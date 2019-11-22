@@ -41,6 +41,7 @@ The data model depends on the event type, see below.
 | `number`                 | integer | **Required** | This is the NOBB module number. Must be generated and can't be changed. 8 digits.             |
 | `brandName`              | string  | **Required** |             |
 | `description`            | string  | **Optional** |             |
+| `etimClass`              | string  | **Optional** |
 | `expiryDate`             | string  | **Optional** |  yyyy-MM-dd |
 | `internalNumber`         | string  | **Required** |             |
 | `keywords`               | array of string   | **Required** |             |
@@ -76,6 +77,7 @@ The data model depends on the event type, see below.
 		"subBrandName": "SYS 840", // string
 		"text": "WEBER SYS 840 KLINKEROLJE", // string
 		"description": "En klar luktfri olje for behandling av uglaserte fliser og klinker.", // string
+		"etimClass": "EC000149",
 		"expiryDate": "2019-09-30", // date in yyyy-MM-dd
 		"keywords": [ // list of strings
 			"OLJE",
@@ -108,6 +110,7 @@ The identifiers must be part of the event data.	Otherwise, only changed fields c
 | `number`                 | integer | **Required** | This is the NOBB module number. Must be generated and can't be changed             |
 | `brandName`              | string  | **Optional** |             |
 | `description`            | string  | **Optional** |             |
+| `etimClass`              | string  | **Optional** |
 | `expiryDate`             | string  | **Optional** |  yyyy-MM-dd |
 | `internalNumber`         | string  | **Optional** |             |
 | `keywords`               | array of string   | **Optional** |             |

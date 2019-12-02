@@ -46,6 +46,8 @@ The data model depends on the event type, see below.
 | ------------------- | ------- | ------------ | ----------- |
 | `id`                | string  | **Required** | GUID. Must be generated and can't be changed.
 | `angle`             | string  | **Optional** |
+| `copyright`         | string  | **Optional** |
+| `copyrightOwner`    | string  | **Optional** |
 | `description`       | string  | **Optional** |
 | `dimensionX`        | integer | **Optional** | Image width.
 | `dimensionY`        | integer | **Optional** | Image height.
@@ -59,7 +61,7 @@ The data model depends on the event type, see below.
 | `resolutionX`       | decimal | **Optional** | From EXIF data.
 | `resolutionY`       | decimal | **Optional** | From EXIF data.
 | `side`              | string  | **Optional** |
-| `size`              | string  | **Optional** | From EXIF data.
+| `size`              | string  | **Optional** |
 | `title`             | string  | **Optional** |
 | `type`              | string  | **Required** | Type of image, from reference data. E.g. "PB".
 | `urls`              | array of objects | **Required** | URLs to the original and the scaled versions of the image. 
@@ -132,6 +134,8 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | ------------------- | ------- | ------------ | ----------- |
 | `id`                | string  | **Required** | GUID. Must be generated and can't be changed.
 | `angle`             | string  | **Optional** |
+| `copyright`         | string  | **Optional** |
+| `copyrightOwner`    | string  | **Optional** |
 | `description`       | string  | **Optional** |
 | `dimensionX`        | integer | **Optional** | Image width.
 | `dimensionY`        | integer | **Optional** | Image height.
@@ -145,7 +149,7 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `resolutionX`       | decimal | **Optional** | From EXIF data.
 | `resolutionY`       | decimal | **Optional** | From EXIF data.
 | `side`              | string  | **Optional** |
-| `size`              | string  | **Optional** | From EXIF data.
+| `size`              | string  | **Optional** |
 | `title`             | string  | **Optional** |
 | `type`              | string  | **Optional** | Type of image, from reference data. E.g. "PB".
 | `urls`              | array of objects | **Optional** | URLs to the original and the scaled versions of the image. 

@@ -31,6 +31,9 @@ The data model depends on the event type, see below.
 - the main group the product group belongs to must have been published
 - only sent once (any later update to a product group triggers a "Product Group updated" event
 
+## Dependencies
+- MainGroupCreated
+- UnitCreated (primaryPseUnit, secondaryPseUnit)
 
 ## Properties
 
@@ -86,6 +89,9 @@ The data model depends on the event type, see below.
 
 ## Preconditions
 - the "Product Group created" event has already been sent
+
+## Dependencies
+- ProductGroupCreated
 
 ## Note
 The identifiers must be part of the event data. Otherwise, only changed fields can be part of the event data. If there is a change inside a list field (like "recommendedDocumentation"), the whole list must be part of the event data.

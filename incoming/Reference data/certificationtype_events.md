@@ -73,6 +73,9 @@ The data model depends on the event type, see below.
 ## Preconditions
 - the "CertificationType created" event has already been sent
 
+## Dependencies
+- CertificationTypeCreated
+
 ## Note
 The identifiers must be part of the event data. Otherwise, only changed fields can be part of the event data. 
 

@@ -62,6 +62,8 @@ The data model depends on the event type, see below.
 
 # Manufacturer Updated 
 
+## Dependencies
+- ManufacturerCreated
 
 ## Properties
 ### data

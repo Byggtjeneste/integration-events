@@ -69,6 +69,9 @@ The data model depends on the event type, see below.
 ## Preconditions
 - the "Unit created" event has already been sent
 
+## Dependencies
+- UnitCreated
+
 ## Note
 The identifiers must be part of the event data. Otherwise, only changed fields can be part of the event data. 
 

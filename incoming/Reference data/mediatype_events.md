@@ -72,6 +72,9 @@ The data model depends on the event type, see below.
 ## Preconditions
 - the "MediaType created" event has already been sent
 
+## Dependencies
+- MediaTypeCreated
+
 ## Note
 The identifiers must be part of the event data. Otherwise, only changed fields can be part of the event data. 
 

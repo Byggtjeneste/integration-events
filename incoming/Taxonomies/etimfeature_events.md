@@ -28,6 +28,7 @@ The data model depends on the event type, see below.
 ## Preconditions
 - only sent once (any later update to a feature triggers a "Feature updated" event)
 
+
 ## Properties
 ### data
 
@@ -70,6 +71,9 @@ The data model depends on the event type, see below.
 
 ## Preconditions
 - the "ETIM Feature created" event has already been sent
+
+## Dependencies
+- ETIMFeatureCreated
 
 ## Note	
 The identifiers must be part of the event data.	Otherwise, only changed fields can be part of the event data. 

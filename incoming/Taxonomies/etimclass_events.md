@@ -29,6 +29,7 @@ The data model depends on the event type, see below.
 - only sent once (any later update to an ETIM class triggers an "ETIM Class updated" event.
 - any ETIM feature/unit/value referenced in the model must have been created beforehand, and the events for creating those must have been sent.
 
+
 ## Properties
 
 ### data
@@ -146,6 +147,12 @@ All items must be of the type: `object` with following properties:
 ## Preconditions
 - the "ETIM Class created" event has already been sent.
 - any ETIM feature/unit/value referenced in the model must have been created beforehand, and the events for creating those must have been sent.
+
+## Dependencies
+- ETIMClassCreated
+- ETIMFeatureCreated for all referenced features
+- ETIMUnitCreated for all referenced units
+- ETIMValueCreated for all referenced values
 
 ## Note
 The identifiers must be part of the event data. Otherwise, only changed fields can be part of the event data. If there is a change inside a list field (like "features"), the whole list must be part of the event data.

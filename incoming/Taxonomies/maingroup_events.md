@@ -29,6 +29,8 @@ The data model depends on the event type, see below.
 - the super group the main group belongs to must have been published
 - only sent once (any later update to a main group triggers a "Main Group updated" event
 
+## Dependencies
+- SuperGroupCreated
 
 ## Properties
 
@@ -70,6 +72,9 @@ The data model depends on the event type, see below.
 
 ## Preconditions
 - the "Main Group created" event has already been sent
+
+## Dependencies
+- MainGroupCreated
 
 ## Note
 The identifiers must be part of the event data. Otherwise, only changed fields can be part of the event data.

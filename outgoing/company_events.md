@@ -104,41 +104,39 @@ The data model depends on the event type, see below.
 	},
 	
 	"data": {
-		// identifiers
 		"id": "4f214662-ba42-491c-b230-37b1420a4db9",
 		"nobbParticipantNumber": 51128,
 		
-		// other data fields
-        "name": "Glava AS",
-        "marketingName": "Glava AS",
-        "organizationNumber": "943049467",
-        "efoParticipantNumber": [44322],
-        "nrfParticipantNumbers": [1060, 1061],
-        "glnNumbers": ["3250617851367"],
-        "parentCompanyId": "4f214662-ba42-491c-b230-37b1420a4db9",
-        "active": true,
-        "vvsCompany": false,
-        "subscriptions": [
-            {"product": "Supplier Solution", "level": "The Level/Type - TBD"},
+		"name": "Glava AS",
+		"marketingName": "Glava AS",
+		"organizationNumber": "943049467",
+		"efoParticipantNumber": [44322],
+		"nrfParticipantNumbers": [1060, 1061],
+		"glnNumbers": ["3250617851367"],
+		"parentCompanyId": "4f214662-ba42-491c-b230-37b1420a4db9",
+		"active": true,
+		"vvsCompany": false,
+		"subscriptions": [
+			{"product": "Supplier Solution", "level": "The Level/Type - TBD"},
 			{"product": "Nobb Kontrakt", "level": "API" }
-        ],
-        "address": {
-            "address": "Nybråtveien 2",
-            "postalCode": "1832",
-            "postalArea": "Askim",
-            "country": "NO"
-        },
-        "billingAddress": {
-            "address": "Postboks 2006",
-            "postalCode": "1801",
-            "postalArea": "Askim",
-            "country": "NO"
-        },
-        "email": "firmapost@glava.no",
-        "phone": null,
-        "website": "https://glava.no",
-        "description": null,
-        "logoUrl": "https://glava.no/images/somelogo.jpg"
+		],
+		"address": {
+			"address": "Nybråtveien 2",
+			"postalCode": "1832",
+			"postalArea": "Askim",
+			"country": "NO"
+		},
+		"billingAddress": {
+			"address": "Postboks 2006",
+			"postalCode": "1801",
+			"postalArea": "Askim",
+			"country": "NO"
+		},
+		"email": "firmapost@glava.no",
+		"phone": null,
+		"website": "https://glava.no",
+		"description": null,
+		"logoUrl": "https://glava.no/images/somelogo.jpg"
 	}
 }
 ```
@@ -211,6 +209,8 @@ The identifiers will be part of the event data. Otherwise, only changed fields w
 
 ### Sample JSON
 
+Example of updating marketing name and adding an NRF participant number:
+
 ```json
 {
 	"metadata": {
@@ -221,14 +221,10 @@ The identifiers will be part of the event data. Otherwise, only changed fields w
 	},
 	
 	"data": {
-		// identifiers
 		"id": "4f214662-ba42-491c-b230-37b1420a4db9",
 		"nobbParticipantNumber": 51128,
 
-		// an example of updating marketingName
-        "marketingName": "Glava", 
-		
-		// an example of updating nrfParticipantNumbers
+		"marketingName": "Glava", 
 		"nrfParticipantNumbers": [1060, 1061, 1062]		
 	}
 }

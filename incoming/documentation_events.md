@@ -35,6 +35,13 @@ The data model depends on the event type, see below.
 ## Preconditions
 - The supplier has uploaded a valid documentation file in DAM, and selected a valid documentation type.
 
+## Dependencies
+- Item Created (for `referencedByItems`)
+- Module Created (for `referencedByModules`)
+- Product Group Created (for `referencedByProductGroups`)
+- MediaType Created (for `type`)
+- Supplier Created (for `participantNumber`)
+
 ## Properties
 
 ### data
@@ -89,6 +96,10 @@ The data model depends on the event type, see below.
 
 ## Preconditions
 - the "Documentation created" event has already been sent
+
+## Dependencies
+- Documentation Created
+- Other dependencies depends on the data being updated (see dependencies for Documentation Created event)
 
 ## Note
 The identifier must be part of the event data. Otherwise, only changed fields can be part of the event data. If there is a change inside a list field (like "referencedByItems"), the whole list must be part of the event data.

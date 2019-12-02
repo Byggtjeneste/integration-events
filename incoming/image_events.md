@@ -36,6 +36,14 @@ The data model depends on the event type, see below.
 - The supplier has uploaded a valid image in DAM, and selected a valid image type.
 - The image has been scaled to the different sizes.
 
+## Dependencies
+- Item Created (for `referencedByItems`)
+- Module Created (for `referencedByModules`)
+- Product Group Created (for `referencedByProductGroups`)
+- MediaType Created (for `type`)
+- Supplier Created (for `participantNumber`)
+
+
 ## Properties
 
 ### data
@@ -121,8 +129,12 @@ All items must be of the type: `object` with following properties:
 ## Preconditions
 - the "Image created" event has already been sent
 
+## Dependencies
+- Image Created
+- Other dependencies depends on the data being updated (see dependencies for Image Created event)
+
 ## Note
-The identifier must be part of the event data. Otherwise, only changed fields can be part of the event data. If there is a change inside a list field (like "urls"), the whole list must be part of the event data.
+The identifier must be part of the event data. Otherwise, only changed fields can be part of the event data. If there is a change inside a list field (like `urls`), the whole list must be part of the event data.
 
 ## Properties
 

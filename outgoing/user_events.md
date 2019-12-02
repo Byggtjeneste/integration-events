@@ -94,7 +94,7 @@ The data model depends on the event type, see below.
 	
 	"data": {
 		"id": "auth0|103547991597142817347",
-        "roles": ["Supplier"]
+		"roles": ["Supplier"]
 	}
 }
 

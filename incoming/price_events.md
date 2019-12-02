@@ -37,6 +37,9 @@ The data model depends on the event type, see below.
 - the price must have been published/approved
 - only sent once (any later update to a price triggers a "Price updated" event)
 
+## Dependencies
+- ItemCreated
+- SupplierCreated (BT internal)
 
 ## Note
 The identifier must be part of the event data.
@@ -89,6 +92,9 @@ The identifier must be part of the event data.
 ## Preconditions
 - the "Price created" event has already been sent
 
+## Dependencies
+- PriceCreated
+
 ## Note
 The identifier must be part of the event data. Otherwise, only changed fields can be part of the event data.
 
@@ -133,6 +139,10 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 
 ## Preconditions
 - the "Price created" event has already been sent
+
+
+## Dependencies
+- PriceCreated
 
 ## Note
 The identifier must be part of the event data. 

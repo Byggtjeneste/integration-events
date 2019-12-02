@@ -23,14 +23,18 @@ The events related to items will be sent from Avensia Middleware to an Azure Ser
 ### data
 The data model depends on the event type, see below.
 
-
-
 # Item Created
 
 ## Preconditions
 - the item has been published/approved
 - only sent once (any later update to an item triggers an "Item updated" event)
 
+## Dependencies
+- SupplierCreated (BT internal)
+- ModuleCreated
+- ManufacturerCreated
+- UnitCreated (for priceunit)
+- PackageCreated (for bundle items)
 
 ## Properties
 
@@ -199,7 +203,13 @@ All items must be of the type: `object` with following properties:
 
 ## Preconditions
 - the "Item created" event has already been sent
-- the item has been published/approved after the item was updated
+- the item has been published/approved after the item was updated, or fields that doesn't require approval has been updated. 
+
+## Dependencies
+- ItemCreated
+- ModuleCreated
+- SupplierCreated (BT internal)
+- Other dependencies depends on the data being updated (see dependencies for ItemCreated event)
 
 ## Note
 The identifiers must be part of the event data. Otherwise, only changed fields can be part of the event data. If there is a change inside a list field (like "bundleItems"), the whole list must be part of the event data.

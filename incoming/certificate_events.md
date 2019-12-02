@@ -35,6 +35,8 @@ The data model depends on the event type, see below.
 ## Preconditions
 - The supplier has uploaded a valid certificate in DAM, and selected a valid certificate type
 
+## Dependencies
+- CertificationTypeCreated
 
 ## Note
 The identifier must be part of the event data.
@@ -77,6 +79,9 @@ The identifier must be part of the event data.
 
 ## Preconditions
 - the "Certificate created" event has already been sent
+
+## Dependencies
+- CertificateCreated
 
 ## Note
 The identifier must be part of the event data. Otherwise, only changed fields can be part of the event data.

@@ -29,6 +29,11 @@ The data model depends on the event type, see below.
 -  the module has been published/approved
 - only sent once (any later update to a module triggers a "Module updated" event)
 
+## Dependencies
+- ManufacturerCreated
+- ProductGroupCreated
+- SupplierCreated (BT internal)
+
 ## Properties
 ### data
 
@@ -94,6 +99,9 @@ The data model depends on the event type, see below.
 ## Preconditions
 - the "Module created" event has already been sent
 - the module has been published/approved after the module was updated
+
+## Dependencies
+- ModuleCreated
 
 ## Note	
 The identifiers must be part of the event data.	Otherwise, only changed fields can be part of the event data. If there is a change inside a list field (like "keywords"), the whole list must be part of the event data.

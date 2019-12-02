@@ -39,6 +39,10 @@ The data model depends on the event type, see below.
 - the item the package belongs to must have been published/approved
 - only sent once (any later update to a package triggers a "Package updated" event)
 
+## Dependencies
+- ItemCreated
+- UnitCreated (unit, consistsOfUnit)
+
 ## Properties
 
 ### data 
@@ -116,6 +120,9 @@ The data model depends on the event type, see below.
 - the "Package created" event has already been sent
 - the item the package belongs to has been published/approved after the package was updated
 
+## Dependencies
+- PackageCreated
+
 ## Note
 The identifier must be part of the event data. Otherwise, only changed fields can be part of the event data.
 
@@ -181,6 +188,9 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 ## Preconditions
 - the "Package created" event has already been sent
 - the item the package belongs to has been published/approved after the package was deleted
+
+## Dependencies
+- PackageCreated
 
 ## Note
 The identifier must be part of the event data.

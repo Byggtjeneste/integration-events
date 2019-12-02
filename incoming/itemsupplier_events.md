@@ -32,6 +32,10 @@ The data model depends on the event type, see below.
 - the item has been published/approved
 - only sent once (any later update to an item triggers an "Item updated" event)
 
+## Dependencies
+- ItemCreated
+- SupplierCreated (BT internal)
+
 
 ## Properties
 
@@ -88,6 +92,8 @@ The data model depends on the event type, see below.
 
 # Item supplier updated
 
+## Dependencies
+- ItemSupplierCreated
 
 ## Properties
 

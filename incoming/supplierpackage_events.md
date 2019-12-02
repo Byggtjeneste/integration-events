@@ -37,6 +37,11 @@ The data model depends on the event type, see below.
 ## Preconditions
 - only sent once (any later update to a supplier package triggers a "Supplier package updated" event)
 
+
+## Dependencies
+- PackageCreated (packageId)
+- SupplierCreated (BT internal)
+
 ## Properties
 
 ### data
@@ -84,6 +89,9 @@ The data model depends on the event type, see below.
 
 ## Preconditions
 - the "Supplier package created" event has already been sent
+
+## Dependencies
+- SupplierPackageCreated
 
 ## Notes
 The identifiers must be part of the event data.
@@ -134,6 +142,9 @@ Otherwise, only changed fields can be part of the event data.
 
 ## Preconditions
 - the "Supplier package created" event has already been sent
+
+## Dependencies
+- SupplierPackageCreated
 
 ## Notes
 The identifiers must be part of the event data.

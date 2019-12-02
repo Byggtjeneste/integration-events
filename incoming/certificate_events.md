@@ -90,9 +90,9 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | Property                    | Type    | Required     | Description |
 | --------------------------- | ------- | ------------ | -------     |
 | `id`                        | string  | **Required** |  GUID. Must be generated and can't be changed.
-| `type`                      | string | **Required** | Type of certificate, from reference data. Eg. "FSC"
-| `participantNumber`    	  | integer | **Required** | Participant number for certificate owner
-| `url`                  	  | string  | **Required** | URL to certificate blob
+| `type`                      | string | **Optional** | Type of certificate, from reference data. Eg. "FSC"
+| `participantNumber`    	  | integer | **Optional** | Participant number for certificate owner
+| `url`                  	  | string  | **Optional** | URL to certificate blob
 | `expiryDate`                    | string  | **Optional** | yyyy-MM-dd
 
 

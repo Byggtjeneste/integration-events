@@ -96,44 +96,42 @@ All items must be of the type: `object` with following properties:
 	},
 	
 	"data": {
-		// identifiers
 		"id": "a0823b8b-f886-43e9-ab54-a67726cd0a8c",
 		"classCode": "EC002860",
-		
-		// other data fields
+
 		"classVersion": 2,
 		"description": "Trykkluftkompressor",
 		"features": [
 			{
-                "id": "02cd081d-6abc-407e-aebb-2f35301aa817", 
-                "code": "EF000008",
+				"id": "02cd081d-6abc-407e-aebb-2f35301aa817", 
+				"code": "EF000008",
 				"sortOrder": 1
 			},
 			{
-                "id": "dc58bc43-0494-46fb-9e87-2c0e2e37e07a", 
-                "code": "EF000009",
+				"id": "dc58bc43-0494-46fb-9e87-2c0e2e37e07a", 
+				"code": "EF000009",
 				"sortOrder": 2,
-                "unit": {
-                    "id": "42b602ae-4af8-41f7-a2ae-ff3b9e9a18d4", 
-                    "code": "EU570399"
-                }
+				"unit": {
+					"id": "42b602ae-4af8-41f7-a2ae-ff3b9e9a18d4", 
+					"code": "EU570399"
+				}
 			},
 			{
-                "id": "9c3c4e68-a192-4170-80ca-6339cafd7ba0", 
-                "code": "EF002169",
+				"id": "9c3c4e68-a192-4170-80ca-6339cafd7ba0", 
+				"code": "EF002169",
 				"sortOrder": 3,
-                "values": [
-                    {
-                        "id": "a9b159af-a57b-4c86-8a30-7b53547dcf74", 
-                        "code": "EV000179",
+				"values": [
+					{
+						"id": "a9b159af-a57b-4c86-8a30-7b53547dcf74", 
+						"code": "EV000179",
 						"sortOrder": 1
-                    },
-                    {
-                        "id": "2fadbb91-6854-414e-969b-abb4cbad7180", 
-                        "code": "EV000149",
+					},
+					{
+						"id": "2fadbb91-6854-414e-969b-abb4cbad7180", 
+						"code": "EV000149",
 						"sortOrder": 2
-                    }
-                ]
+					}
+				]
 			}
 		],
 		"groupCode": "EG000051",
@@ -203,18 +201,18 @@ The `features` property is the same as for the "ETIM Class created" event, see a
 		// Any missing ETIM feature will be considered as removed.
 		"features": [
 			{
-                "id": "02cd081d-6abc-407e-aebb-2f35301aa817", 
-                "code": "EF000008",
+				"id": "02cd081d-6abc-407e-aebb-2f35301aa817", 
+				"code": "EF000008",
 				"sortOrder": 1
 			},
 			{
-                "id": "dc58bc43-0494-46fb-9e87-2c0e2e37e07a", 
-                "code": "EF000009",
+				"id": "dc58bc43-0494-46fb-9e87-2c0e2e37e07a", 
+				"code": "EF000009",
 				"sortOrder": 2,
-                "unit": {
-                    "id": "42b602ae-4af8-41f7-a2ae-ff3b9e9a18d4", 
-                    "code": "EU570399"
-                }
+				"unit": {
+					"id": "42b602ae-4af8-41f7-a2ae-ff3b9e9a18d4", 
+					"code": "EU570399"
+				}
 			}
 		],
 	}

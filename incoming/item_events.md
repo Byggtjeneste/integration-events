@@ -38,7 +38,7 @@ The data model depends on the event type, see below.
 
 ## Properties
 
-	
+
 
 ### data
 
@@ -62,7 +62,7 @@ The data model depends on the event type, see below.
 | `hasDurabilityDate`         | boolean | **Required** |
 | `hazardLabels`              | array of string   | **Optional** |
 | `launchDate`                | string  | **Optional** | yyyy-MM-dd
-| `manufacturerItemNumber` | string  | **Required** |
+| `manufacturerItemNumber`    | string  | **Required** |
 | `marketingText`             | string  | **Optional** |
 | `modelName`                 | string  | **Optional** |
 | `moduleNumber`              | integer | **Required** |
@@ -70,7 +70,7 @@ The data model depends on the event type, see below.
 | `priceUnit`                 | string  | **Required** |
 | `primaryText`               | string  | **Required** | "Varetekst 1"
 | `productNumber`             | integer | **Optional** | Reference to Product
-| `itemOwnerItemNumber` | string  | **Required** | 
+| `itemOwnerItemNumber`       | string  | **Required** | 
 | `replacesNobbNumber`        | integer | **Optional** |
 | `secondaryText`             | string  | **Optional** | "Varetekst 2" in NOBB domain language.
 | `seriesName`                | string  | **Optional** |
@@ -131,71 +131,69 @@ All items must be of the type: `object` with following properties:
 
 ```json
 {
-	"metadata": {
-		"eventType": "Create", // string
-		"event": "Item", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
-		"author": "Glava AS" // string
-	},
-	
-	"data": {
-		// identifiers
-		"id": "4f214662-ba42-491c-b230-37b1420a4db9", // GUID (must be generated and can't be changed)
-		"nobbNumber": 55556666, // integer (must be generated and can't be changed)
-		
-		// other data fields
-		"moduleNumber": 22223333, // integer
-		"productNumber": 77778888, // integer, optional
-		"type": "Standard", // string
-		"primaryText": "VINDU FK U12 TRE 13X24", // string
-		"secondaryText": "2-LAGS GLASS, U-VERDI 1,2", // string, optional
-		"marketingText": "Vindu Fastkarm U12 Tre 13X24", // string, optional
-		"seriesName": null, // string, optional
-		"modelName": null, // string, optional
-		"description": "Natre Fastkarm - isolerer bedre...", // string, optional
-		"itemOwnerItemNumber": "ABC123", // string
-		"manufacturerItemNumber": "DEF456", // string
-		"priceUnit": "STK", // string
-		"stocked": true, // boolean
-		"launchDate": "2019-12-01", // date in yyyy-MM-dd, optional
-		"expiryDate": "2020-01-01", // date in yyyy-MM-dd, optional
-		"hasDurabilityDate": false, // boolean
-		"toleratesFrost": true, // boolean, optional
-		"replacesNobbNumber": 77778888, // integer, optional
-		"freightGroup": "T500", // string, optional
-		"hazardLabels": ["Very Flammable", "Poisonous"], // list of strings, optional
-		"customsNoCode": "1999", // string, optional
-		"customsEuCode": "2999", // string, optional
-		"tax": null, // string, optional
-		"environmentLabels": ["NAAF", "FSC"], // list of strings, optional
-		"dangerousGoods": { // optional
-			"number": 1001, // integer
-			"class": "5.1", // string, optional
-			"className": "Oxidizing substances", // string, optional
-			"adrName": null, // string, optional
-			"packingGroup": 3, // integer, optional
-		},
-		"nrfInfo": { // optional
-			"number": 5110033, // integer, optional
-			"supplierNumber": 273782, // integer
-			"productGroupNumber": "5110000", // string
-			"name": "Uponor Teck Endetetning", // string
-			"dimension": "25-54/34", // string, optional
-			"additionalText": "L=117mm", // string, optional
-		},
-		"tunNumber": "00001748433", // string, optional
-		"finfoNumber": "004101343", // string, optional
-		"bundleItems": [ // list of objects, only used for Display and Composite items
-			{
-				"packageId": "a279846f-6654-4394-84f8-4f99b170fad9", // GUID to package
-				"quantity": 2, // integer
-			}
-		],
-		"uniqueSellingPoints": [ // list of strings, optional
-			"Kan leveres med funksjonsglass",
-			"Samme profil som øvrige produkter"
-		]
-	}
+    "metadata": {
+        "eventType": "Create",
+        "event": "Item",
+        "date": "2019-09-30 12:34:56",
+        "author": "Glava AS"
+    },
+    
+    "data": {
+        "id": "4f214662-ba42-491c-b230-37b1420a4db9",
+        "nobbNumber": 55556666,
+
+        "moduleNumber": 22223333,
+        "productNumber": 77778888,
+        "type": "Standard",
+        "primaryText": "VINDU FK U12 TRE 13X24",
+        "secondaryText": "2-LAGS GLASS, U-VERDI 1,2",
+        "marketingText": "Vindu Fastkarm U12 Tre 13X24",
+        "seriesName": null,
+        "modelName": null,
+        "description": "Natre Fastkarm - isolerer bedre...",
+        "itemOwnerItemNumber": "ABC123",
+        "manufacturerItemNumber": "DEF456",
+        "priceUnit": "STK",
+        "stocked": true,
+        "launchDate": "2019-12-01",
+        "expiryDate": "2020-01-01",
+        "hasDurabilityDate": false,
+        "toleratesFrost": true,
+        "replacesNobbNumber": 77778888,
+        "freightGroup": "T500",
+        "hazardLabels": ["Very Flammable", "Poisonous"],
+        "customsNoCode": "1999",
+        "customsEuCode": "2999",
+        "tax": null,
+        "environmentLabels": ["NAAF", "FSC"],
+        "dangerousGoods": {
+            "number": 1001,
+            "class": "5.1",
+            "className": "Oxidizing substances",
+            "adrName": null,
+            "packingGroup": 3,
+        },
+        "nrfInfo": {
+            "number": 5110033,
+            "supplierNumber": 273782,
+            "productGroupNumber": "5110000",
+            "name": "Uponor Teck Endetetning",
+            "dimension": "25-54/34",
+            "additionalText": "L=117mm",
+        },
+        "tunNumber": "00001748433",
+        "finfoNumber": "004101343",
+        "bundleItems": [
+            {
+                "packageId": "a279846f-6654-4394-84f8-4f99b170fad9",
+                "quantity": 2,
+            }
+        ],
+        "uniqueSellingPoints": [
+            "Kan leveres med funksjonsglass",
+            "Samme profil som øvrige produkter"
+        ]
+    }
 }
 ```
 
@@ -240,7 +238,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `hasDurabilityDate`         | boolean | **Optional** |
 | `hazardLabels`              | array of string   | **Optional** |
 | `launchDate`                | string  | **Optional** | yyyy-MM-dd
-| `manufacturerItemNumber` | string  | **Optional** |
+| `manufacturerItemNumber`    | string  | **Optional** |
 | `marketingText`             | string  | **Optional** |
 | `modelName`                 | string  | **Optional** |
 | `moduleNumber`              | integer | **Optional** |
@@ -248,7 +246,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `priceUnit`                 | string  | **Optional** |
 | `primaryText`               | string  | **Optional** |
 | `productNumber`             | integer | **Optional** |
-| `itemOwnerItemNumber` 		| string  | **Optional** |
+| `itemOwnerItemNumber`       | string  | **Optional** |
 | `replacesNobbNumber`        | integer | **Optional** |
 | `secondaryText`             | string  | **Optional** |
 | `seriesName`                | string  | **Optional** |
@@ -305,39 +303,36 @@ All items must be of the type: `object` with following properties:
 
 
 ## Sample json
+Example which does the following:
+- Removes expiry date
+- Updates description
+- Updates dangerous goods class
+- Updates quantity for a bundled item
 
 ```json
 {
-	"metadata": {
-		"eventType": "Update", // string
-		"event": "Item", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
-		"author": "Glava AS" // string
-	},
-	
-	"data": {
-		// identifiers must always be part of the event and can't change value
-		"id": "4f214662-ba42-491c-b230-37b1420a4db9",
-		"nobbNumber": 55556666,
+    "metadata": {
+        "eventType": "Update",
+        "event": "Item",
+        "date": "2019-09-30 12:34:56",
+        "author": "Glava AS"
+    },
+    
+    "data": {
+        "id": "4f214662-ba42-491c-b230-37b1420a4db9",
+        "nobbNumber": 55556666,
 
-		// an example of removing expiryDate
-		"expiryDate": null,
-		
-		// an example of updating description
-		"description": "Natre Fastkarm - isolerer best...",
-		
-		// an example of updating class inside dangerousGoods
-		"dangerousGoods": {
-			"class": "5.2"
-		},
-		
-		// an example of updating quantity inside one of the bundleItems. Must supply the whole list for any changes inside the list.
-		"bundleItems": [
-			{
-				"packageId": "a279846f-6654-4394-84f8-4f99b170fad9",
-				"quantity": 3
-			}
-		]
-	}
+        "expiryDate": null,
+        "description": "Natre Fastkarm - isolerer best...",
+        "dangerousGoods": {
+            "class": "5.2"
+        },
+        "bundleItems": [
+            {
+                "packageId": "a279846f-6654-4394-84f8-4f99b170fad9",
+                "quantity": 3
+            }
+        ]
+    }
 }
 ```

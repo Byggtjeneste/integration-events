@@ -49,7 +49,6 @@ The data model depends on the event type, see below.
 | `etimClass`              | string  | **Optional** |
 | `expiryDate`             | string  | **Optional** |  yyyy-MM-dd |
 | `internalNumber`         | string  | **Required** |             |
-| `keywords`               | array of string   | **Required** |             |
 | `manufacturerNumber`     | integer | **Required** | Reference to manufacturer (ref.data)            |
 | `ownerParticipantNumber` | integer | **Required** | Reference to company            |
 | `productGroupNumber`     | integer | **Required** | Reference to productgroup (taxonomy)            |
@@ -61,34 +60,28 @@ The data model depends on the event type, see below.
 ## Sample json
 ```json
 {
-	"metadata": {
-		"eventType": "Create", // string
-		"event": "Module", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
-		"author": "Glava AS" // string
-	},
-	
-	"data": {
-		// identifiers
-		"id": "4f214662-ba42-491c-b230-37b1420a4db9", // GUID (must be generated and can't be changed)
-		"number": 44445555, // integer (must be generated and can't be changed)
-		
-		// other data fields
-		"productGroupNumber": 1234567, // integer
-		"ownerParticipantNumber": 51128, // integer
-		"manufacturerNumber": 2002, // integer
-		"internalNumber": "ABC123", // string
-		"brandName": "WEBER", // string
-		"subBrandName": "SYS 840", // string
-		"text": "WEBER SYS 840 KLINKEROLJE", // string
-		"description": "En klar luktfri olje for behandling av uglaserte fliser og klinker.", // string
-		"etimClass": "EC000149",
-		"expiryDate": "2019-09-30", // date in yyyy-MM-dd
-		"keywords": [ // list of strings
-			"OLJE",
-			"KLINKEROLJE"
-		]
-	}
+    "metadata": {
+        "eventType": "Create",
+        "event": "Module",
+        "date": "2019-09-30 12:34:56",
+        "author": "Glava AS"
+    },
+    
+    "data": {
+        "id": "4f214662-ba42-491c-b230-37b1420a4db9",
+        "number": 44445555,
+
+        "productGroupNumber": 1234567,
+        "ownerParticipantNumber": 51128,
+        "manufacturerNumber": 2002,
+        "internalNumber": "ABC123",
+        "brandName": "WEBER",
+        "subBrandName": "SYS 840",
+        "text": "WEBER SYS 840 KLINKEROLJE",
+        "description": "En klar luktfri olje for behandling av uglaserte fliser og klinker.",
+        "etimClass": "EC000149",
+        "expiryDate": "2019-09-30"
+    }
 }
 
 ```
@@ -104,7 +97,7 @@ The data model depends on the event type, see below.
 - ModuleCreated
 
 ## Note	
-The identifiers must be part of the event data.	Otherwise, only changed fields can be part of the event data. If there is a change inside a list field (like "keywords"), the whole list must be part of the event data.
+The identifiers must be part of the event data.	Otherwise, only changed fields can be part of the event data.
 
 ## Properties
 ### data
@@ -121,7 +114,6 @@ The identifiers must be part of the event data.	Otherwise, only changed fields c
 | `etimClass`              | string  | **Optional** |
 | `expiryDate`             | string  | **Optional** |  yyyy-MM-dd |
 | `internalNumber`         | string  | **Optional** |             |
-| `keywords`               | array of string   | **Optional** |             |
 | `manufacturerNumber`     | integer | **Optional** | Reference to manufacturer (ref.data)            |
 | `ownerParticipantNumber` | integer | **Optional** | Reference to company            |
 | `productGroupNumber`     | integer | **Optional** | Reference to productgroup (taxonomy)            |
@@ -131,26 +123,22 @@ The identifiers must be part of the event data.	Otherwise, only changed fields c
 
 
 ## Sample json
+Example of removing expiry date:
 ```json
 {
-	"metadata": {
-		"eventType": "Update", // string
-		"event": "Module", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
-		"author": "Glava AS" // string
-	},
-	
-	"data": {
-		// identifiers must always be part of the event and can't change value
-		"id": "4f214662-ba42-491c-b230-37b1420a4db9",
-		"number": 44445555,
-		
-		// an example of updating keywords
-		"keywords": [ "OLJE", "KLINKEROLJE", "KLINK" ],
-		
-		// an example of removing expiryDate
-		"expiryDate": null,
-	}
+    "metadata": {
+        "eventType": "Update",
+        "event": "Module",
+        "date": "2019-09-30 12:34:56",
+        "author": "Glava AS"
+    },
+    
+    "data": {
+        "id": "4f214662-ba42-491c-b230-37b1420a4db9",
+        "number": 44445555,
+
+        "expiryDate": null,
+    }
 }
 
 ```

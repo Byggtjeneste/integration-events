@@ -54,9 +54,7 @@ The data model depends on the event type, see below.
 | `marketingText`         | string  | **Optional** | 
 | `nobbNumber`            | integer | **Required** | 
 | `participantNumber`     | integer | **Required** | Alternative suppliers participant number
-| `supplierItemNumber` | string  | **Required** | 
-| `uniqueSellingPoints`   | array of string   | **Optional** | 
-
+| `supplierItemNumber`    | string  | **Required** | 
 
 
 
@@ -65,27 +63,21 @@ The data model depends on the event type, see below.
 ```json
 {
 	"metadata": {
-		"eventType": "Create", // string
-		"event": "ItemSupplier", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
-		"author": "Icopal AS" // string
+		"eventType": "Create",
+		"event": "ItemSupplier",
+		"date": "2019-09-30 12:34:56",
+		"author": "Icopal AS"
 	},
 	
 	"data": {
-		// identifiers
-		"id": "4f214662-ba42-491c-b230-37b1420a4db9", // GUID (must be generated and can't be changed)
-		"nobbNumber": 55556666, // integer
-		"participantNumber": 207168, // integer
-		
-		// other data fields
-		"supplierItemNumber": "ABC123", // string
-		"freightGroup": "100", // string, optional
-		"expiryDate": "2020-01-01", // date in yyyy-MM-dd
-		"marketingText": "Lorem ipsum", // string, optional
-		"uniqueSellingPoints": [ // list of strings, optional
-			"Slipper inn mye lys",
-			"For store glassfasader"
-		]
+		"id": "4f214662-ba42-491c-b230-37b1420a4db9",
+		"nobbNumber": 55556666,
+		"participantNumber": 207168,
+
+		"supplierItemNumber": "ABC123",
+		"freightGroup": "100",
+		"expiryDate": "2020-01-01",
+		"marketingText": "Lorem ipsum"
 	}
 }
 ```
@@ -109,35 +101,27 @@ The data model depends on the event type, see below.
 | `marketingText`         | string  | **Optional** | 
 | `nobbNumber`            | integer | **Required** | 
 | `participantNumber`     | integer | **Required** | 
-| `supplierItemNumber` | string  | **Optional** | 
-| `uniqueSellingPoints`   | array of string   | **Optional** | If any item within the array has changed, the whole list must be supplied
-
+| `supplierItemNumber`    | string  | **Optional** | 
 
 
 
 ## Sample json
-
+Example of removing expiry date:
 ```json
 {
 	"metadata": {
-		"eventType": "Update", // string
-		"event": "ItemSupplier", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
-		"author": "Icopal AS" // string
+		"eventType": "Update",
+		"event": "ItemSupplier",
+		"date": "2019-09-30 12:34:56",
+		"author": "Icopal AS"
 	},
 	
 	"data": {
-		// identifiers must always be part of the event and can't change value
 		"id": "4f214662-ba42-491c-b230-37b1420a4db9",
 		"nobbNumber": 55556666,
 		"participantNumber": 207168,
-		
-		// an example of removing expiryDate
-		"expiryDate": null,
-		
-		// an example of updating uniqueSellingPoints
-		"uniqueSellingPoints": ["Slipper inn mye lys"]
+
+		"expiryDate": null
 	}
 }
 ```
-

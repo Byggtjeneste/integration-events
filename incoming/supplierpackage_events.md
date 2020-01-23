@@ -53,7 +53,6 @@ The data model depends on the event type, see below.
 | `id`                    | string  | **Required** | 
 | `participantNumber`	  | integer | **Required** | Alternative supplier participant number
 | `packageId`          	  | string  | **Required** | Parent package GUID
-| `gtin`          		  | string  | **Optional** | 
 | `stocked`          	  | boolean | **Required** | 
 | `deliverable`           | boolean | **Required** | 
 | `dPakLayerCount`  	  | integer  | **Optional** | 
@@ -63,24 +62,21 @@ The data model depends on the event type, see below.
 ## Sample json
 ```json
 {
-	"metadata": {
-		"eventType": "Create", // string
-		"event": "SupplierPackage", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
-		"author": "Glava AS" // string
-	},
-	
-	"data": {
-		// identifiers
-		"id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63", // GUID
-		"participantNumber": 201768, // integer
-		"packageId": "52b552a7-274c-4610-b3f7-3bc43663ab50", // GUID to a package entity
-		
-		// other data fields
-		"gtin": "055566667777", // string, optional
-		"stocked": true, // boolean
-		"deliverable": false, // boolean
-	}
+    "metadata": {
+        "eventType": "Create",
+        "event": "SupplierPackage",
+        "date": "2019-09-30 12:34:56",
+        "author": "Glava AS"
+    },
+
+    "data": {
+        "id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
+        "participantNumber": 201768,
+        "packageId": "52b552a7-274c-4610-b3f7-3bc43663ab50",
+
+        "stocked": true,
+        "deliverable": false,
+    }
 }
 
 ```
@@ -106,34 +102,31 @@ Otherwise, only changed fields can be part of the event data.
 | Property                | Type    | Required     | Description |
 | ----------------------- | ------- | ------------ | ------- |
 | `id`                    | string  | **Required** | 
-| `participantNumber`	  | integer | **Required** | Alternative supplier participant number
-| `packageId`          	  | string  | **Required** | Parent package (item owners package) GUID
-| `gtin`          		  | string  | **Optional** | 
-| `stocked`          	  | boolean | **Optional** | 
+| `participantNumber`     | integer | **Required** | Alternative supplier participant number
+| `packageId`             | string  | **Required** | Parent package (item owners package) GUID
+| `stocked`               | boolean | **Optional** | 
 | `deliverable`           | boolean | **Optional** | 
-| `dPakLayerCount`  	  | integer  | **Optional** | 
+| `dPakLayerCount`        | integer  | **Optional** | 
 | `maxStackingWeight`     | decimal  | **Optional** | 
 
 ## Sample json
-
+Example of updating stocked:
 ```json
 {
-	"metadata": {
-		"eventType": "Update", // string
-		"event": "SupplierPackage", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
-		"author": "Glava AS" // string
-	},
-	
-	"data": {
-		// identifiers must always be part of the event and can't change value
-		"id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
-		"participantNumber": 201768,
-		"packageId": "52b552a7-274c-4610-b3f7-3bc43663ab50",
-		
-		// an example of updating stocked
-		"stocked": false
-	}
+    "metadata": {
+        "eventType": "Update",
+        "event": "SupplierPackage",
+        "date": "2019-09-30 12:34:56",
+        "author": "Glava AS"
+    },
+
+    "data": {
+        "id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
+        "participantNumber": 201768,
+        "packageId": "52b552a7-274c-4610-b3f7-3bc43663ab50",
+
+        "stocked": false
+    }
 }
 
 ```
@@ -166,19 +159,18 @@ The identifiers must be part of the event data.
 
 ```json
 {
-	"metadata": {
-		"eventType": "Delete", // string
-		"event": "SupplierPackage", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
-		"author": "Glava AS" // string
-	},
-	
-	"data": {
-		// the identifiers to the supplier package that was deleted
-		"id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
-		"participantNumber": 201768,
-		"packageId": "52b552a7-274c-4610-b3f7-3bc43663ab50"
-	}
+    "metadata": {
+        "eventType": "Delete",
+        "event": "SupplierPackage",
+        "date": "2019-09-30 12:34:56",
+        "author": "Glava AS"
+    },
+
+    "data": {
+        "id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
+        "participantNumber": 201768,
+        "packageId": "52b552a7-274c-4610-b3f7-3bc43663ab50"
+    }
 }
 
 ```

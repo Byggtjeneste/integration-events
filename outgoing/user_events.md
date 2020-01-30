@@ -134,7 +134,7 @@ Example of updating roles:
 ```json
 {
     "metadata": {
-        "eventType": "Update",
+        "eventType": "Delete",
         "event": "User",
         "date": "2019-09-30 12:34:56",
         "author": "Glava AS"

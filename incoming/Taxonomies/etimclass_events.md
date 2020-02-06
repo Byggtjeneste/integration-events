@@ -17,7 +17,7 @@ The events related to ETIM classes will be sent from Avensia Middleware to an Az
 | ------------------| ------- | ------------ | ------- |
 | `eventType`       | string  | **Required** | Either "Create", "Update" or "Delete".
 | `event`           | string  | **Required** | Always "EtimClass" for ETIM class events.
-| `date`            | string  | **Required** | Date and time for the action that triggered the event. In format yyyy-MM-dd HH:mm:ss.
+| `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
 
 ### data
@@ -91,7 +91,7 @@ All items must be of the type: `object` with following properties:
 	"metadata": {
 		"eventType": "Create",
 		"event": "EtimClass",
-		"date": "2019-09-30 16:34:56",
+		"date": "2019-09-30T16:34:56",
 		"author": "Glava AS"
 	},
 	
@@ -184,7 +184,7 @@ The `features` property is the same as for the "ETIM Class created" event, see a
 	"metadata": {
 		"eventType": "Update",
 		"event": "EtimClass",
-		"date": "2019-09-30 16:34:56",
+		"date": "2019-09-30T16:34:56",
 		"author": "Glava AS"
 	},
 	

@@ -23,7 +23,7 @@ These events relates to images that will be maintained in the DAM domain within 
 | ------------------| ------- | ------------ | ------- |
 | `eventType`       | string  | **Required** | Either "Create", "Update" or "Delete".
 | `event`           | string  | **Required** | Always "Image" for image events.
-| `date`            | string  | **Required** | Date and time for the action that triggered the event. In format yyyy-MM-dd HH:mm:ss.
+| `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
 
 ### data
@@ -100,7 +100,7 @@ All items must be of the type: `object` with following properties:
 	"metadata": {
 		"eventType": "Create",
 		"event": "Image",
-		"date": "2019-09-30 16:34:56",
+		"date": "2019-09-30T16:34:56",
 		"author": "Glava AS"
 	},	
 	"data": {
@@ -179,7 +179,7 @@ Example of when the image has been referenced from one more item:
 	"metadata": {
 		"eventType": "Update",
 		"event": "Image",
-		"date": "2019-09-30 17:34:56",
+		"date": "2019-09-30T17:34:56",
 		"author": "Glava AS"
 	},	
 	"data": {
@@ -215,7 +215,7 @@ The identifier must be part of the event data.
 	"metadata": {
 		"eventType": "Delete",
 		"event": "Image",
-		"date": "2019-09-30 19:34:56",
+		"date": "2019-09-30T19:34:56",
 		"author": "Glava AS"
 	},
 	"data": {

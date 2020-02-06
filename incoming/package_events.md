@@ -26,7 +26,7 @@ The events related to packages will be sent from Avensia Middleware to an Azure 
 | ------------------| ------- | ------------ | ------- |
 | `eventType`       | string  | **Required** | Either "Create", "Update" or "Delete".
 | `event`           | string  | **Required** | Always "Package" for package events.
-| `date`            | string  | **Required** | Date and time for the action that triggered the event. In format yyyy-MM-dd hh:mm:ss.
+| `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
 
 ### data
@@ -81,7 +81,7 @@ The data model depends on the event type, see below.
 	"metadata": {
 		"eventType": "Create", // string
 		"event": "Package", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
+		"date": "2019-09-30T12:34:56",
 		"author": "Glava AS" // string
 	},
 	
@@ -167,7 +167,7 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 	"metadata": {
 		"eventType": "Update", // string
 		"event": "Package", // string
-		"date": "2019-09-30 13:34:56", // datetime in yyyy-MM-dd hh:mm:ss
+		"date": "2019-09-30T13:34:56",
 		"author": "Glava AS" // string
 	},
 	
@@ -215,7 +215,7 @@ The identifier must be part of the event data.
 	"metadata": {
 		"eventType": "Delete", // string
 		"event": "Package", // string
-		"date": "2019-09-30 13:34:56", // datetime in yyyy-MM-dd hh:mm:ss
+		"date": "2019-09-30T13:34:56",
 		"author": "Glava AS" // string
 	},
 	

@@ -23,7 +23,7 @@ These events relates to supplier certificates that will be maintained in the DAM
 | ------------------| ------- | ------------ | ------- |
 | `eventType`       | string  | **Required** | Either "Create", "Update" or "Delete".
 | `event`           | string  | **Required** | Always "Certificate" for certificate events.
-| `date`            | string  | **Required** | Date and time for the action that triggered the event. In format yyyy-MM-dd HH:mm:ss.
+| `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
 
 ### data
@@ -62,7 +62,7 @@ The identifier must be part of the event data.
 	"metadata": {
 		"eventType": "Create",
 		"event": "Certificate",
-		"date": "2019-09-30 12:34:56",
+		"date": "2019-09-30T12:34:56",
 		"author": "Glava AS"
 	},	
 	"data": {
@@ -110,7 +110,7 @@ Example of setting "expiryDate" for a certificate
 	"metadata": {
 		"eventType": "Update",
 		"event": "Certificate",
-		"date": "2019-09-30 12:34:56",
+		"date": "2019-09-30T12:34:56",
 		"author": "Glava AS"
 	},
 	
@@ -147,7 +147,7 @@ The identifier must be part of the event data.
 	"metadata": {
 		"eventType": "Delete",
 		"event": "Certificate",
-		"date": "2019-09-30 12:34:56",
+		"date": "2019-09-30T12:34:56",
 		"author": "Glava AS"
 	},
 	"data": {

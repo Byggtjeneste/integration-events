@@ -17,7 +17,7 @@ The events related to items will be sent from Avensia Middleware to an Azure Ser
 | ------------------| ------- | ------------ | ------- |
 | `eventType`       | string  | **Required** | Either "Create" or "Update".
 | `event`           | string  | **Required** | Always "Item" for item events.
-| `date`            | string  | **Required** | Date and time for the action that triggered the event. In format yyyy-MM-dd hh:mm:ss.
+| `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
 
 ### data
@@ -134,7 +134,7 @@ All items must be of the type: `object` with following properties:
     "metadata": {
         "eventType": "Create",
         "event": "Item",
-        "date": "2019-09-30 12:34:56",
+        "date": "2019-09-30T12:34:56",
         "author": "Glava AS"
     },
     
@@ -314,7 +314,7 @@ Example which does the following:
     "metadata": {
         "eventType": "Update",
         "event": "Item",
-        "date": "2019-09-30 12:34:56",
+        "date": "2019-09-30T12:34:56",
         "author": "Glava AS"
     },
     

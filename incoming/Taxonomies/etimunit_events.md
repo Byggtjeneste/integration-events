@@ -17,7 +17,7 @@ The events related to ETIM Units will be sent from Avensia Middleware to an Azur
 | ------------------| ------- | ------------ | ------- |
 | `eventType`       | string  | **Required** | Either "Create" or "Update".
 | `event`           | string  | **Required** | Always "EtimUnit" for Etim Unit events.
-| `date`            | string  | **Required** | Date and time for the action that triggered the event. In format yyyy-MM-dd HH:mm:ss.
+| `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
 
 ### data
@@ -49,7 +49,7 @@ The data model depends on the event type, see below.
 	"metadata": {
 		"eventType": "Create", // string
 		"event": "EtimUnit", // string
-		"date": "2019-09-30 16:34:56", // datetime in yyyy-MM-dd HH:mm:ss
+		"date": "2019-09-30T16:34:56",
 		"author": "Byggtjeneste" // string
 	},
 	
@@ -97,7 +97,7 @@ The identifiers must be part of the event data.	Otherwise, only changed fields c
 	"metadata": {
 		"eventType": "Update", // string
 		"event": "EtimUnit", // string
-		"date": "2019-09-30 16:34:56", // datetime in yyyy-MM-dd HH:mm:ss
+		"date": "2019-09-30T16:34:56",
 		"author": "Byggtjeneste" // string
 	},
 	

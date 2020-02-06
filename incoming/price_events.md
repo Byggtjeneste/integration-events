@@ -23,7 +23,7 @@ The events related to prices will be sent from Avensia Middleware to an Azure Se
 | ------------------| ------- | ------------ | ------- |
 | `eventType`       | string  | **Required** | Either "Create", "Update" or "Delete".
 | `event`           | string  | **Required** | Always "Price" for price events.
-| `date`            | string  | **Required** | Date and time for the action that triggered the event. In format yyyy-MM-dd hh:mm:ss.
+| `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
 
 ### data
@@ -68,7 +68,7 @@ The identifier must be part of the event data.
 	"metadata": {
 		"eventType": "Create", // string
 		"event": "Price", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
+		"date": "2019-09-30T12:34:56",
 		"author": "Glava AS" // string
 	},
 	
@@ -121,7 +121,7 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 	"metadata": {
 		"eventType": "Update", // string
 		"event": "Price", // string
-		"date": "2019-10-10 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
+		"date": "2019-10-10T12:34:56",
 		"author": "Glava AS" // string
 	},
 
@@ -165,7 +165,7 @@ The identifier must be part of the event data.
 	"metadata": {
 		"eventType": "Delete", // string
 		"event": "Price", // string
-		"date": "2019-09-30 12:34:56", // datetime in yyyy-MM-dd hh:mm:ss
+		"date": "2019-09-30T12:34:56",
 		"author": "Glava AS" // string
 	},
 	

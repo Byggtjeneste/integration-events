@@ -17,7 +17,7 @@ The events related to modules will be sent from Avensia Middleware to an Azure S
 | ------------------| ------- | ------------ | ------- |
 | `eventType`       | string  | **Required** | Either "Create" or "Update".
 | `event`           | string  | **Required** | Always "Module" for module events.
-| `date`            | string  | **Required** | Date and time for the action that triggered the event. In format yyyy-MM-dd hh:mm:ss.
+| `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
 
 ### data
@@ -63,7 +63,7 @@ The data model depends on the event type, see below.
     "metadata": {
         "eventType": "Create",
         "event": "Module",
-        "date": "2019-09-30 12:34:56",
+        "date": "2019-09-30T12:34:56",
         "author": "Glava AS"
     },
     
@@ -129,7 +129,7 @@ Example of removing expiry date:
     "metadata": {
         "eventType": "Update",
         "event": "Module",
-        "date": "2019-09-30 12:34:56",
+        "date": "2019-09-30T12:34:56",
         "author": "Glava AS"
     },
     

@@ -50,6 +50,7 @@ The data model depends on the event type, see below.
 | --------------------------- | ------- | ------------ | ------------
 | `id`                        | string  | **Required** | GUID (must be generated and can't be changed)
 | `nobbNumber`                | integer | **Required** | Must be generated and can't be changed. 8 digits.
+| `accessories`               | array of integers | **Optional** | Array of NOBB numbers.
 | `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items 
 | `customsEuCode`             | string  | **Optional** | 
 | `customsNoCode`             | string  | **Optional** | 
@@ -160,6 +161,7 @@ All items must be of the type: `object` with following properties:
         "hasDurabilityDate": false,
         "toleratesFrost": true,
         "replacesNobbNumber": 77778888,
+        "accessories": [11223344, 55667788],
         "freightGroup": "T500",
         "hazardLabels": ["Very Flammable", "Poisonous"],
         "customsNoCode": "1999",
@@ -226,6 +228,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | --------------------------- | ------- | ------------ | ------------
 | `id`                        | string  | **Required** | GUID (must be generated and can't be changed)
 | `nobbNumber`                | integer | **Required** | Must be generated and can't be changed. 8 digits.
+| `accessories`               | array of integers | **Optional** | Array of NOBB numbers.
 | `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items 
 | `customsEuCode`             | string  | **Optional** |
 | `customsNoCode`             | string  | **Optional** |

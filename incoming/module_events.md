@@ -44,7 +44,8 @@ The data model depends on the event type, see below.
 | ------------------------ | ------- | ------------ | -------     |
 | `id`                     | string  | **Required** | GUID (must be generated and can't be changed)             |
 | `number`                 | integer | **Required** | This is the NOBB module number. Must be generated and can't be changed. 8 digits.             |
-| `brandName`              | string  | **Required** |             |
+| `brand`                  | string  | **Optional** |             |
+| `corporateBrand`         | string  | **Required** |             |
 | `description`            | string  | **Optional** |             |
 | `etimClass`              | string  | **Optional** |
 | `expiryDate`             | string  | **Optional** |  yyyy-MM-dd |
@@ -52,7 +53,6 @@ The data model depends on the event type, see below.
 | `manufacturerNumber`     | integer | **Required** | Reference to manufacturer (ref.data)            |
 | `ownerParticipantNumber` | integer | **Required** | Reference to company            |
 | `productGroupNumber`     | integer | **Required** | Reference to productgroup (taxonomy)            |
-| `subBrandName`           | string  | **Optional** |             |
 | `text`                   | string  | **Required** | Referred to as Moduletext 1 in NOBB             |
 
 
@@ -75,8 +75,8 @@ The data model depends on the event type, see below.
         "ownerParticipantNumber": 51128,
         "manufacturerNumber": 2002,
         "internalNumber": "ABC123",
-        "brandName": "WEBER",
-        "subBrandName": "SYS 840",
+        "corporateBrand": "WEBER",
+        "brand": "SYS 840",
         "text": "WEBER SYS 840 KLINKEROLJE",
         "description": "En klar luktfri olje for behandling av uglaserte fliser og klinker.",
         "etimClass": "EC000149",
@@ -109,7 +109,8 @@ The identifiers must be part of the event data.	Otherwise, only changed fields c
 | ------------------------ | ------- | ------------ | -------     |
 | `id`                     | string  | **Required** | GUID. Must be generated and can't be changed.             |
 | `number`                 | integer | **Required** | This is the NOBB module number. Must be generated and can't be changed             |
-| `brandName`              | string  | **Optional** |             |
+| `brand`                  | string  | **Optional** |             |
+| `corporateBrand`         | string  | **Optional** |             |
 | `description`            | string  | **Optional** |             |
 | `etimClass`              | string  | **Optional** |
 | `expiryDate`             | string  | **Optional** |  yyyy-MM-dd |
@@ -117,7 +118,6 @@ The identifiers must be part of the event data.	Otherwise, only changed fields c
 | `manufacturerNumber`     | integer | **Optional** | Reference to manufacturer (ref.data)            |
 | `ownerParticipantNumber` | integer | **Optional** | Reference to company            |
 | `productGroupNumber`     | integer | **Optional** | Reference to productgroup (taxonomy)            |
-| `subBrandName`           | string  | **Optional** |             |
 | `text`                   | string  | **Optional** | Referred to as Moduletext 1 in NOBB             |
 
 

@@ -54,32 +54,32 @@ The data model depends on the event type, see below.
 | `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | TBD 
 | `customsEuCode`             | string  | **Optional** | | TBD
 | `customsNoCode`             | string  | **Optional** | | TBD
-| `dangerousGoods`            | object  | **Optional** | | TBD
-| `description`               | string  | **Optional** | | TBD
-| `environmentLabels`         | array of string   | **Optional** | | TBD
-| `expiryDate`                | string  | **Optional** | yyyy-MM-dd | TBD
-| `finfoNumber`               | string  | **Optional** | | TBD
-| `freightGroup`              | string  | **Optional** | | TBD
-| `hasDurabilityDate`         | boolean | **Required** | | TBD
-| `hazardLabels`              | array of string   | **Optional** | | TBD
-| `launchDate`                | string  | **Optional** | yyyy-MM-dd | TBD
-| `manufacturerItemNumber`    | string  | **Required** | | TBD
+| `dangerousGoods`            | object  | **Optional** | | thgpackaginglabels
+| `description`               | string  | **Optional** | | thgmoduledescription
+| `environmentLabels`         | array of string   | **Optional** | | thgenvironmentlabels
+| `expiryDate`                | string  | **Optional** | yyyy-MM-dd | thgexpiredate
+| `finfoNumber`               | string  | **Optional** | | thgfinfono
+| `freightGroup`              | string  | **Optional** | | thgfreightgroup
+| `hasDurabilityDate`         | boolean | **Required** | | thghasdurabilitydate
+| `hazardLabels`              | array of string   | **Optional** | | thgdangerclass
+| `launchDate`                | string  | **Optional** | yyyy-MM-dd | thglaunchdate
+| `manufacturerItemNumber`    | string  | **Required** | | thgmanufactureritemno
 | `marketingText`             | string  | **Optional** | | TBD
-| `modelName`                 | string  | **Optional** | | TBD
-| `moduleNumber`              | integer | **Required** | | TBD 
+| `modelName`                 | string  | **Optional** | | thgmodelname
+| `moduleNumber`              | integer | **Required** | | thgmoduleno 
 | `nrfInfo`                   | object  | **Optional** | | TBD
-| `priceUnit`                 | string  | **Required** | | TBD
-| `primaryText`               | string  | **Required** | "Varetekst 1" | TBD
+| `priceUnit`                 | string  | **Required** | | thgpriceunit
+| `primaryText`               | string  | **Required** | "Varetekst 1" | thgtext1
 | `productNumber`             | integer | **Optional** | Reference to Product | TBD
-| `itemOwnerItemNumber`       | string  | **Required** | | TBD 
-| `replacesNobbNumber`        | integer | **Optional** | | TBD
-| `secondaryText`             | string  | **Optional** | "Varetekst 2" in NOBB domain language. | TBD
-| `seriesName`                | string  | **Optional** | | TBD
-| `stocked`                   | boolean | **Required** | | TBD
-| `tax`                       | string  | **Optional** | | TBD
-| `toleratesFrost`            | boolean | **Optional** | | TBD
-| `tunNumber`                 | string  | **Optional** | | TBD
-| `type`                      | string  | **Required** | Type of item. One of "Standard, Display, Composite, Service" | TBD
+| `itemOwnerItemNumber`       | string  | **Required** | | thgsupplieritemno 
+| `replacesNobbNumber`        | integer | **Optional** | | thgreplacesnobbnumber
+| `secondaryText`             | string  | **Optional** | "Varetekst 2" in NOBB domain language. | thgtext2
+| `seriesName`                | string  | **Optional** | | thgserialname
+| `stocked`                   | boolean | **Required** | | thgstocked
+| `tax`                       | string  | **Optional** | | thgtax
+| `toleratesFrost`            | boolean | **Optional** | | thgtoleratesfrost
+| `tunNumber`                 | string  | **Optional** | | thgtunno
+| `type`                      | string  | **Required** | Type of item. One of "Standard, Display, Composite, Service" | Set by Middleware based on RS entity type.
 | `uniqueSellingPoints`       | array of string   | **Optional** | | TBD
 
 #### bundleItems

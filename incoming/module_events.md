@@ -41,8 +41,8 @@ The data model depends on the event type, see below.
 
 
 | Property                 | Type    | Required     | Description | Riversand Comment
-| ------------------------ | ------- | ------------ | -------     | ---------------------------------------------------------------------------------
-| `id`                     | string  | **Required** | GUID (must be generated and can't be changed)             | This will be generated and stored in Middleware. 
+| ------------------------ | ------- | ------------ | -------     | -----------------
+| `id`                     | string  | **Required** | GUID (must be generated and can't be changed)             | This will be generated and stored in Middleware.  
 | `number`                 | integer | **Required** | This is the NOBB module number. Must be generated and can't be changed. 8 digits. | thgmoduleno
 | `brand`                  | string  | **Optional** |             | thgbrandname
 | `corporateBrand`         | string  | **Required** |             | thgcorporatebrand

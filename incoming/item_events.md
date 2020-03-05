@@ -46,41 +46,41 @@ The data model depends on the event type, see below.
 
 `object` with following properties:
 
-| Property                    | Type    | Required     | Description |
-| --------------------------- | ------- | ------------ | ------------
-| `id`                        | string  | **Required** | GUID (must be generated and can't be changed)
-| `nobbNumber`                | integer | **Required** | Must be generated and can't be changed. 8 digits.
-| `accessories`               | array of integers | **Optional** | Array of NOBB numbers.
-| `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items 
-| `customsEuCode`             | string  | **Optional** | 
-| `customsNoCode`             | string  | **Optional** | 
-| `dangerousGoods`            | object  | **Optional** |
-| `description`               | string  | **Optional** |
-| `environmentLabels`         | array of string   | **Optional** |
-| `expiryDate`                | string  | **Optional** | yyyy-MM-dd
-| `finfoNumber`               | string  | **Optional** |
-| `freightGroup`              | string  | **Optional** |
-| `hasDurabilityDate`         | boolean | **Required** |
-| `hazardLabels`              | array of string   | **Optional** |
-| `launchDate`                | string  | **Optional** | yyyy-MM-dd
-| `manufacturerItemNumber`    | string  | **Required** |
-| `marketingText`             | string  | **Optional** |
-| `modelName`                 | string  | **Optional** |
-| `moduleNumber`              | integer | **Required** |
-| `nrfInfo`                   | object  | **Optional** |
-| `priceUnit`                 | string  | **Required** |
-| `primaryText`               | string  | **Required** | "Varetekst 1"
-| `productNumber`             | integer | **Optional** | Reference to Product
-| `itemOwnerItemNumber`       | string  | **Required** | 
-| `replacesNobbNumber`        | integer | **Optional** |
-| `secondaryText`             | string  | **Optional** | "Varetekst 2" in NOBB domain language.
-| `seriesName`                | string  | **Optional** |
-| `stocked`                   | boolean | **Required** |
-| `tax`                       | string  | **Optional** |
-| `toleratesFrost`            | boolean | **Optional** |
-| `tunNumber`                 | string  | **Optional** |
-| `type`                      | string  | **Required** | Type of item. One of "Standard, Display, Composite, Service"
-| `uniqueSellingPoints`       | array of string   | **Optional** |
+| Property                    | Type    | Required     | Description  | Riversand Comment
+| --------------------------- | ------- | ------------ | ------------ | -------------------------------------------
+| `id`                        | string  | **Required** | GUID (must be generated and can't be changed) | TBD
+| `nobbNumber`                | integer | **Required** | Must be generated and can't be changed. 8 digits. | TBD
+| `accessories`               | array of integers | **Optional** | Array of NOBB numbers. | TBD
+| `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | TBD 
+| `customsEuCode`             | string  | **Optional** | | TBD
+| `customsNoCode`             | string  | **Optional** | | TBD
+| `dangerousGoods`            | object  | **Optional** | | TBD
+| `description`               | string  | **Optional** | | TBD
+| `environmentLabels`         | array of string   | **Optional** | | TBD
+| `expiryDate`                | string  | **Optional** | yyyy-MM-dd | TBD
+| `finfoNumber`               | string  | **Optional** | | TBD
+| `freightGroup`              | string  | **Optional** | | TBD
+| `hasDurabilityDate`         | boolean | **Required** | | TBD
+| `hazardLabels`              | array of string   | **Optional** | | TBD
+| `launchDate`                | string  | **Optional** | yyyy-MM-dd | TBD
+| `manufacturerItemNumber`    | string  | **Required** | | TBD
+| `marketingText`             | string  | **Optional** | | TBD
+| `modelName`                 | string  | **Optional** | | TBD
+| `moduleNumber`              | integer | **Required** | | TBD 
+| `nrfInfo`                   | object  | **Optional** | | TBD
+| `priceUnit`                 | string  | **Required** | | TBD
+| `primaryText`               | string  | **Required** | "Varetekst 1" | TBD
+| `productNumber`             | integer | **Optional** | Reference to Product | TBD
+| `itemOwnerItemNumber`       | string  | **Required** | | TBD 
+| `replacesNobbNumber`        | integer | **Optional** | | TBD
+| `secondaryText`             | string  | **Optional** | "Varetekst 2" in NOBB domain language. | TBD
+| `seriesName`                | string  | **Optional** | | TBD
+| `stocked`                   | boolean | **Required** | | TBD
+| `tax`                       | string  | **Optional** | | TBD
+| `toleratesFrost`            | boolean | **Optional** | | TBD
+| `tunNumber`                 | string  | **Optional** | | TBD
+| `type`                      | string  | **Required** | Type of item. One of "Standard, Display, Composite, Service" | TBD
+| `uniqueSellingPoints`       | array of string   | **Optional** | | TBD
 
 #### bundleItems
 

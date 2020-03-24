@@ -50,11 +50,11 @@ The data model depends on the event type, see below.
 | --------------------------- | ------- | ------------ | ------------ | ----------------- |
 | `id`                        | string  | **Required** | GUID (must be generated and can't be changed) | This will be generated and stored in Middleware.|
 | `nobbNumber`                | integer | **Required** | Must be generated and can't be changed. 8 digits. | thgnobbno |
-| `accessories`               | array of integers | **Optional** | Array of NOBB numbers. | TBD |
-| `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | TBD |
-| `customsEuCode`             | string  | **Optional** | | TBD |
-| `customsNoCode`             | string  | **Optional** | | TBD |
-| `dangerousGoods`            | object  | **Optional** | | TBD |
+| `accessories`               | array of integers | **Optional** | Array of NOBB numbers. | **TBD** |
+| `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | **TBD** |
+| `customsEuCode`             | string  | **Optional** | | **TBD** |
+| `customsNoCode`             | string  | **Optional** | | **TBD** |
+| `dangerousGoods`            | object  | **Optional** | | **TBD** |
 | `description`               | string  | **Optional** | | thgdescription |
 | `environmentLabels`         | array of string   | **Optional** | | thgenvironmentlabels |
 | `expiryDate`                | string  | **Optional** | yyyy-MM-dd | thgexpiredate |
@@ -64,13 +64,13 @@ The data model depends on the event type, see below.
 | `hazardLabels`              | array of string   | **Optional** | | thgpackaginglabels |
 | `launchDate`                | string  | **Optional** | yyyy-MM-dd | thglaunchdate |
 | `manufacturerItemNumber`    | string  | **Required** | | thgmanufactureritemno |
-| `marketingText`             | string  | **Optional** | | TBD |
+| `marketingText`             | string  | **Optional** | | **TBD** |
 | `modelName`                 | string  | **Optional** | | thgmodelname |
 | `moduleNumber`              | integer | **Required** | | thgmoduleno |
-| `nrfInfo`                   | object  | **Optional** | | TBD |
+| `nrfInfo`                   | object  | **Optional** | | **TBD** |
 | `priceUnit`                 | string  | **Required** | | thgpriceunit |
 | `primaryText`               | string  | **Required** | "Varetekst 1" | thgtext1 |
-| `productNumber`             | integer | **Optional** | Reference to Product | TBD |
+| `productNumber`             | integer | **Optional** | Reference to Product | **TBD** |
 | `itemOwnerItemNumber`       | string  | **Required** | | thgsupplieritemno | 
 | `replacesNobbNumber`        | integer | **Optional** | | thgreplacesnobbnumber |
 | `secondaryText`             | string  | **Optional** | "Varetekst 2" in NOBB domain language. | thgtext2 |
@@ -92,7 +92,7 @@ All items must be of the type: `object` with following properties:
 
 | Property    | Type    | Required     |	Description         | Riversand Comment |
 | ----------- | ------- | ------------ | ---------------------  | ----------------- |
-| `packageId` | string  | **Required** | GUID of package entity | **TBD** |
+| `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware. |
 | `quantity`  | integer | **Required** |                        | **TBD** |
 
 
@@ -224,41 +224,41 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 
 `object` with following properties:
 
-| Property                    | Type    | Required     | Description    | Riversand Comment |
-| --------------------------- | ------- | ------------ | -------------- | ----------------- |
-| `id`                        | string  | **Required** | GUID (must be generated and can't be changed)| **TBD**           |
-| `nobbNumber`                | integer | **Required** | Must be generated and can't be changed. 8 digits.| thgnobbno |
-| `accessories`               | array of integers | **Optional** | Array of NOBB numbers.| **TBD**           |
-| `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | **TBD**           |
-| `customsEuCode`             | string  | **Optional** |                | **TBD**           |
-| `customsNoCode`             | string  | **Optional** |                | **TBD**           |
-| `dangerousGoods`            | object  | **Optional** |                | **TBD**           |
-| `description`               | string  | **Optional** |                | thgdescription |
-| `environmentLabels`         | array of string   | **Optional** |      | thgenvironmentlabels |
-| `expiryDate`                | string  | **Optional** |                | thgexpiredate |
-| `finfoNumber`               | string  | **Optional** |                | thgfinfono |
-| `freightGroup`              | string  | **Optional** |                | thgfreightgroup |
-| `hasDurabilityDate`         | boolean | **Optional** |                | thghasdurabilitydate |
-| `hazardLabels`              | array of string   | **Optional** |      | thgpackaginglabels |
-| `launchDate`                | string  | **Optional** | yyyy-MM-dd     | thglaunchdate |
-| `manufacturerItemNumber`    | string  | **Optional** |                | thgmanufactureritemno |
-| `marketingText`             | string  | **Optional** |                | **TBD**           |
-| `modelName`                 | string  | **Optional** |                | thgmodelname |
-| `moduleNumber`              | integer | **Optional** |                | thgmoduleno |
-| `nrfInfo`                   | object  | **Optional** |                | **TBD**           |
-| `priceUnit`                 | string  | **Optional** |                | thgpriceunit |
-| `primaryText`               | string  | **Optional** |                | thgtext1 |
-| `productNumber`             | integer | **Optional** |                | **TBD**           |
-| `itemOwnerItemNumber`       | string  | **Optional** |                | thgsupplieritemno |
-| `replacesNobbNumber`        | integer | **Optional** |                | thgreplacesnobbnumber |
-| `secondaryText`             | string  | **Optional** |                | thgtext2 |
-| `seriesName`                | string  | **Optional** |                | thgserialname |
-| `stocked`                   | boolean | **Optional** |                | thgstocked |
-| `tax`                       | string  | **Optional** |                | thgtax |       
-| `toleratesFrost`            | boolean | **Optional** |                | thgtoleratesfrost |  
-| `tunNumber`                 | string  | **Optional** |                | thgtunno |
-| `type`                      | string  | **Optional** | Type of item. One of "Standard, Display, Composite, Service" | Set by Middleware based on RS entity type.|
-| `uniqueSellingPoints`       | array of string   | **Optional** |      | **TBD**           |
+| Property                    | Type                | Required     | Description                                                    | Riversand Comment |
+| --------------------------- | -------             | ------------ | --------------                                                 | ----------------- |
+| `id`                        | string              | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware. |         |
+| `nobbNumber`                | integer             | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
+| `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | **TBD**           |
+| `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | **TBD**           |
+| `customsEuCode`             | string              | **Optional** |                                                                | **TBD**           |
+| `customsNoCode`             | string              | **Optional** |                                                                | **TBD**           |
+| `dangerousGoods`            | object              | **Optional** |                                                                | **TBD**           |
+| `description`               | string              | **Optional** |                                                                | thgdescription |
+| `environmentLabels`         | array of string     | **Optional** |                                                                | thgenvironmentlabels |
+| `expiryDate`                | string              | **Optional** |                                                                | thgexpiredate |
+| `finfoNumber`               | string              | **Optional** |                                                                | thgfinfono |
+| `freightGroup`              | string              | **Optional** |                                                                | thgfreightgroup |
+| `hasDurabilityDate`         | boolean             | **Optional** |                                                                | thghasdurabilitydate |
+| `hazardLabels`              | array of string     | **Optional** |                                                                | thgpackaginglabels |
+| `launchDate`                | string              | **Optional** | yyyy-MM-dd                                                     | thglaunchdate |
+| `manufacturerItemNumber`    | string              | **Optional** |                                                                | thgmanufactureritemno |
+| `marketingText`             | string              | **Optional** |                                                                | **TBD**           |
+| `modelName`                 | string              | **Optional** |                                                                | thgmodelname |
+| `moduleNumber`              | integer             | **Optional** |                                                                | thgmoduleno |
+| `nrfInfo`                   | object              | **Optional** |                                                                | **TBD**           |
+| `priceUnit`                 | string              | **Optional** |                                                                | thgpriceunit |
+| `primaryText`               | string              | **Optional** |                                                                | thgtext1 |
+| `productNumber`             | integer             | **Optional** |                                                                | **TBD**           |
+| `itemOwnerItemNumber`       | string              | **Optional** |                                                                | thgsupplieritemno |
+| `replacesNobbNumber`        | integer             | **Optional** |                                                                | thgreplacesnobbnumber |
+| `secondaryText`             | string              | **Optional** |                                                                | thgtext2 |
+| `seriesName`                | string              | **Optional** |                                                                | thgserialname |
+| `stocked`                   | boolean             | **Optional** |                                                                | thgstocked |
+| `tax`                       | string              | **Optional** |                                                                | thgtax |       
+| `toleratesFrost`            | boolean             | **Optional** |                                                                | thgtoleratesfrost |  
+| `tunNumber`                 | string              | **Optional** |                                                                | thgtunno |
+| `type`                      | string              | **Optional** | Type of item. One of "Standard, Display, Composite, Service"   | Set by Middleware based on RS entity type.|
+| `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | **TBD** |
 
 #### bundleItems
 
@@ -270,7 +270,7 @@ All items must be of the type: `object` with following properties:
 
 | Property    | Type    | Required     | Description            | Riversand Comment |
 | ----------- | ------- | ------------ | ---------------------- | ----------------- |
-| `packageId` | string  | **Required** | GUID of package entity | **TBD**           |
+| `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware. |
 | `quantity`  | integer | **Required** |                        | **TBD**           |
 
 

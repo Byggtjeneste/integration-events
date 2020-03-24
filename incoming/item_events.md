@@ -54,7 +54,7 @@ The data model depends on the event type, see below.
 | `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | see `bundleItems Type` |
 | `customsEuCode`             | string  | **Optional** | | thgeucustomcode |
 | `customsNoCode`             | string  | **Optional** | | thgnocustomcode |
-| `dangerousGoods`            | object  | **Optional** | | see `dangerousGoods Type` |
+| `dangerousGoods`            | object  | **Optional** | | thgdangerclass (rddangerclass) => see `dangerousGoods Type` |
 | `description`               | string  | **Optional** | | thgdescription |
 | `environmentLabels`         | array of string   | **Optional** | | thgenvironmentlabels |
 | `expiryDate`                | string  | **Optional** | yyyy-MM-dd | thgexpiredate |
@@ -102,8 +102,8 @@ All items must be of the type: `object` with following properties:
 | Property       | Type    | Required     |	Description                 | Riversand Comment |
 | -------------- | ------- | ------------ | --------------------------- | ----------------- |
 | `adrName`      | string  | **Optional** |                             | **TBD**           |
-| `class`        | string  | **Optional** | Eg "5.1"                    | **TBD**           |
-| `className`    | string  | **Optional** | Eg "Oxidizing substances"   | **TBD**           |
+| `class`        | string  | **Optional** | Eg "5.1"                    | rddangerclass::refcode |
+| `className`    | string  | **Optional** | Eg "Oxidizing substances"   | rddangerclass::refvalue |
 | `number`       | integer | **Required** |                             | **TBD**           |
 | `packingGroup` | integer | **Optional** |                             | **TBD**           |
 
@@ -229,7 +229,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | see `bundleItems Type`|
 | `customsEuCode`             | string              | **Optional** |                                                                | thgeucustomcode      |
 | `customsNoCode`             | string              | **Optional** |                                                                | thgnocustomcode      |
-| `dangerousGoods`            | object              | **Optional** |                                                                | see `dangerousGoods Type` |
+| `dangerousGoods`            | object              | **Optional** |                                                                | thgdangerclass (rddangerclass) => see `dangerousGoods Type` |
 | `description`               | string              | **Optional** |                                                                | thgdescription |
 | `environmentLabels`         | array of string     | **Optional** |                                                                | thgenvironmentlabels |
 | `expiryDate`                | string              | **Optional** |                                                                | thgexpiredate |
@@ -277,8 +277,8 @@ All items must be of the type: `object` with following properties:
 | Property       | Type    | Required     | Description         | Riversand Comment | 
 | -------------- | ------- | ------------ | ------------------- | ----------------- |
 | `adrName`      | string  | **Optional** |                     | **TBD**           |
-| `class`        | string  | **Optional** |                     | **TBD**           |
-| `className`    | string  | **Optional** |                     | **TBD**           |
+| `class`        | string  | **Optional** |                     | rddangerclass::refcode  |
+| `className`    | string  | **Optional** |                     | rddangerclass::refvalue |
 | `number`       | integer | **Required** |                     | **TBD**           |
 | `packingGroup` | integer | **Optional** |                     | **TBD**           |
 

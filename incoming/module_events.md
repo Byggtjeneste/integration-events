@@ -40,20 +40,20 @@ The data model depends on the event type, see below.
 `object` with following properties:
 
 
-| Property                 | Type    | Required     | Description | Riversand Comment
-| ------------------------ | ------- | ------------ | -------     | -----------------
-| `id`                     | string  | **Required** | GUID (must be generated and can't be changed)             | This will be generated and stored in Middleware.  
-| `number`                 | integer | **Required** | This is the NOBB module number. Must be generated and can't be changed. 8 digits. | thgmoduleno
-| `brand`                  | string  | **Optional** |             | thgbrandname
-| `corporateBrand`         | string  | **Required** |             | thgcorporatebrand
-| `description`            | string  | **Optional** |             | thgmoduledescription
-| `etimClass`              | string  | **Optional** |             | thgetimclass
-| `expiryDate`             | string  | **Optional** |  yyyy-MM-dd | thgmoduleexpiredate
-| `internalNumber`         | string  | **Required** |             | thginternalmoduleno
-| `manufacturerNumber`     | integer | **Required** | Reference to manufacturer (ref.data)            | thgmanufacturernumber
-| `ownerParticipantNumber` | integer | **Required** | Reference to company            | thgsupplierno
-| `productGroupNumber`     | integer | **Required** | Reference to productgroup (taxonomy)            | Get number based on thgpseproductgroup
-| `text`                   | string  | **Required** | Referred to as Moduletext 1 in NOBB             | thgmoduletext
+| Property                 | Type    | Required     | Description                                                                       | Riversand Comment                                 |
+| ------------------------ | ------- | ------------ | --------------------------------------------------------------------------------- | ------------------------------------------------- |
+| `id`                     | string  | **Required** | GUID (must be generated and can't be changed)                                     | This will be generated and stored in Middleware.  |
+| `number`                 | integer | **Required** | This is the NOBB module number. Must be generated and can't be changed. 8 digits. | thgmoduleno |
+| `brand`                  | string  | **Optional** |                                                                                   | thgbrandname |
+| `corporateBrand`         | string  | **Required** |                                                                                   | thgcorporatebrand |
+| `description`            | string  | **Optional** |                                                                                   | thgmoduledescription |
+| `etimClass`              | string  | **Optional** |                                                                                   | thgetimclass |
+| `expiryDate`             | string  | **Optional** | yyyy-MM-dd                                                                        | thgmoduleexpiredate |
+| `internalNumber`         | string  | **Required** |                                                                                   | thginternalmoduleno |
+| `manufacturerNumber`     | integer | **Required** | Reference to manufacturer (ref.data)                                              | thgmanufacturernumber |
+| `ownerParticipantNumber` | integer | **Required** | Reference to company                                                              | thgsupplierno |
+| `productGroupNumber`     | integer | **Required** | Reference to productgroup (taxonomy)                                              | Get number based on thgpseproductgroup |
+| `text`                   | string  | **Required** | Referred to as Moduletext 1 in NOBB                                               | thgmoduletext |
 
 
 
@@ -105,20 +105,20 @@ The identifiers must be part of the event data.	Otherwise, only changed fields c
 `object` with following properties:
 
 
-| Property                 | Type    | Required     | Description |
-| ------------------------ | ------- | ------------ | -------     |
-| `id`                     | string  | **Required** | GUID. Must be generated and can't be changed.             |
-| `number`                 | integer | **Required** | This is the NOBB module number. Must be generated and can't be changed             |
-| `brand`                  | string  | **Optional** |             |
-| `corporateBrand`         | string  | **Optional** |             |
-| `description`            | string  | **Optional** |             |
-| `etimClass`              | string  | **Optional** |
-| `expiryDate`             | string  | **Optional** |  yyyy-MM-dd |
-| `internalNumber`         | string  | **Optional** |             |
-| `manufacturerNumber`     | integer | **Optional** | Reference to manufacturer (ref.data)            |
-| `ownerParticipantNumber` | integer | **Optional** | Reference to company            |
-| `productGroupNumber`     | integer | **Optional** | Reference to productgroup (taxonomy)            |
-| `text`                   | string  | **Optional** | Referred to as Moduletext 1 in NOBB             |
+| Property                 | Type    | Required     | Description                                                               | Riversand Comment |
+| ------------------------ | ------- | ------------ | ------------------------------------------------------------------------- | ----------------- | 
+| `id`                     | string  | **Required** | GUID. Must be generated and can't be changed.                             | This will be generated and stored in Middleware.  
+| `number`                 | integer | **Required** | This is the NOBB module number. Must be generated and can't be changed    | thgmoduleno
+| `brand`                  | string  | **Optional** |                                                                           | thgbrandname
+| `corporateBrand`         | string  | **Optional** |                                                                           | thgcorporatebrand
+| `description`            | string  | **Optional** |                                                                           | thgmoduledescription
+| `etimClass`              | string  | **Optional** |                                                                           | thgetimclass
+| `expiryDate`             | string  | **Optional** | yyyy-MM-dd                                                                | thgmoduleexpiredate
+| `internalNumber`         | string  | **Optional** |                                                                           | thginternalmoduleno
+| `manufacturerNumber`     | integer | **Optional** | Reference to manufacturer (ref.data)                                      | thgmanufacturernumber
+| `ownerParticipantNumber` | integer | **Optional** | Reference to company                                                      | thgsupplierno
+| `productGroupNumber`     | integer | **Optional** | Reference to productgroup (taxonomy)                                      | Get number based on thgpseproductgroup
+| `text`                   | string  | **Optional** | Referred to as Moduletext 1 in NOBB                                       | thgmoduletext
 
 
 

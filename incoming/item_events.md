@@ -67,7 +67,7 @@ The data model depends on the event type, see below.
 | `marketingText`             | string  | **Optional** | | **TBD** |
 | `modelName`                 | string  | **Optional** | | thgmodelname |
 | `moduleNumber`              | integer | **Required** | | thgmoduleno |
-| `nrfInfo`                   | object  | **Optional** | | see `nrfInfo Type` |
+| `nrfInfo`                   | object  | **Optional** | | NRF Taxonomy => see `nrfInfo Type` |
 | `priceUnit`                 | string  | **Required** | | thgpriceunit |
 | `primaryText`               | string  | **Required** | "Varetekst 1" | thgtext1 |
 | `productNumber`             | integer | **Optional** | Reference to Product | **TBD** |
@@ -242,7 +242,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `marketingText`             | string              | **Optional** |                                                                | **TBD**           |
 | `modelName`                 | string              | **Optional** |                                                                | thgmodelname |
 | `moduleNumber`              | integer             | **Optional** |                                                                | thgmoduleno |
-| `nrfInfo`                   | object              | **Optional** |                                                                | see `nrfInfo Type` |
+| `nrfInfo`                   | object              | **Optional** |                                                                | NRF Taxonomy => see `nrfInfo Type` |
 | `priceUnit`                 | string              | **Optional** |                                                                | thgpriceunit |
 | `primaryText`               | string              | **Optional** |                                                                | thgtext1 |
 | `productNumber`             | integer             | **Optional** |                                                                | **TBD**           |

@@ -88,10 +88,10 @@ Array type: `object[]`
 
 All items must be of the type: `object` with following properties:
 
-| Property    | Type    | Required     |	Description         | Riversand Comment |
-| ----------- | ------- | ------------ | ---------------------  | ----------------- |
-| `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware. |
-| `quantity`  | integer | **Required** |                        | **TBD** |
+| Property    | Type    | Required     |	Description         | Riversand Comment                                 |
+| ----------- | ------- | ------------ | ---------------------  | ------------------------------------------------- |
+| `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware.  |
+| `quantity`  | integer | **Required** |                        | **TBD**                                           |
 
 
 
@@ -99,13 +99,13 @@ All items must be of the type: `object` with following properties:
 
 `object` with following properties:
 
-| Property       | Type    | Required     |	Description                 | Riversand Comment |
-| -------------- | ------- | ------------ | --------------------------- | ----------------- |
-| `adrName`      | string  | **Optional** |                             | **TBD**           |
-| `class`        | string  | **Optional** | Eg "5.1"                    | rddangerclass::refcode |
-| `className`    | string  | **Optional** | Eg "Oxidizing substances"   | rddangerclass::refvalue |
-| `number`       | integer | **Required** |                             | **TBD**           |
-| `packingGroup` | integer | **Optional** |                             | **TBD**           |
+| Property       | Type    | Required     |	Description                 | Riversand Comment         |
+| -------------- | ------- | ------------ | --------------------------- | ------------------------- |
+| `adrName`      | string  | **Optional** |                             | **TBD**                   |
+| `class`        | string  | **Optional** | Eg "5.1"                    | rddangerclass::refcode    |
+| `className`    | string  | **Optional** | Eg "Oxidizing substances"   | rddangerclass::refvalue   |
+| `number`       | integer | **Required** |                             | **TBD**                   |
+| `packingGroup` | integer | **Optional** |                             | **TBD**                   |
 
 
 
@@ -263,10 +263,10 @@ Array type: `object[]`
 
 All items must be of the type: `object` with following properties:
 
-| Property    | Type    | Required     | Description            | Riversand Comment |
-| ----------- | ------- | ------------ | ---------------------- | ----------------- |
-| `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware. |
-| `quantity`  | integer | **Required** |                        | **TBD**           |
+| Property    | Type    | Required     | Description            | Riversand Comment                                 |
+| ----------- | ------- | ------------ | ---------------------- | ------------------------------------------------- |
+| `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware.  |
+| `quantity`  | integer | **Required** |                        | **TBD**                                           |
 
 
 
@@ -274,13 +274,13 @@ All items must be of the type: `object` with following properties:
 
 `object` with following properties:
 
-| Property       | Type    | Required     | Description         | Riversand Comment | 
-| -------------- | ------- | ------------ | ------------------- | ----------------- |
-| `adrName`      | string  | **Optional** |                     | **TBD**           |
-| `class`        | string  | **Optional** |                     | rddangerclass::refcode  |
-| `className`    | string  | **Optional** |                     | rddangerclass::refvalue |
-| `number`       | integer | **Required** |                     | **TBD**           |
-| `packingGroup` | integer | **Optional** |                     | **TBD**           |
+| Property       | Type    | Required     | Description         | Riversand Comment         | 
+| -------------- | ------- | ------------ | ------------------- | ------------------------- |
+| `adrName`      | string  | **Optional** |                     | **TBD**                   |
+| `class`        | string  | **Optional** |                     | rddangerclass::refcode    |
+| `className`    | string  | **Optional** |                     | rddangerclass::refvalue   |
+| `number`       | integer | **Required** |                     | **TBD**                   |
+| `packingGroup` | integer | **Optional** |                     | **TBD**                   |
 
 
 

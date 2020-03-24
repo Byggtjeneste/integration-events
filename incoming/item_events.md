@@ -54,7 +54,7 @@ The data model depends on the event type, see below.
 | `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | TBD 
 | `customsEuCode`             | string  | **Optional** | | TBD
 | `customsNoCode`             | string  | **Optional** | | TBD
-| `dangerousGoods`            | object  | **Optional** | | thgpackaginglabels
+| `dangerousGoods`            | object  | **Optional** | | TBD
 | `description`               | string  | **Optional** | | thgdescription
 | `environmentLabels`         | array of string   | **Optional** | | thgenvironmentlabels
 | `expiryDate`                | string  | **Optional** | yyyy-MM-dd | thgexpiredate

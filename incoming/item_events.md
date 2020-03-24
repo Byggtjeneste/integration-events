@@ -101,7 +101,7 @@ All items must be of the type: `object` with following properties:
 
 `object` with following properties:
 
-| Property       | Type    | Required     |	Description | Riversand Comment
+| Property       | Type    | Required     |	Description | Riversand Comment |
 | -------------- | ------- | ------------ | -------------
 | `adrName`      | string    | **Optional** |
 | `class`        | string  | **Optional** | Eg "5.1"
@@ -116,7 +116,7 @@ All items must be of the type: `object` with following properties:
 
 `object` with following properties:
 
-| Property             | Type    | Required     |	Description |
+| Property             | Type    | Required     |	Description | Riversand Comment |
 | -------------------- | ------- | ------------ | --------------
 | `additionalText`     | string  | **Optional** |
 | `dimension`          | string  | **Optional** |

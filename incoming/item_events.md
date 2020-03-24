@@ -80,7 +80,7 @@ The data model depends on the event type, see below.
 | `toleratesFrost`            | boolean | **Optional** | | thgtoleratesfrost
 | `tunNumber`                 | string  | **Optional** | | thgtunno
 | `type`                      | string  | **Required** | Type of item. One of "Standard, Display, Composite, Service" | Set by Middleware based on RS entity type.
-| `uniqueSellingPoints`       | array of string   | **Optional** | | TBD
+| `uniqueSellingPoints`       | array of string   | **Optional** | | **TBD** |
 
 #### bundleItems
 
@@ -90,8 +90,8 @@ Array type: `object[]`
 
 All items must be of the type: `object` with following properties:
 
-| Property    | Type    | Required     |	Description |
-| ----------- | ------- | ------------ | ---------------
+| Property    | Type    | Required     |	Description     | Riversand Comment |
+| ----------- | ------- | ------------ | ------------------ | ----------------- |
 | `packageId` | string  | **Required** | GUID of package entity
 | `quantity`  | integer | **Required** | 
 
@@ -102,7 +102,7 @@ All items must be of the type: `object` with following properties:
 `object` with following properties:
 
 | Property       | Type    | Required     |	Description | Riversand Comment |
-| -------------- | ------- | ------------ | -------------
+| -------------- | ------- | ------------ | ----------- | ----------------- |
 | `adrName`      | string    | **Optional** |
 | `class`        | string  | **Optional** | Eg "5.1"
 | `className`    | string  | **Optional** | Eg "Oxidizing substances"
@@ -117,7 +117,7 @@ All items must be of the type: `object` with following properties:
 `object` with following properties:
 
 | Property             | Type    | Required     |	Description | Riversand Comment |
-| -------------------- | ------- | ------------ | --------------
+| -------------------- | ------- | ------------ | ------------- | ----------------- |
 | `additionalText`     | string  | **Optional** |
 | `dimension`          | string  | **Optional** |
 | `name`               | string  | **Required** |

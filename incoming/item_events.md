@@ -227,37 +227,37 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | Property                    | Type    | Required     | Description    | Riversand Comment |
 | --------------------------- | ------- | ------------ | -------------- | ----------------- |
 | `id`                        | string  | **Required** | GUID (must be generated and can't be changed)| **TBD**           |
-| `nobbNumber`                | integer | **Required** | Must be generated and can't be changed. 8 digits.| **TBD**           |
+| `nobbNumber`                | integer | **Required** | Must be generated and can't be changed. 8 digits.| thgnobbno |
 | `accessories`               | array of integers | **Optional** | Array of NOBB numbers.| **TBD**           |
 | `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | **TBD**           |
 | `customsEuCode`             | string  | **Optional** |                | **TBD**           |
 | `customsNoCode`             | string  | **Optional** |                | **TBD**           |
 | `dangerousGoods`            | object  | **Optional** |                | **TBD**           |
-| `description`               | string  | **Optional** |                | **TBD**           |
-| `environmentLabels`         | array of string   | **Optional** |      | **TBD**           |
-| `expiryDate`                | string  | **Optional** |                | **TBD**           |
-| `finfoNumber`               | string  | **Optional** |                | **TBD**           |
-| `freightGroup`              | string  | **Optional** |                | **TBD**           |
-| `hasDurabilityDate`         | boolean | **Optional** |                | **TBD**           |
-| `hazardLabels`              | array of string   | **Optional** |      | **TBD**           |
-| `launchDate`                | string  | **Optional** | yyyy-MM-dd     | **TBD**           |
-| `manufacturerItemNumber`    | string  | **Optional** |                | **TBD**           |
+| `description`               | string  | **Optional** |                | thgdescription |
+| `environmentLabels`         | array of string   | **Optional** |      | thgenvironmentlabels |
+| `expiryDate`                | string  | **Optional** |                | thgexpiredate |
+| `finfoNumber`               | string  | **Optional** |                | thgfinfono |
+| `freightGroup`              | string  | **Optional** |                | thgfreightgroup |
+| `hasDurabilityDate`         | boolean | **Optional** |                | thghasdurabilitydate |
+| `hazardLabels`              | array of string   | **Optional** |      | thgpackaginglabels |
+| `launchDate`                | string  | **Optional** | yyyy-MM-dd     | thglaunchdate |
+| `manufacturerItemNumber`    | string  | **Optional** |                | thgmanufactureritemno |
 | `marketingText`             | string  | **Optional** |                | **TBD**           |
-| `modelName`                 | string  | **Optional** |                | **TBD**           |
-| `moduleNumber`              | integer | **Optional** |                | **TBD**           |
+| `modelName`                 | string  | **Optional** |                | thgmodelname |
+| `moduleNumber`              | integer | **Optional** |                | thgmoduleno |
 | `nrfInfo`                   | object  | **Optional** |                | **TBD**           |
-| `priceUnit`                 | string  | **Optional** |                | **TBD**           |
-| `primaryText`               | string  | **Optional** |                | **TBD**           |
+| `priceUnit`                 | string  | **Optional** |                | thgpriceunit |
+| `primaryText`               | string  | **Optional** |                | thgtext1 |
 | `productNumber`             | integer | **Optional** |                | **TBD**           |
-| `itemOwnerItemNumber`       | string  | **Optional** |                | **TBD**           |
-| `replacesNobbNumber`        | integer | **Optional** |                | **TBD**           |
-| `secondaryText`             | string  | **Optional** |                | **TBD**           |
-| `seriesName`                | string  | **Optional** |                | **TBD**           |
-| `stocked`                   | boolean | **Optional** |                | **TBD**           |
-| `tax`                       | string  | **Optional** |                | **TBD**           |       
-| `toleratesFrost`            | boolean | **Optional** |                | **TBD**           |  
-| `tunNumber`                 | string  | **Optional** |                | **TBD**           |
-| `type`                      | string  | **Optional** | Type of item. One of "Standard, Display, Composite, Service" | **TBD**           |
+| `itemOwnerItemNumber`       | string  | **Optional** |                | thgsupplieritemno |
+| `replacesNobbNumber`        | integer | **Optional** |                | thgreplacesnobbnumber |
+| `secondaryText`             | string  | **Optional** |                | thgtext2 |
+| `seriesName`                | string  | **Optional** |                | thgserialname |
+| `stocked`                   | boolean | **Optional** |                | thgstocked |
+| `tax`                       | string  | **Optional** |                | thgtax |       
+| `toleratesFrost`            | boolean | **Optional** |                | thgtoleratesfrost |  
+| `tunNumber`                 | string  | **Optional** |                | thgtunno |
+| `type`                      | string  | **Optional** | Type of item. One of "Standard, Display, Composite, Service" | Set by Middleware based on RS entity type.|
 | `uniqueSellingPoints`       | array of string   | **Optional** |      | **TBD**           |
 
 #### bundleItems

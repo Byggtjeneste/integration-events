@@ -61,7 +61,7 @@ The data model depends on the event type, see below.
 | `finfoNumber`               | string  | **Optional** | | thgfinfono
 | `freightGroup`              | string  | **Optional** | | thgfreightgroup
 | `hasDurabilityDate`         | boolean | **Required** | | thghasdurabilitydate
-| `hazardLabels`              | array of string   | **Optional** | | thgdangerclass
+| `hazardLabels`              | array of string   | **Optional** | | thgpackaginglabels
 | `launchDate`                | string  | **Optional** | yyyy-MM-dd | thglaunchdate
 | `manufacturerItemNumber`    | string  | **Required** | | thgmanufactureritemno
 | `marketingText`             | string  | **Optional** | | TBD

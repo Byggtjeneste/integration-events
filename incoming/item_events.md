@@ -51,10 +51,10 @@ The data model depends on the event type, see below.
 | `id`                        | string  | **Required** | GUID (must be generated and can't be changed) | This will be generated and stored in Middleware.|
 | `nobbNumber`                | integer | **Required** | Must be generated and can't be changed. 8 digits. | thgnobbno |
 | `accessories`               | array of integers | **Optional** | Array of NOBB numbers. | **TBD** |
-| `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | **TBD** |
-| `customsEuCode`             | string  | **Optional** | | **TBD** |
-| `customsNoCode`             | string  | **Optional** | | **TBD** |
-| `dangerousGoods`            | object  | **Optional** | | **TBD** |
+| `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | see `bundleItems Type` |
+| `customsEuCode`             | string  | **Optional** | | thgeucustomcode |
+| `customsNoCode`             | string  | **Optional** | | thgnocustomcode |
+| `dangerousGoods`            | object  | **Optional** | | see `dangerousGoods Type` |
 | `description`               | string  | **Optional** | | thgdescription |
 | `environmentLabels`         | array of string   | **Optional** | | thgenvironmentlabels |
 | `expiryDate`                | string  | **Optional** | yyyy-MM-dd | thgexpiredate |
@@ -67,7 +67,7 @@ The data model depends on the event type, see below.
 | `marketingText`             | string  | **Optional** | | **TBD** |
 | `modelName`                 | string  | **Optional** | | thgmodelname |
 | `moduleNumber`              | integer | **Required** | | thgmoduleno |
-| `nrfInfo`                   | object  | **Optional** | | **TBD** |
+| `nrfInfo`                   | object  | **Optional** | | see `nrfInfo Type` |
 | `priceUnit`                 | string  | **Required** | | thgpriceunit |
 | `primaryText`               | string  | **Required** | "Varetekst 1" | thgtext1 |
 | `productNumber`             | integer | **Optional** | Reference to Product | **TBD** |
@@ -82,9 +82,7 @@ The data model depends on the event type, see below.
 | `type`                      | string  | **Required** | Type of item. One of "Standard, Display, Composite, Service" | Set by Middleware based on RS entity type. |
 | `uniqueSellingPoints`       | array of string   | **Optional** | | **TBD** |
 
-#### bundleItems
-
-
+#### bundleItems Type
 
 Array type: `object[]`
 
@@ -116,15 +114,14 @@ All items must be of the type: `object` with following properties:
 
 `object` with following properties:
 
-| Property             | Type    | Required     |	Description         | Riversand Comment |
-| -------------------- | ------- | ------------ | --------------------- | ----------------- |
-| `additionalText`     | string  | **Optional** |                       | **TBD**           |
-| `dimension`          | string  | **Optional** |                       | **TBD**           |
-| `name`               | string  | **Required** |                       | **TBD**           |
-| `number`             | integer | **Optional** |                       | **TBD**           | 
-| `productGroupNumber` | string  | **Required** | NRF item group number | **TBD**           |
-| `supplierNumber`     | integer | **Required** | NRF Supplier number   | **TBD**           |
-
+| Property             | Type    | Required     |	Description         | Riversand Comment         |
+| -------------------- | ------- | ------------ | --------------------- | ------------------------- |
+| `additionalText`     | string  | **Optional** |                       | txnrftilleggsopplysninger |
+| `dimension`          | string  | **Optional** |                       | txnrfdimension            |
+| `name`               | string  | **Required** |                       | txnrfname                 |
+| `number`             | integer | **Optional** |                       | txnrfnumber               | 
+| `productGroupNumber` | string  | **Required** | NRF item group number | txnrfvaregruppenr         |
+| `supplierNumber`     | integer | **Required** | NRF Supplier number   | txnrfsuppliernr           |
 
 
 
@@ -229,10 +226,10 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `id`                        | string              | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware. | 
 | `nobbNumber`                | integer             | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
 | `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | **TBD**           |
-| `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | **TBD**           |
-| `customsEuCode`             | string              | **Optional** |                                                                | **TBD**           |
-| `customsNoCode`             | string              | **Optional** |                                                                | **TBD**           |
-| `dangerousGoods`            | object              | **Optional** |                                                                | **TBD**           |
+| `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | see `bundleItems Type`|
+| `customsEuCode`             | string              | **Optional** |                                                                | thgeucustomcode      |
+| `customsNoCode`             | string              | **Optional** |                                                                | thgnocustomcode      |
+| `dangerousGoods`            | object              | **Optional** |                                                                | see `dangerousGoods Type` |
 | `description`               | string              | **Optional** |                                                                | thgdescription |
 | `environmentLabels`         | array of string     | **Optional** |                                                                | thgenvironmentlabels |
 | `expiryDate`                | string              | **Optional** |                                                                | thgexpiredate |
@@ -245,7 +242,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `marketingText`             | string              | **Optional** |                                                                | **TBD**           |
 | `modelName`                 | string              | **Optional** |                                                                | thgmodelname |
 | `moduleNumber`              | integer             | **Optional** |                                                                | thgmoduleno |
-| `nrfInfo`                   | object              | **Optional** |                                                                | **TBD**           |
+| `nrfInfo`                   | object              | **Optional** |                                                                | see `nrfInfo Type` |
 | `priceUnit`                 | string              | **Optional** |                                                                | thgpriceunit |
 | `primaryText`               | string              | **Optional** |                                                                | thgtext1 |
 | `productNumber`             | integer             | **Optional** |                                                                | **TBD**           |
@@ -261,8 +258,6 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | **TBD** |
 
 #### bundleItems
-
-
 
 Array type: `object[]`
 
@@ -289,19 +284,18 @@ All items must be of the type: `object` with following properties:
 
 
 
-
 ##### nrfInfo Type
 
 `object` with following properties:
 
-| Property             | Type    | Required     | Description           | Riversand Comment |
-| -------------------- | ------- | ------------ | --------------------- | ----------------- |
-| `additionalText`     | string  | **Optional** |                       | **TBD**           |
-| `dimension`          | string  | **Optional** |                       | **TBD**           |
-| `name`               | string  | **Required** |                       | **TBD**           |
-| `number`             | integer | **Optional** |                       | **TBD**           |
-| `productGroupNumber` | string  | **Required** |                       | **TBD**           |
-| `supplierNumber`     | integer | **Required** | NRF Supplier number   | **TBD**           |
+| Property             | Type    | Required     | Description           | Riversand Comment         |
+| -------------------- | ------- | ------------ | --------------------- | ------------------------- |
+| `additionalText`     | string  | **Optional** |                       | txnrftilleggsopplysninger |
+| `dimension`          | string  | **Optional** |                       | txnrfdimension            |
+| `name`               | string  | **Required** |                       | txnrfname                 |
+| `number`             | integer | **Optional** |                       | txnrfnumber               |
+| `productGroupNumber` | string  | **Required** |                       | txnrfvaregruppenr         |
+| `supplierNumber`     | integer | **Required** | NRF Supplier number   | txnrfsuppliernr           |
 
 
 

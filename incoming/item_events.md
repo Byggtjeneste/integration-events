@@ -257,7 +257,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `tax`                       | string  | **Optional** |
 | `toleratesFrost`            | boolean | **Optional** |
 | `tunNumber`                 | string  | **Optional** |
-| `type`                      | string  | **Optional** | Type of item. One of "Standard, Display, Composite, Service"
+| `type`                      | string  | **Optional** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service"
 | `uniqueSellingPoints`       | array of string   | **Optional** |
 
 #### bundleItems

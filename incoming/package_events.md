@@ -58,15 +58,15 @@ The data model depends on the event type, see below.
 | `calculatedCount`   | integer | **Required** | 						| **TBD**
 | `consistsOfCount`   | integer | **Required** | 						| **TBD**
 | `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"			| **TBD**
-| `dPakLayerCount`    | integer | **Optional** |						| **TBD**	
-| `deliverable`       | boolean | **Required** |						| **TBD**
+| `dPakLayerCount`    | integer | **Optional** | Only "T-PAK"					| thgdpaklayercount 					|	
+| `deliverable`       | boolean | **Required** |						| thgcanbeordered 					|
 | `gtin`              | string  | **Optional** |						| thggtin 						|	
 | `height`            | decimal | **Optional** | millimeters					| thgheight 						|	
 | `length`            | decimal | **Optional** | millimeters					| thglength 						|
 | `maxStackingWeight` | decimal | **Optional** | 						| **TBD**
-| `minOrderQuantity`  | integer | **Optional** |						| **TBD**
+| `minOrderQuantity`  | integer | **Optional** | Only "F-PAK"					| thgminorderquantity 					|
 | `packageNumber`     | integer | **Required** |						| **TBD**	
-| `stocked`           | boolean | **Required** |						| **TBD**
+| `stocked`           | boolean | **Required** |						| thgstocked 						|
 | `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| Set by Middleware based on RS entity type.		|
 | `unit`              | string  | **Required** | From reference data, eg. "STK"			| **TBD**
 | `volume`            | decimal | **Optional** | dm3						| thgvolume 						|
@@ -142,15 +142,15 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `calculatedCount`   | integer | **Optional** | 						| **TBD**
 | `consistsOfCount`   | integer | **Optional** | 						| **TBD**
 | `consistsOfUnit`    | string  | **Optional** | From reference data, eg. "STK"			| **TBD**
-| `dPakLayerCount`    | integer | **Optional** |						| **TBD**
-| `deliverable`       | boolean | **Optional** |						| **TBD**
+| `dPakLayerCount`    | integer | **Optional** | Only "T-PAK"					| thgdpaklayercount 					|
+| `deliverable`       | boolean | **Optional** |						| thgcanbeordered 					|
 | `gtin`              | string  | **Optional** |						| thggtin 						|	
 | `height`            | decimal | **Optional** | millimeters					| thgheight 						|	
 | `length`            | decimal | **Optional** | millimeters					| thglength 						|
 | `maxStackingWeight` | decimal | **Optional** | 						| **TBD**
-| `minOrderQuantity`  | integer | **Optional** |						| **TBD**	
+| `minOrderQuantity`  | integer | **Optional** | Only "F-PAK"					| thgminorderquantity 					|	
 | `packageNumber`     | integer | **Optional** |						| **TBD**
-| `stocked`           | boolean | **Optional** |						| **TBD**
+| `stocked`           | boolean | **Optional** |						| thgstocked 						|
 | `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| Set by Middleware based on RS entity type. 		|
 | `unit`              | string  | **Optional** | From reference data, eg. "STK"			| **TBD**
 | `volume`            | decimal | **Optional** | dm3						| thgvolume						|

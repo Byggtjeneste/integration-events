@@ -13,10 +13,10 @@ The events related to packages will be sent from Avensia Middleware to an Azure 
 
 ## Properties
 
-| Property              | Type     | Required     | Nullable | Description                                |
-| --------------------- | -------- | ------------ | -------- | ------------------------------------------ |
-| [data](#data)         | `object` | **Required** | No       |         |
-| [metadata](#metadata) | `object` | **Required** | No       |         |
+| Property              | Type     | Required     | Nullable | Description                            	|
+| --------------------- | -------- | ------------ | -------- | ---------------------------------------- |
+| [data](#data)         | `object` | **Required** | No       |         					|
+| [metadata](#metadata) | `object` | **Required** | No       |         					|
 
 ### metadata
 
@@ -49,29 +49,29 @@ The data model depends on the event type, see below.
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description |
-| ------------------- | ------- | ------------ | ------- |
-| `id`                | string  | **Required** | GUID (must be generated and can't be changed)
-| `nobbNumber`        | integer | **Required** |
-| `availableFrom`     | string  | **Optional** | yyyy-MM-dd
-| `availableTo`       | string  | **Optional** | yyyy-MM-dd
-| `calculatedCount`   | integer | **Required** | 
-| `consistsOfCount`   | integer | **Required** | 
-| `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"
-| `dPakLayerCount`    | integer | **Optional** |
-| `deliverable`       | boolean | **Required** |
-| `gtin`              | string  | **Optional** |
-| `height`            | decimal | **Optional** | millimeters
-| `length`            | decimal | **Optional** | millimeters
-| `maxStackingWeight` | decimal | **Optional** | 
-| `minOrderQuantity`  | integer | **Optional** |
-| `packageNumber`     | integer | **Required** |
-| `stocked`           | boolean | **Required** |
-| `type`              | string  | **Optional** | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF").
-| `unit`              | string  | **Required** | From reference data, eg. "STK"
-| `volume`            | decimal | **Optional** | dm3
-| `weight`            | decimal  | **Optional** | kg
-| `width`             | decimal | **Optional** | millimeters
+| Property            | Type    | Required     | Description 					| Riversand Comment                                 	|
+| ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
+| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
+| `nobbNumber`        | integer | **Required** |						| thgnobbno 						|
+| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| thgpackageavailablefrom 				|
+| `availableTo`       | string  | **Optional** | yyyy-MM-dd					| thgexpiredate 					|
+| `calculatedCount`   | integer | **Required** | 						| thgcalculatedcount 					|
+| `consistsOfCount`   | integer | **Required** | 						| thgconsistsofcount 					|
+| `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"			| thgconsistsofunit (rdunit) 				|
+| `dPakLayerCount`    | integer | **Optional** | Only "T-PAK"					| thgdpaklayercount 					|	
+| `deliverable`       | boolean | **Required** |						| thgcanbeordered 					|
+| `gtin`              | string  | **Optional** |						| thggtin 						|	
+| `height`            | decimal | **Optional** | millimeters					| thgheight 						|	
+| `length`            | decimal | **Optional** | millimeters					| thglength 						|
+| `maxStackingWeight` | decimal | **Optional** | Only "T-PAK"					| thgmaxstackingweight 					|
+| `minOrderQuantity`  | integer | **Optional** | Only "F-PAK"					| thgminorderquantity 					|
+| `packageNumber`     | integer | **Required** |						| **TBD**						|
+| `stocked`           | boolean | **Required** |						| thgstocked 						|
+| `type`              | string  | **Optional** | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF").| Set by Middleware based on RS entity type.		|
+| `unit`              | string  | **Required** | From reference data, eg. "STK"			| thgpackageunit (rdunit) 				|
+| `volume`            | decimal | **Optional** | dm3						| thgvolume 						|
+| `weight`            | decimal	| **Optional** | kg						| thgweight 						|
+| `width`             | decimal | **Optional** | millimeters					| thgwidth 						|
 
 
 ## Sample json
@@ -134,28 +134,28 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description |
-| ------------------- | ------- | ------------ | ------- |
-| `id`                | string  | **Required** | GUID (must be generated and can't be changed)
-| `availableFrom`     | string  | **Optional** | yyyy-MM-dd
-| `availableTo`       | string  | **Optional** | yyyy-MM-dd
-| `calculatedCount`   | integer | **Optional** | 
-| `consistsOfCount`   | integer | **Optional** | 
-| `consistsOfUnit`    | string  | **Optional** | From reference data, eg. "STK"
-| `dPakLayerCount`    | integer | **Optional** |
-| `deliverable`       | boolean | **Optional** |
-| `gtin`              | string  | **Optional** |
-| `height`            | decimal | **Optional** | millimeters
-| `length`            | decimal | **Optional** | millimeters
-| `maxStackingWeight` | decimal | **Optional** | 
-| `minOrderQuantity`  | integer | **Optional** |
-| `packageNumber`     | integer | **Optional** |
-| `stocked`           | boolean | **Optional** |
-| `type`              | string  | **Optional** | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF").
-| `unit`              | string  | **Optional** | From reference data, eg. "STK"
-| `volume`            | decimal | **Optional** | dm3
-| `weight`            | decimal  | **Optional** | kg
-| `width`             | decimal | **Optional** | millimeters
+| Property            | Type    | Required     | Description 					| Riversand Comment                                 	|
+| ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
+| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
+| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| thgpackageavailablefrom 				|
+| `availableTo`       | string  | **Optional** | yyyy-MM-dd					| thgexpiredate						|
+| `calculatedCount`   | integer | **Optional** | 						| thgcalculatedcount 					|
+| `consistsOfCount`   | integer | **Optional** | 						| thgconsistsofcount 					|
+| `consistsOfUnit`    | string  | **Optional** | From reference data, eg. "STK"			| thgconsistsofunit (rdunit) 				|
+| `dPakLayerCount`    | integer | **Optional** | Only "T-PAK"					| thgdpaklayercount 					|
+| `deliverable`       | boolean | **Optional** |						| thgcanbeordered 					|
+| `gtin`              | string  | **Optional** |						| thggtin 						|	
+| `height`            | decimal | **Optional** | millimeters					| thgheight 						|	
+| `length`            | decimal | **Optional** | millimeters					| thglength 						|
+| `maxStackingWeight` | decimal | **Optional** | Only "T-PAK"					| thgmaxstackingweight 					|
+| `minOrderQuantity`  | integer | **Optional** | Only "F-PAK"					| thgminorderquantity 					|	
+| `packageNumber`     | integer | **Optional** |						| **TBD**						|
+| `stocked`           | boolean | **Optional** |						| thgstocked 						|
+| `type`              | string  | **Optional** | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF"). | Set by Middleware based on RS entity type. 		|
+| `unit`              | string  | **Optional** | From reference data, eg. "STK"			| thgpackageunit (rdunit)				|
+| `volume`            | decimal | **Optional** | dm3						| thgvolume						|
+| `weight`            | decimal | **Optional** | kg						| thgweight 						|
+| `width`             | decimal | **Optional** | millimeters					| thgwidth 						|
 
 
 
@@ -202,9 +202,9 @@ The identifier must be part of the event data.
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description |
-| ------------------- | ------- | ------------ | ------- |
-| `id`                | string  | **Required** |
+| Property            | Type    | Required     | Description	| Riversand Comment                                |
+| ------------------- | ------- | ------------ | -------------- | ------------------------------------------------ |
+| `id`                | string  | **Required** |		| This will be generated and stored in Middleware. |
 
 
 

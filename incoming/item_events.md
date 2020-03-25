@@ -50,7 +50,7 @@ The data model depends on the event type, see below.
 | --------------------------- | ------------------- | ------------ | -------------------------------------------------------------- | ------------------------------------------------- |
 | `id`                        | string              | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware.  |
 | `nobbNumber`                | integer             | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
-| `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | **TBD** |
+| `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | __relationships__ [ serviceaccessories, standardaccessories ]  |
 | `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | __relationship__ see `bundleItems Type` |
 | `customsEuCode`             | string              | **Optional** |                                                                | thgeucustomcode |
 | `customsNoCode`             | string              | **Optional** |                                                                | thgnocustomcode |
@@ -227,10 +227,10 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | --------------------------- | ------------------- | ------------ | -------------------------------------------------------------- | ----------------- |
 | `id`                        | string              | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware. | 
 | `nobbNumber`                | integer             | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
-| `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | **TBD**           |
-| `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | __Relationship__ see `bundleItems Type`|
+| `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | __relationships__  [ serviceaccessories, standardaccessories ] |
+| `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | __relationship__ see `bundleItems Type`|
 | `customsEuCode`             | string              | **Optional** |                                                                | thgeucustomcode      |
-| `customsNoCode`             | string              | **Optional** |                                                                | thgnocustomcode      |
+| `customsNoCode`             | string              | **Optional** |                                                                | thgnocustomcode      |]
 | `dangerousGoods`            | object              | **Optional** |                                                                | see `dangerousGoods Type` |
 | `description`               | string              | **Optional** |                                                                | thgdescription |
 | `environmentLabels`         | array of string     | **Optional** |                                                                | thgenvironmentlabels |

@@ -49,29 +49,29 @@ The data model depends on the event type, see below.
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description |
-| ------------------- | ------- | ------------ | ------- |
-| `id`                | string  | **Required** | GUID (must be generated and can't be changed)
-| `nobbNumber`        | integer | **Required** |
-| `availableFrom`     | string  | **Optional** | yyyy-MM-dd
-| `availableTo`       | string  | **Optional** | yyyy-MM-dd
-| `calculatedCount`   | integer | **Required** | 
-| `consistsOfCount`   | integer | **Required** | 
-| `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"
-| `dPakLayerCount`    | integer | **Optional** |
-| `deliverable`       | boolean | **Required** |
-| `gtin`              | string  | **Optional** |
-| `height`            | decimal | **Optional** | millimeters
-| `length`            | decimal | **Optional** | millimeters
-| `maxStackingWeight` | decimal | **Optional** | 
-| `minOrderQuantity`  | integer | **Optional** |
-| `packageNumber`     | integer | **Required** |
-| `stocked`           | boolean | **Required** |
-| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"
-| `unit`              | string  | **Required** | From reference data, eg. "STK"
-| `volume`            | decimal | **Optional** | dm3
-| `weight`            | decimal  | **Optional** | kg
-| `width`             | decimal | **Optional** | millimeters
+| Property            | Type    | Required     | Description 					| Riversand Comment                                 |
+| ------------------- | ------- | ------------ | ---------------------------------------------- | ------------------------------------------------- |
+| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	|
+| `nobbNumber`        | integer | **Required** |						|
+| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					|
+| `availableTo`       | string  | **Optional** | yyyy-MM-dd					|
+| `calculatedCount`   | integer | **Required** | 						|
+| `consistsOfCount`   | integer | **Required** | 						|
+| `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"			|
+| `dPakLayerCount`    | integer | **Optional** |						|	
+| `deliverable`       | boolean | **Required** |						|
+| `gtin`              | string  | **Optional** |						|	
+| `height`            | decimal | **Optional** | millimeters					|	
+| `length`            | decimal | **Optional** | millimeters					|
+| `maxStackingWeight` | decimal | **Optional** | 						|
+| `minOrderQuantity`  | integer | **Optional** |						|
+| `packageNumber`     | integer | **Required** |						|	
+| `stocked`           | boolean | **Required** |						|
+| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	|
+| `unit`              | string  | **Required** | From reference data, eg. "STK"			|
+| `volume`            | decimal | **Optional** | dm3						|
+| `weight`            | decimal	| **Optional** | kg						|
+| `width`             | decimal | **Optional** | millimeters					|
 
 
 ## Sample json

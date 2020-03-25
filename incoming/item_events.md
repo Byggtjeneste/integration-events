@@ -104,13 +104,15 @@ All items must be of the type: `object` with following properties:
 | `adrName`      | string  | **Optional** |                                 | thgadritemname                                    |
 | `class`        | string  | **Optional** | Eg "5.1"                        | thgdangerclass => rddangerclass::refcode          |
 | `className`    | string  | **Optional** | Eg "Oxidizing substances"       | thgdangerclass => rddangerclass::refvalue         |
-| `number`       | integer | **Required** |                                 | thgunno                                           |
+| `number`       | integer | **Required** | 4 digit number                  | thgunno                                           |
 | `packingGroup` | integer | **Optional** | Emballasjegruppe, ex 1, 2 or 3  | thgpackaginggroup => rdpackaginggroup::refcode    |
 
 
 
 
 ##### nrfInfo Type
+
+__Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 
 `object` with following properties:
 
@@ -277,14 +279,16 @@ All items must be of the type: `object` with following properties:
 | Property       | Type    | Required     | Description                     | Riversand Comment                                 | 
 | -------------- | ------- | ------------ | ------------------------------- | ------------------------------------------------- |
 | `adrName`      | string  | **Optional** |                                 | thgadritemname                                    |
-| `class`        | string  | **Optional** |                                 | thgdangerclass => rddangerclass::refcode          |
-| `className`    | string  | **Optional** |                                 | thgdangerclass => rddangerclass::refvalue         |
-| `number`       | integer | **Required** |                                 | thgunno                                           |
+| `class`        | string  | **Optional** | Eg "5.1"                        | thgdangerclass => rddangerclass::refcode          |
+| `className`    | string  | **Optional** | Eg "Oxidizing substances"       | thgdangerclass => rddangerclass::refvalue         |
+| `number`       | integer | **Required** | 4 digit number                  | thgunno                                           |
 | `packingGroup` | integer | **Optional** | Emballasjegruppe, ex 1, 2 or 3  | thgpackaginggroup => rdpackaginggroup::refcode    |
 
 
 
 ##### nrfInfo Type
+
+__Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 
 `object` with following properties:
 

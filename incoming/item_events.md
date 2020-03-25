@@ -79,7 +79,7 @@ The data model depends on the event type, see below.
 | `tax`                       | string  | **Optional** | | thgtax
 | `toleratesFrost`            | boolean | **Optional** | | thgtoleratesfrost
 | `tunNumber`                 | string  | **Optional** | | thgtunno
-| `type`                      | string  | **Required** | Type of item. One of "Standard, Display, Composite, Service" | Set by Middleware based on RS entity type.
+| `type`                      | string  | **Required** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type.
 | `uniqueSellingPoints`       | array of string   | **Optional** | | TBD
 
 #### bundleItems

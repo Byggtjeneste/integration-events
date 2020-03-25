@@ -63,12 +63,12 @@ The data model depends on the event type, see below.
 | `gtin`              | string  | **Optional** |						| thggtin 						|	
 | `height`            | decimal | **Optional** | millimeters					| thgheight 						|	
 | `length`            | decimal | **Optional** | millimeters					| thglength 						|
-| `maxStackingWeight` | decimal | **Optional** | 						| **TBD**
+| `maxStackingWeight` | decimal | **Optional** | Only "T-PAK"					| thgmaxstackingweight 					|
 | `minOrderQuantity`  | integer | **Optional** | Only "F-PAK"					| thgminorderquantity 					|
-| `packageNumber`     | integer | **Required** |						| **TBD**	
+| `packageNumber`     | integer | **Required** |						| __thgpackageid__ ?					|
 | `stocked`           | boolean | **Required** |						| thgstocked 						|
 | `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| Set by Middleware based on RS entity type.		|
-| `unit`              | string  | **Required** | From reference data, eg. "STK"			| **TBD**
+| `unit`              | string  | **Required** | From reference data, eg. "STK"			| thgpackageunit (rdunit) 				|
 | `volume`            | decimal | **Optional** | dm3						| thgvolume 						|
 | `weight`            | decimal	| **Optional** | kg						| thgweight 						|
 | `width`             | decimal | **Optional** | millimeters					| thgwidth 						|
@@ -147,12 +147,12 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `gtin`              | string  | **Optional** |						| thggtin 						|	
 | `height`            | decimal | **Optional** | millimeters					| thgheight 						|	
 | `length`            | decimal | **Optional** | millimeters					| thglength 						|
-| `maxStackingWeight` | decimal | **Optional** | 						| **TBD**
+| `maxStackingWeight` | decimal | **Optional** | Only "T-PAK"					| thgmaxstackingweight 					|
 | `minOrderQuantity`  | integer | **Optional** | Only "F-PAK"					| thgminorderquantity 					|	
-| `packageNumber`     | integer | **Optional** |						| **TBD**
+| `packageNumber`     | integer | **Optional** |						| __thgpackageid__ ?					|
 | `stocked`           | boolean | **Optional** |						| thgstocked 						|
 | `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| Set by Middleware based on RS entity type. 		|
-| `unit`              | string  | **Optional** | From reference data, eg. "STK"			| **TBD**
+| `unit`              | string  | **Optional** | From reference data, eg. "STK"			| thgpackageunit (rdunit)				|
 | `volume`            | decimal | **Optional** | dm3						| thgvolume						|
 | `weight`            | decimal | **Optional** | kg						| thgweight 						|
 | `width`             | decimal | **Optional** | millimeters					| thgwidth 						|

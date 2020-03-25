@@ -51,10 +51,10 @@ The data model depends on the event type, see below.
 | `id`                        | string  | **Required** | GUID (must be generated and can't be changed) | This will be generated and stored in Middleware.|
 | `nobbNumber`                | integer | **Required** | Must be generated and can't be changed. 8 digits. | thgnobbno |
 | `accessories`               | array of integers | **Optional** | Array of NOBB numbers. | **TBD** |
-| `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | see `bundleItems Type` |
+| `bundleItems`               | array of objects  | **Optional** | Only used for Display and Composite items | __relationship__ see `bundleItems Type` |
 | `customsEuCode`             | string  | **Optional** | | thgeucustomcode |
 | `customsNoCode`             | string  | **Optional** | | thgnocustomcode |
-| `dangerousGoods`            | object  | **Optional** | | thgdangerclass (rddangerclass) => see `dangerousGoods Type` |
+| `dangerousGoods`            | object  | **Optional** | | see `dangerousGoods Type` |
 | `description`               | string  | **Optional** | | thgdescription |
 | `environmentLabels`         | array of string   | **Optional** | | thgenvironmentlabels |
 | `expiryDate`                | string  | **Optional** | yyyy-MM-dd | thgexpiredate |
@@ -67,7 +67,7 @@ The data model depends on the event type, see below.
 | `marketingText`             | string  | **Optional** | | **TBD** |
 | `modelName`                 | string  | **Optional** | | thgmodelname |
 | `moduleNumber`              | integer | **Required** | | thgmoduleno |
-| `nrfInfo`                   | object  | **Optional** | | NRF Taxonomy => see `nrfInfo Type` |
+| `nrfInfo`                   | object  | **Optional** | | __NRF Taxonomy__ => see `nrfInfo Type` |
 | `priceUnit`                 | string  | **Required** | | thgpriceunit |
 | `primaryText`               | string  | **Required** | "Varetekst 1" | thgtext1 |
 | `productNumber`             | integer | **Optional** | Reference to Product | **TBD** |
@@ -99,13 +99,13 @@ All items must be of the type: `object` with following properties:
 
 `object` with following properties:
 
-| Property       | Type    | Required     |	Description                 | Riversand Comment         |
-| -------------- | ------- | ------------ | --------------------------- | ------------------------- |
-| `adrName`      | string  | **Optional** |                             | **TBD**                   |
-| `class`        | string  | **Optional** | Eg "5.1"                    | rddangerclass::refcode    |
-| `className`    | string  | **Optional** | Eg "Oxidizing substances"   | rddangerclass::refvalue   |
-| `number`       | integer | **Required** |                             | **TBD**                   |
-| `packingGroup` | integer | **Optional** |                             | **TBD**                   |
+| Property       | Type    | Required     |	Description                     | Riversand Comment                                 |
+| -------------- | ------- | ------------ | ------------------------------- | ------------------------------------------------- |
+| `adrName`      | string  | **Optional** |                                 | thgadritemname                                    |
+| `class`        | string  | **Optional** | Eg "5.1"                        | thgdangerclass => rddangerclass::refcode          |
+| `className`    | string  | **Optional** | Eg "Oxidizing substances"       | thgdangerclass => rddangerclass::refvalue         |
+| `number`       | integer | **Required** |                                 | **TBD**                                           |
+| `packingGroup` | integer | **Optional** | Emballasjegruppe, ex 1, 2 or 3  | thgpackaginggroup => rdpackaginggroup::refcode    |
 
 
 
@@ -226,10 +226,10 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `id`                        | string              | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware. | 
 | `nobbNumber`                | integer             | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
 | `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | **TBD**           |
-| `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | see `bundleItems Type`|
+| `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | __Relationship__ see `bundleItems Type`|
 | `customsEuCode`             | string              | **Optional** |                                                                | thgeucustomcode      |
 | `customsNoCode`             | string              | **Optional** |                                                                | thgnocustomcode      |
-| `dangerousGoods`            | object              | **Optional** |                                                                | thgdangerclass (rddangerclass) => see `dangerousGoods Type` |
+| `dangerousGoods`            | object              | **Optional** |                                                                | see `dangerousGoods Type` |
 | `description`               | string              | **Optional** |                                                                | thgdescription |
 | `environmentLabels`         | array of string     | **Optional** |                                                                | thgenvironmentlabels |
 | `expiryDate`                | string              | **Optional** |                                                                | thgexpiredate |
@@ -242,7 +242,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `marketingText`             | string              | **Optional** |                                                                | **TBD**           |
 | `modelName`                 | string              | **Optional** |                                                                | thgmodelname |
 | `moduleNumber`              | integer             | **Optional** |                                                                | thgmoduleno |
-| `nrfInfo`                   | object              | **Optional** |                                                                | NRF Taxonomy => see `nrfInfo Type` |
+| `nrfInfo`                   | object              | **Optional** |                                                                | __NRF Taxonomy__ => see `nrfInfo Type` |
 | `priceUnit`                 | string              | **Optional** |                                                                | thgpriceunit |
 | `primaryText`               | string              | **Optional** |                                                                | thgtext1 |
 | `productNumber`             | integer             | **Optional** |                                                                | **TBD**           |
@@ -274,13 +274,13 @@ All items must be of the type: `object` with following properties:
 
 `object` with following properties:
 
-| Property       | Type    | Required     | Description         | Riversand Comment         | 
-| -------------- | ------- | ------------ | ------------------- | ------------------------- |
-| `adrName`      | string  | **Optional** |                     | **TBD**                   |
-| `class`        | string  | **Optional** |                     | rddangerclass::refcode    |
-| `className`    | string  | **Optional** |                     | rddangerclass::refvalue   |
-| `number`       | integer | **Required** |                     | **TBD**                   |
-| `packingGroup` | integer | **Optional** |                     | **TBD**                   |
+| Property       | Type    | Required     | Description                     | Riversand Comment                                 | 
+| -------------- | ------- | ------------ | ------------------------------- | ------------------------------------------------- |
+| `adrName`      | string  | **Optional** |                                 | thgadritemname                                    |
+| `class`        | string  | **Optional** |                                 | thgdangerclass => rddangerclass::refcode          |
+| `className`    | string  | **Optional** |                                 | thgdangerclass => rddangerclass::refvalue         |
+| `number`       | integer | **Required** |                                 | **TBD**                                           |
+| `packingGroup` | integer | **Optional** | Emballasjegruppe, ex 1, 2 or 3  | thgpackaginggroup => rdpackaginggroup::refcode    |
 
 
 

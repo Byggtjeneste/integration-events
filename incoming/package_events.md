@@ -13,10 +13,10 @@ The events related to packages will be sent from Avensia Middleware to an Azure 
 
 ## Properties
 
-| Property              | Type     | Required     | Nullable | Description                                |
-| --------------------- | -------- | ------------ | -------- | ------------------------------------------ |
-| [data](#data)         | `object` | **Required** | No       |         |
-| [metadata](#metadata) | `object` | **Required** | No       |         |
+| Property              | Type     | Required     | Nullable | Description                            	|
+| --------------------- | -------- | ------------ | -------- | ---------------------------------------- |
+| [data](#data)         | `object` | **Required** | No       |         					|
+| [metadata](#metadata) | `object` | **Required** | No       |         					|
 
 ### metadata
 
@@ -51,27 +51,27 @@ The data model depends on the event type, see below.
 
 | Property            | Type    | Required     | Description 					| Riversand Comment                                 |
 | ------------------- | ------- | ------------ | ---------------------------------------------- | ------------------------------------------------- |
-| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	|
-| `nobbNumber`        | integer | **Required** |						|
-| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					|
-| `availableTo`       | string  | **Optional** | yyyy-MM-dd					|
-| `calculatedCount`   | integer | **Required** | 						|
-| `consistsOfCount`   | integer | **Required** | 						|
-| `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"			|
-| `dPakLayerCount`    | integer | **Optional** |						|	
-| `deliverable`       | boolean | **Required** |						|
-| `gtin`              | string  | **Optional** |						|	
-| `height`            | decimal | **Optional** | millimeters					|	
-| `length`            | decimal | **Optional** | millimeters					|
-| `maxStackingWeight` | decimal | **Optional** | 						|
-| `minOrderQuantity`  | integer | **Optional** |						|
-| `packageNumber`     | integer | **Required** |						|	
-| `stocked`           | boolean | **Required** |						|
-| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	|
-| `unit`              | string  | **Required** | From reference data, eg. "STK"			|
-| `volume`            | decimal | **Optional** | dm3						|
-| `weight`            | decimal	| **Optional** | kg						|
-| `width`             | decimal | **Optional** | millimeters					|
+| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| **TBD**
+| `nobbNumber`        | integer | **Required** |						| **TBD**
+| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| **TBD**
+| `availableTo`       | string  | **Optional** | yyyy-MM-dd					| **TBD**
+| `calculatedCount`   | integer | **Required** | 						| **TBD**
+| `consistsOfCount`   | integer | **Required** | 						| **TBD**
+| `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"			| **TBD**
+| `dPakLayerCount`    | integer | **Optional** |						| **TBD**	
+| `deliverable`       | boolean | **Required** |						| **TBD**
+| `gtin`              | string  | **Optional** |						| **TBD**	
+| `height`            | decimal | **Optional** | millimeters					| **TBD**	
+| `length`            | decimal | **Optional** | millimeters					| **TBD**
+| `maxStackingWeight` | decimal | **Optional** | 						| **TBD**
+| `minOrderQuantity`  | integer | **Optional** |						| **TBD**
+| `packageNumber`     | integer | **Required** |						| **TBD**	
+| `stocked`           | boolean | **Required** |						| **TBD**
+| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| **TBD**
+| `unit`              | string  | **Required** | From reference data, eg. "STK"			| **TBD**
+| `volume`            | decimal | **Optional** | dm3						| **TBD**
+| `weight`            | decimal	| **Optional** | kg						| **TBD**
+| `width`             | decimal | **Optional** | millimeters					| **TBD**
 
 
 ## Sample json
@@ -136,26 +136,26 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 
 | Property            | Type    | Required     | Description 					| Riversand Comment                                 |
 | ------------------- | ------- | ------------ | ---------------------------------------------- | ------------------------------------------------- |
-| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	|
-| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					|
-| `availableTo`       | string  | **Optional** | yyyy-MM-dd					|
-| `calculatedCount`   | integer | **Optional** | 						|
-| `consistsOfCount`   | integer | **Optional** | 						|
-| `consistsOfUnit`    | string  | **Optional** | From reference data, eg. "STK"			|
-| `dPakLayerCount`    | integer | **Optional** |						|
-| `deliverable`       | boolean | **Optional** |						|
-| `gtin`              | string  | **Optional** |						|	
-| `height`            | decimal | **Optional** | millimeters					|	
-| `length`            | decimal | **Optional** | millimeters					|
-| `maxStackingWeight` | decimal | **Optional** | 						|
-| `minOrderQuantity`  | integer | **Optional** |						|	
-| `packageNumber`     | integer | **Optional** |						|
-| `stocked`           | boolean | **Optional** |						|
-| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	|
-| `unit`              | string  | **Optional** | From reference data, eg. "STK"			|
-| `volume`            | decimal | **Optional** | dm3						|
-| `weight`            | decimal | **Optional** | kg						|
-| `width`             | decimal | **Optional** | millimeters					|
+| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| **TBD**
+| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| **TBD**
+| `availableTo`       | string  | **Optional** | yyyy-MM-dd					| **TBD**
+| `calculatedCount`   | integer | **Optional** | 						| **TBD**
+| `consistsOfCount`   | integer | **Optional** | 						| **TBD**
+| `consistsOfUnit`    | string  | **Optional** | From reference data, eg. "STK"			| **TBD**
+| `dPakLayerCount`    | integer | **Optional** |						| **TBD**
+| `deliverable`       | boolean | **Optional** |						| **TBD**
+| `gtin`              | string  | **Optional** |						| **TBD**	
+| `height`            | decimal | **Optional** | millimeters					| **TBD**	
+| `length`            | decimal | **Optional** | millimeters					| **TBD**
+| `maxStackingWeight` | decimal | **Optional** | 						| **TBD**
+| `minOrderQuantity`  | integer | **Optional** |						| **TBD**	
+| `packageNumber`     | integer | **Optional** |						| **TBD**
+| `stocked`           | boolean | **Optional** |						| **TBD**
+| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| **TBD**
+| `unit`              | string  | **Optional** | From reference data, eg. "STK"			| **TBD**
+| `volume`            | decimal | **Optional** | dm3						| **TBD**
+| `weight`            | decimal | **Optional** | kg						| **TBD**
+| `width`             | decimal | **Optional** | millimeters					| **TBD**
 
 
 
@@ -202,9 +202,9 @@ The identifier must be part of the event data.
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description |
-| ------------------- | ------- | ------------ | ------- |
-| `id`                | string  | **Required** |
+| Property            | Type    | Required     | Description	| Riversand Comment                                 |
+| ------------------- | ------- | ------------ | -------------- | ------------------------------------------------- |
+| `id`                | string  | **Required** |		| **TBD**
 
 
 

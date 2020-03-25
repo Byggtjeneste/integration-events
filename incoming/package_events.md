@@ -134,7 +134,7 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description |
+| Property            | Type    | Required     | Description | RS Comment
 | ------------------- | ------- | ------------ | ------- |
 | `id`                | string  | **Required** | GUID (must be generated and can't be changed)
 | `availableFrom`     | string  | **Optional** | yyyy-MM-dd

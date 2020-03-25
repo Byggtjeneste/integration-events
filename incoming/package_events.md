@@ -52,7 +52,7 @@ The data model depends on the event type, see below.
 | Property            | Type    | Required     | Description 					| Riversand Comment                                 	|
 | ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
 | `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
-| `nobbNumber`        | integer | **Required** |						| **TBD**
+| `nobbNumber`        | integer | **Required** |						| thgnobbno 						|
 | `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| **TBD**
 | `availableTo`       | string  | **Optional** | yyyy-MM-dd					| **TBD**
 | `calculatedCount`   | integer | **Required** | 						| **TBD**
@@ -60,18 +60,18 @@ The data model depends on the event type, see below.
 | `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"			| **TBD**
 | `dPakLayerCount`    | integer | **Optional** |						| **TBD**	
 | `deliverable`       | boolean | **Required** |						| **TBD**
-| `gtin`              | string  | **Optional** |						| **TBD**	
-| `height`            | decimal | **Optional** | millimeters					| **TBD**	
-| `length`            | decimal | **Optional** | millimeters					| **TBD**
+| `gtin`              | string  | **Optional** |						| thggtin 						|	
+| `height`            | decimal | **Optional** | millimeters					| thgheight 						|	
+| `length`            | decimal | **Optional** | millimeters					| thglength 						|
 | `maxStackingWeight` | decimal | **Optional** | 						| **TBD**
 | `minOrderQuantity`  | integer | **Optional** |						| **TBD**
 | `packageNumber`     | integer | **Required** |						| **TBD**	
 | `stocked`           | boolean | **Required** |						| **TBD**
-| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| **TBD**
+| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| Set by Middleware based on RS entity type.		|
 | `unit`              | string  | **Required** | From reference data, eg. "STK"			| **TBD**
-| `volume`            | decimal | **Optional** | dm3						| **TBD**
-| `weight`            | decimal	| **Optional** | kg						| **TBD**
-| `width`             | decimal | **Optional** | millimeters					| **TBD**
+| `volume`            | decimal | **Optional** | dm3						| thgvolume 						|
+| `weight`            | decimal	| **Optional** | kg						| thgweight 						|
+| `width`             | decimal | **Optional** | millimeters					| thgwidth 						|
 
 
 ## Sample json
@@ -144,18 +144,18 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `consistsOfUnit`    | string  | **Optional** | From reference data, eg. "STK"			| **TBD**
 | `dPakLayerCount`    | integer | **Optional** |						| **TBD**
 | `deliverable`       | boolean | **Optional** |						| **TBD**
-| `gtin`              | string  | **Optional** |						| **TBD**	
-| `height`            | decimal | **Optional** | millimeters					| **TBD**	
-| `length`            | decimal | **Optional** | millimeters					| **TBD**
+| `gtin`              | string  | **Optional** |						| thggtin 						|	
+| `height`            | decimal | **Optional** | millimeters					| thgheight 						|	
+| `length`            | decimal | **Optional** | millimeters					| thglength 						|
 | `maxStackingWeight` | decimal | **Optional** | 						| **TBD**
 | `minOrderQuantity`  | integer | **Optional** |						| **TBD**	
 | `packageNumber`     | integer | **Optional** |						| **TBD**
 | `stocked`           | boolean | **Optional** |						| **TBD**
-| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| **TBD**
+| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| Set by Middleware based on RS entity type. 		|
 | `unit`              | string  | **Optional** | From reference data, eg. "STK"			| **TBD**
-| `volume`            | decimal | **Optional** | dm3						| **TBD**
-| `weight`            | decimal | **Optional** | kg						| **TBD**
-| `width`             | decimal | **Optional** | millimeters					| **TBD**
+| `volume`            | decimal | **Optional** | dm3						| thgvolume						|
+| `weight`            | decimal | **Optional** | kg						| thgweight 						|
+| `width`             | decimal | **Optional** | millimeters					| thgwidth 						|
 
 
 

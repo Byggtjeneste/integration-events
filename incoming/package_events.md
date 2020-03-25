@@ -65,7 +65,7 @@ The data model depends on the event type, see below.
 | `length`            | decimal | **Optional** | millimeters					| thglength 						|
 | `maxStackingWeight` | decimal | **Optional** | Only "T-PAK"					| thgmaxstackingweight 					|
 | `minOrderQuantity`  | integer | **Optional** | Only "F-PAK"					| thgminorderquantity 					|
-| `packageNumber`     | integer | **Required** |						| __thgpackageid__ ?					|
+| `packageNumber`     | integer | **Required** |						| **TBD**						|
 | `stocked`           | boolean | **Required** |						| thgstocked 						|
 | `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| Set by Middleware based on RS entity type.		|
 | `unit`              | string  | **Required** | From reference data, eg. "STK"			| thgpackageunit (rdunit) 				|
@@ -149,7 +149,7 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `length`            | decimal | **Optional** | millimeters					| thglength 						|
 | `maxStackingWeight` | decimal | **Optional** | Only "T-PAK"					| thgmaxstackingweight 					|
 | `minOrderQuantity`  | integer | **Optional** | Only "F-PAK"					| thgminorderquantity 					|	
-| `packageNumber`     | integer | **Optional** |						| __thgpackageid__ ?					|
+| `packageNumber`     | integer | **Optional** |						| **TBD**						|
 | `stocked`           | boolean | **Optional** |						| thgstocked 						|
 | `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"	| Set by Middleware based on RS entity type. 		|
 | `unit`              | string  | **Optional** | From reference data, eg. "STK"			| thgpackageunit (rdunit)				|

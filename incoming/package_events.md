@@ -53,11 +53,11 @@ The data model depends on the event type, see below.
 | ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
 | `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
 | `nobbNumber`        | integer | **Required** |						| thgnobbno 						|
-| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| **TBD**
-| `availableTo`       | string  | **Optional** | yyyy-MM-dd					| **TBD**
-| `calculatedCount`   | integer | **Required** | 						| **TBD**
-| `consistsOfCount`   | integer | **Required** | 						| **TBD**
-| `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"			| **TBD**
+| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| thgpackageavailablefrom 				|
+| `availableTo`       | string  | **Optional** | yyyy-MM-dd					| thgexpiredate 					|
+| `calculatedCount`   | integer | **Required** | 						| thgcalculatedcount 					|
+| `consistsOfCount`   | integer | **Required** | 						| thgconsistsofcount 					|
+| `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"			| thgconsistsofunit (rdunit) 				|
 | `dPakLayerCount`    | integer | **Optional** | Only "T-PAK"					| thgdpaklayercount 					|	
 | `deliverable`       | boolean | **Required** |						| thgcanbeordered 					|
 | `gtin`              | string  | **Optional** |						| thggtin 						|	
@@ -137,11 +137,11 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | Property            | Type    | Required     | Description 					| Riversand Comment                                 	|
 | ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
 | `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
-| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| **TBD**
-| `availableTo`       | string  | **Optional** | yyyy-MM-dd					| **TBD**
-| `calculatedCount`   | integer | **Optional** | 						| **TBD**
-| `consistsOfCount`   | integer | **Optional** | 						| **TBD**
-| `consistsOfUnit`    | string  | **Optional** | From reference data, eg. "STK"			| **TBD**
+| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| thgpackageavailablefrom 				|
+| `availableTo`       | string  | **Optional** | yyyy-MM-dd					| thgexpiredate						|
+| `calculatedCount`   | integer | **Optional** | 						| thgcalculatedcount 					|
+| `consistsOfCount`   | integer | **Optional** | 						| thgconsistsofcount 					|
+| `consistsOfUnit`    | string  | **Optional** | From reference data, eg. "STK"			| thgconsistsofunit (rdunit) 				|
 | `dPakLayerCount`    | integer | **Optional** | Only "T-PAK"					| thgdpaklayercount 					|
 | `deliverable`       | boolean | **Optional** |						| thgcanbeordered 					|
 | `gtin`              | string  | **Optional** |						| thggtin 						|	

@@ -49,9 +49,9 @@ The data model depends on the event type, see below.
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description 					| Riversand Comment                                 |
-| ------------------- | ------- | ------------ | ---------------------------------------------- | ------------------------------------------------- |
-| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| **TBD**
+| Property            | Type    | Required     | Description 					| Riversand Comment                                 	|
+| ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
+| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
 | `nobbNumber`        | integer | **Required** |						| **TBD**
 | `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| **TBD**
 | `availableTo`       | string  | **Optional** | yyyy-MM-dd					| **TBD**
@@ -134,9 +134,9 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description 					| Riversand Comment                                 |
-| ------------------- | ------- | ------------ | ---------------------------------------------- | ------------------------------------------------- |
-| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| **TBD**
+| Property            | Type    | Required     | Description 					| Riversand Comment                                 	|
+| ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
+| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
 | `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| **TBD**
 | `availableTo`       | string  | **Optional** | yyyy-MM-dd					| **TBD**
 | `calculatedCount`   | integer | **Optional** | 						| **TBD**
@@ -202,9 +202,9 @@ The identifier must be part of the event data.
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description	| Riversand Comment                                 |
-| ------------------- | ------- | ------------ | -------------- | ------------------------------------------------- |
-| `id`                | string  | **Required** |		| **TBD**
+| Property            | Type    | Required     | Description	| Riversand Comment                                |
+| ------------------- | ------- | ------------ | -------------- | ------------------------------------------------ |
+| `id`                | string  | **Required** |		| This will be generated and stored in Middleware. |
 
 
 

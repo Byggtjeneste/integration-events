@@ -67,7 +67,7 @@ The data model depends on the event type, see below.
 | `minOrderQuantity`  | integer | **Optional** |
 | `packageNumber`     | integer | **Required** |
 | `stocked`           | boolean | **Required** |
-| `type`              | string  | **Optional** | One of "F-PAK", "D-PAK", "T-PAK", "M-PAK"
+| `type`              | string  | **Optional** | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF").
 | `unit`              | string  | **Required** | From reference data, eg. "STK"
 | `volume`            | decimal | **Optional** | dm3
 | `weight`            | decimal  | **Optional** | kg

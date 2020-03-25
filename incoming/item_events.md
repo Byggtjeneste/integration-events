@@ -80,7 +80,7 @@ The data model depends on the event type, see below.
 | `toleratesFrost`            | boolean             | **Optional** |                                                                | thgtoleratesfrost |
 | `tunNumber`                 | string              | **Optional** |                                                                | thgtunno |
 | `type`                      | string              | **Required** | Type of item. One of "Standard, Display, Composite, Service"   | Set by Middleware based on RS entity type. |
-| `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | **TBD** |
+| `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
 
 #### bundleItems Type
 
@@ -257,7 +257,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `toleratesFrost`            | boolean             | **Optional** |                                                                | thgtoleratesfrost |  
 | `tunNumber`                 | string              | **Optional** |                                                                | thgtunno |
 | `type`                      | string              | **Optional** | Type of item. One of "Standard, Display, Composite, Service"   | Set by Middleware based on RS entity type.|
-| `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | **TBD** |
+| `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
 
 #### bundleItems
 

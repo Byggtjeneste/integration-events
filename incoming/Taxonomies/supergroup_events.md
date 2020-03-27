@@ -2,6 +2,10 @@
 
 The events related to super groups will be sent from Avensia Middleware to an Azure Service Bus queue for consumption by Byggtjeneste. Super groups (a.k.a. "overgrupper") is the top level in the NOBB group hierarchy, above main groups ("hovedgrupper") and product groups ("varegrupper").
 
+## Message properties
+
+### SessionID: 	<data.id>
+
 ## Properties
 
 | Property              | Type     | Required     | Nullable |

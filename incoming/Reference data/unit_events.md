@@ -2,7 +2,7 @@
 
 ## Message properties
 
-### SessionID: "Unit_<data.code>"
+### SessionID: 	<data.id>
 
 ## Properties
 

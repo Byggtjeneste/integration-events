@@ -2,6 +2,10 @@
 
 The events related to modules will be sent from Avensia Middleware to an Azure Service Bus queue for consumption by Byggtjeneste.
 
+## Message properties
+
+### SessionID: 	<data.id>
+
 ## Properties
 
 | Property              | Type     | Required     | Nullable |

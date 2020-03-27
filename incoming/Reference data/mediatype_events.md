@@ -4,7 +4,7 @@ Media types are reference data that represents the available document and image 
 
 ## Message properties
 
-### SessionID: "MediaType_<data.code>"
+### SessionID: 	<data.id>
 
 ## Properties
 

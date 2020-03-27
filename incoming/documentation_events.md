@@ -8,6 +8,10 @@ These events relates to documentation that will be maintained in the DAM domain 
 
 [Documentation Deleted](#Documentation-Deleted)
 
+## Message properties
+
+### SessionID: 	<data.id>
+
 ## Properties
 
 | Property              | Type     | Required     | Nullable | Description                                |

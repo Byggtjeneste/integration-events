@@ -4,7 +4,7 @@ Certification types are reference data that represents the available certificati
 
 ## Message properties
 
-### SessionID: "CertificationType_<data.code>"
+### SessionID: 	<data.id>
 
 ## Properties
 

@@ -2,6 +2,10 @@
 
 The events related to main groups will be sent from Avensia Middleware to an Azure Service Bus queue for consumption by Byggtjeneste. Main groups (a.k.a. "hovedgrupper") is the second level in the NOBB group hierarchy, below super groups ("overgrupper"), and above product groups ("varegrupper").
 
+## Message properties
+
+### SessionID: 	<data.id>
+
 ## Properties
 
 | Property              | Type     | Required     | Nullable |

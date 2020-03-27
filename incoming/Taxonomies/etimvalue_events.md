@@ -6,7 +6,7 @@ The events related to ETIM Values will be sent from Avensia Middleware to an Azu
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

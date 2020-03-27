@@ -14,7 +14,7 @@ The events related to packages will be sent from Avensia Middleware to an Azure 
 
 ### SessionID: 	<data.nobbNumber>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                            	|
 | --------------------- | -------- | ------------ | -------- | ---------------------------------------- |

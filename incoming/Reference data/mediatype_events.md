@@ -6,7 +6,7 @@ Media types are reference data that represents the available document and image 
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

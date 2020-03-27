@@ -7,7 +7,7 @@ For us to be able to process messages from queues in order, and at scale, we hav
 
 When sessions is enabled for a queue all messages sent to the queue needs to have a SessionId set, unless the message will fail. The Message object from the Microsoft.Azure.ServiceBus namespace, that should be used for alle messages sent to Service Bus, has a SessionId property that needs to be set before sending the message.
 
-The value for the SessionId property will depend on the messagetype, and is specified for each message type in this repository. For eg. "Item" events the SessionId will be "Nobb number". 
+The value for the SessionId property will depend on the messagetype, and is specified for each incoming message type in the section "Message properties" in this repository. For eg. "Item" events the SessionId will be the Nobb number. 
 
 General info about sessions in Azure Service Bus can be found here: https://docs.microsoft.com/en-us/azure/service-bus-messaging/message-sessions
 

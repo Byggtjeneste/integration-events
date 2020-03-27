@@ -12,7 +12,7 @@ The events related to prices will be sent from Avensia Middleware to an Azure Se
 
 ### SessionID: 	<data.nobbNumber>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                                |
 | --------------------- | -------- | ------------ | -------- | ------------------------------------------ |

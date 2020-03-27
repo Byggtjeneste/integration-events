@@ -6,7 +6,7 @@ The events related to modules will be sent from Avensia Middleware to an Azure S
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

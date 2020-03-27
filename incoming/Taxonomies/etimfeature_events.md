@@ -6,7 +6,7 @@ The events related to ETIM Features will be sent from Avensia Middleware to an A
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

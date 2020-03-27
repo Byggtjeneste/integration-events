@@ -12,7 +12,7 @@ These events relates to supplier certificates that will be maintained in the DAM
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                                |
 | --------------------- | -------- | ------------ | -------- | ------------------------------------------ |

@@ -7,7 +7,7 @@
 
 ### SessionID: 	<data.nobbNumber>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

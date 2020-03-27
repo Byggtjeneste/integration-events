@@ -6,7 +6,7 @@ The events related to items will be sent from Avensia Middleware to an Azure Ser
 
 ### SessionID: 	<data.nobbNumber>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

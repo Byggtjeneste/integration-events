@@ -6,9 +6,8 @@ Certification types are reference data that represents the available certificati
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
-SessionID: 
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

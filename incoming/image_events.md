@@ -12,7 +12,7 @@ These events relates to images that will be maintained in the DAM domain within 
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                                |
 | --------------------- | -------- | ------------ | -------- | ------------------------------------------ |

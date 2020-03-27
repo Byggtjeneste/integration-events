@@ -12,7 +12,7 @@ These events relates to documentation that will be maintained in the DAM domain 
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                                |
 | --------------------- | -------- | ------------ | -------- | ------------------------------------------ |

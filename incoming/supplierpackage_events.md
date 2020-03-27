@@ -14,7 +14,7 @@ The events related to supplier packages will be sent from Avensia Middleware to 
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                                |
 | --------------------- | -------- | ------------ | -------- | ------------------------------------------ |

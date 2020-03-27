@@ -6,7 +6,7 @@ The events related to product groups will be sent from Avensia Middleware to an 
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

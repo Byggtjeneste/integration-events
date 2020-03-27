@@ -6,7 +6,7 @@ The events related to super groups will be sent from Avensia Middleware to an Az
 
 ### SessionID: 	<data.id>
 
-## Properties
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

@@ -2,7 +2,13 @@
 
 Certification types are reference data that represents the available certifications a supplier can assign themselves by uploading corresponding certificate. 
 
+## Message properties
+
+### SessionID: "CertificationType_<data.code>"
+
 ## Properties
+
+SessionID: 
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

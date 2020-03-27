@@ -1,5 +1,9 @@
 # Manufacturer events
 
+## Message properties
+
+### SessionID: "Manufacturer_<data.code>"
+
 ## Properties
 
 | Property              | Type     | Required     | Nullable |

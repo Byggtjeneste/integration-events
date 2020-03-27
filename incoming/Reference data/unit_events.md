@@ -1,5 +1,9 @@
 # Unit events
 
+## Message properties
+
+### SessionID: "Unit_<data.code>"
+
 ## Properties
 
 | Property              | Type     | Required     | Nullable |

@@ -8,7 +8,11 @@ The events related to prices will be sent from Avensia Middleware to an Azure Se
 
 [Price Deleted](#Price-Deleted)
 
-## Properties
+## Message properties
+
+### SessionID: 	<data.nobbNumber>
+
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                                |
 | --------------------- | -------- | ------------ | -------- | ------------------------------------------ |

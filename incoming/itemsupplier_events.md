@@ -3,7 +3,11 @@
 
  These events relates to what is known as alternative suppliers within Riversand. The events related to item suppliers will be sent from Avensia Middleware to an Azure Service Bus queue for consumption by Byggtjeneste.
 
-## Properties
+## Message properties
+
+### SessionID: 	<data.nobbNumber>
+
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

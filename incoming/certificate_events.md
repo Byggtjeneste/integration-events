@@ -8,7 +8,11 @@ These events relates to supplier certificates that will be maintained in the DAM
 
 [Certificate Deleted](#Certificate-Deleted)
 
-## Properties
+## Message properties
+
+### SessionID: 	<data.id>
+
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                                |
 | --------------------- | -------- | ------------ | -------- | ------------------------------------------ |

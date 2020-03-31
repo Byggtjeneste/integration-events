@@ -2,7 +2,11 @@
 
 Media types are reference data that represents the available document and image types a supplier can upload in DAM.
 
-## Properties
+## Message properties
+
+### SessionID: 	<data.id>
+
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

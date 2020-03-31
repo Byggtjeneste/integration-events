@@ -1,6 +1,10 @@
 # Manufacturer events
 
-## Properties
+## Message properties
+
+### SessionID: 	<data.id>
+
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

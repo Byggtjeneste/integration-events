@@ -10,7 +10,11 @@ The events related to supplier packages will be sent from Avensia Middleware to 
 
 [Supplier Package Deleted](#Supplier-Package-Deleted)
 
-## Properties
+## Message properties
+
+### SessionID: 	<data.id>
+
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                                |
 | --------------------- | -------- | ------------ | -------- | ------------------------------------------ |

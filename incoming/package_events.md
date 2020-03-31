@@ -10,8 +10,11 @@ The events related to packages will be sent from Avensia Middleware to an Azure 
 
 [Package Deleted](#Package-Deleted)
 
+## Message properties
 
-## Properties
+### SessionID: 	<data.nobbNumber>
+
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                            	|
 | --------------------- | -------- | ------------ | -------- | ---------------------------------------- |

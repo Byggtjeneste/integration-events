@@ -2,7 +2,11 @@
 
 The events related to ETIM Features will be sent from Avensia Middleware to an Azure Service Bus queue for consumption by Byggtjeneste.
 
-## Properties
+## Message properties
+
+### SessionID: 	<data.id>
+
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

@@ -2,7 +2,11 @@
 
 The events related to items will be sent from Avensia Middleware to an Azure Service Bus queue for consumption by Byggtjeneste.
 
-## Properties
+## Message properties
+
+### SessionID: 	<data.nobbNumber>
+
+## Payload properties
 
 | Property              | Type     | Required     | Nullable |
 | --------------------- | -------- | ------------ | -------- |

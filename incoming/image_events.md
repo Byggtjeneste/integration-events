@@ -8,7 +8,11 @@ These events relates to images that will be maintained in the DAM domain within 
 
 [Image Deleted](#Image-Deleted)
 
-## Properties
+## Message properties
+
+### SessionID: 	<data.id>
+
+## Payload properties
 
 | Property              | Type     | Required     | Nullable | Description                                |
 | --------------------- | -------- | ------------ | -------- | ------------------------------------------ |

@@ -41,8 +41,8 @@ The data model depends on the event type, see below.
 | `email`                 | string  | **Required** |
 | `firstName`             | string  | **Required** |
 | `surname`               | string  | **Required** |
-| `ownerships`            | array of integer | **Required** | NOBB participant numbers
-| `roles`                 | array of string | **Required** | For example "Supplier"
+| `ownerships`            | array of integer | **Optional** | NOBB participant numbers. Only required for role "supplier".
+| `roles`                 | array of string | **Required** | One or more of the available roles: "supplier", "nobbadmin", and "nobbsuperadmin".
 
 ## Sample JSON
 
@@ -61,7 +61,7 @@ The data model depends on the event type, see below.
         "firstName": "Ola",
         "surname": "Nordmann",
         "ownerships": [51128, 206198],
-        "roles": ["Supplier"]
+        "roles": ["supplier"]
     }
 }
 
@@ -104,7 +104,7 @@ Example of updating roles:
     "data": {
         "id": "auth0|103547991597142817347",
         "email": "ola@nordmann.no",
-        "roles": ["Supplier"]
+        "roles": ["supplier"]
     }
 }
 

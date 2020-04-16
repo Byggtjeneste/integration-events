@@ -53,7 +53,7 @@ The data model depends on the event type, see below.
 | `parentCompanyId`       | string  		| **Optional** | grouptocompany (Relationship)				| GUID of parent company. Default is null.												
 | `phone`                 | string  		| **Optional** | ptycustomerservicephonenumber				| 																	
 | `subscriptions`         | array of objects 	| **Required** | ptycompanycertificates (referencelist rdcertificate)	| 																	
-| `vvsCompany`            | boolean 		| **Required** | **TBD**						| Internal usage.														
+| `vvsCompany`            | boolean 		| **Required** | No mapping (Only used internal communication) 		| Internal usage.														
 | `website`               | string  		| **Optional** | ptycustomerwebadress					| External URI to company website													
 
 
@@ -171,7 +171,7 @@ The identifiers will be part of the event data. Otherwise, only changed fields w
 | `parentCompanyId`       | string  		| **Optional** | grouptocompany (Relationship)				|  
 | `phone`                 | string  		| **Optional** | ptycustomerservicephonenumber				| 
 | `subscriptions`         | array of objects 	| **Optional** | ptycompanycertificates (referencelist rdcertificate)	| Any change to this field must include the whole array
-| `vvsCompany`            | boolean 		| **Optional** | **TBD**						| 
+| `vvsCompany`            | boolean 		| **Optional** | No mapping (Only used internal communication) 		| 
 | `website`               | string  		| **Optional** | ptycustomerwebadress					| 
 
 #### subscription

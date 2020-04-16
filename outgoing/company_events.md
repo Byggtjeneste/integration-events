@@ -61,21 +61,21 @@ The data model depends on the event type, see below.
 
 `object` with the following properties:
 
-| Property     | Type   | Required     | Description |
-| ------------ | ------ | ------------ | ----------- |
-| `product`    | string | **Required** | Some irrelevant products may appear here, this is just for informational use. Middleware should filter by product: SupplierSolution. If the company doesn't have a product: SupplierSolution subscription, then they do not have an active subscription.
-| `level`    | string | **Required** | This will include the subscription type to the product, which is what level the company has on the product. Can be related to company type etc as this could hold the information like supplier or retailer.
+| Property     	| Type   | Required     | Description |
+| ------------ 	| ------ | ------------ | ----------- |
+| `product`    	| string | **Required** | Some irrelevant products may appear here, this is just for informational use. Middleware should filter by product: SupplierSolution. If the company doesn't have a product: SupplierSolution subscription, then they do not have an active subscription.
+| `level`    	| string | **Required** | This will include the subscription type to the product, which is what level the company has on the product. Can be related to company type etc as this could hold the information like supplier or retailer.
 
 #### address
 
 `object` with the following properties:
 
-| Property     | Type   | Required     | Description |
-| ------------ | ------ | ------------ | ----------- |
-| `address`    | string | **Required** |
-| `country`    | string | **Required** | 2 character ISO code
-| `postalArea` | string | **Required** |
-| `postalCode` | string | **Required** |
+| Property     | Type   | Required     | Description 		| Riversand Comment
+| ------------ | ------ | ------------ | ---------------------- | --------------------
+| `address`    | string | **Required** |			| TBD	
+| `country`    | string | **Required** | 2 character ISO code	| TBD
+| `postalArea` | string | **Required** |			| TBD
+| `postalCode` | string | **Required** |			| TBD
 
 
 
@@ -83,12 +83,12 @@ The data model depends on the event type, see below.
 
 `object` with the following properties:
 
-| Property     | Type   | Required     | Description |
-| ------------ | ------ | ------------ | ----------- |
-| `address`    | string | **Required** |
-| `country`    | string | **Required** | 2 character ISO code
-| `postalArea` | string | **Required** |
-| `postalCode` | string | **Required** |
+| Property     | Type   | Required     | Description 		| Riversand Comment
+| ------------ | ------ | ------------ | ---------------------- |
+| `address`    | string | **Required** |			| TBD	
+| `country`    | string | **Required** | 2 character ISO code	| TBD	
+| `postalArea` | string | **Required** |			| TBD	
+| `postalCode` | string | **Required** |			| TBD	
 
 
 

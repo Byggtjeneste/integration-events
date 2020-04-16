@@ -50,7 +50,7 @@ The data model depends on the event type, see below.
 | `name`                  | string  		| **Required** | ptypartyname					| 																	
 | `nrfParticipantNumbers` | array of integers 	| **Optional** | ptynrfparticipantnumber (multiselect textbox)	| Participant number(s) for company in NRF database											
 | `organizationNumber`    | string  		| **Optional** | ptyorgnumber					|  																	
-| `parentCompanyId`       | string  		| **Optional** | **TBD**					| GUID of parent company. Default is null.												
+| `parentCompanyId`       | string  		| **Optional** | grouptocompany (Relationship)			| GUID of parent company. Default is null.												
 | `phone`                 | string  		| **Optional** | ptycustomerservicephonenumber			| 																	
 | `subscriptions`         | array of objects 	| **Required** | ptycompanycertificates (referencelist **TBD**) | 																	
 | `vvsCompany`            | boolean 		| **Required** | **TBD**					| Internal usage.														
@@ -168,7 +168,7 @@ The identifiers will be part of the event data. Otherwise, only changed fields w
 | `name`                  | string  		| **Optional** | ptypartyname					|  
 | `nrfParticipantNumbers` | array of integers 	| **Optional** | ptynrfparticipantnumber (multiselect textbox)	| Any change to this field must include the whole array
 | `organizationNumber`    | string 		| **Optional** | ptyorgnumber					|  
-| `parentCompanyId`       | string  		| **Optional** | **TBD**					|  
+| `parentCompanyId`       | string  		| **Optional** | grouptocompany (Relationship)			|  
 | `phone`                 | string  		| **Optional** | ptycustomerservicephonenumber			| 
 | `subscriptions`         | array of objects 	| **Optional** | ptycompanycertificates (referencelist **TBD**)	| Any change to this field must include the whole array
 | `vvsCompany`            | boolean 		| **Optional** | **TBD**					| 

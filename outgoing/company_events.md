@@ -49,9 +49,9 @@ The data model depends on the event type, see below.
 | `marketingName`         | string  		| **Required** | ptymarketingname		|  																	
 | `name`                  | string  		| **Required** | ptypartyname			| 																	
 | `nrfParticipantNumbers` | array of integers 	| **Optional** | **TBD**			| Participant number(s) for company in NRF database											
-| `organizationNumber`    | string  		| **Optional** | **TBD**			|  																	
+| `organizationNumber`    | string  		| **Optional** | ptyorgnumber			|  																	
 | `parentCompanyId`       | string  		| **Optional** | **TBD**			| GUID of parent company. Default is null.												
-| `phone`                 | string  		| **Optional** | "ptycustomerservicephonenumber	| 																	
+| `phone`                 | string  		| **Optional** | ptycustomerservicephonenumber	| 																	
 | `subscriptions`         | array of objects 	| **Required** | **TBD**			| 																	
 | `vvsCompany`            | boolean 		| **Required** | **TBD**			| Internal usage.														
 | `website`               | string  		| **Optional** | ptycustomerwebadress		| External URI to company website													
@@ -152,27 +152,27 @@ The identifiers will be part of the event data. Otherwise, only changed fields w
 
 `object` with following properties:
 
-| Property                | Type    		| Required     | Riversand Comment	| Description 
-| ----------------------- | ------------------- | ------------ | ---------------------- | ------------------------------------------------------------
-| `id`                    | string  		| **Required** | **TBD**		| The identifier to the company that should be updated
-| `nobbParticipantNumber` | integer 		| **Required** | **TBD**		| The participant number of the company that should be updated
-| `active`                | boolean 		| **Optional** | **TBD**		|  
-| `address`               | object  		| **Optional** | **TBD**		|  
-| `billingAddress`        | object  		| **Optional** | **TBD**		|  
-| `description`           | string  		| **Optional** | **TBD**		|  
-| `efoParticipantNumber`  | array of integers 	| **Optional** | **TBD**		| Any change to this field must include the whole array
-| `email`                 | string  		| **Optional** | **TBD**		| 
-| `glnNumbers`            | array of strings 	| **Optional** | **TBD**		| Any change to this field must include the whole array
-| `logoUrl`               | string  		| **Optional** | **TBD**		|  
-| `marketingName`         | string  		| **Optional** | **TBD**		|  
-| `name`                  | string  		| **Optional** | **TBD**		|  
-| `nrfParticipantNumbers` | array of integers 	| **Optional** | **TBD**		| Any change to this field must include the whole array
-| `organizationNumber`    | string 		| **Optional** | **TBD**		|  
-| `parentCompanyId`       | string  		| **Optional** | **TBD**		|  
-| `phone`                 | string  		| **Optional** | **TBD**		| 
-| `subscriptions`         | array of objects 	| **Optional** | **TBD**		| Any change to this field must include the whole array
-| `vvsCompany`            | boolean 		| **Optional** | **TBD**		| 
-| `website`               | string  		| **Optional** | **TBD**		| 
+| Property                | Type    		| Required     | Riversand Comment		| Description 
+| ----------------------- | ------------------- | ------------ | ------------------------------ | ------------------------------------------------------------
+| `id`                    | string  		| **Required** | ptypartyid			| The identifier to the company that should be updated
+| `nobbParticipantNumber` | integer 		| **Required** | ptynobbparticipantnumber	| The participant number of the company that should be updated
+| `active`                | boolean 		| **Optional** | ptyactive			|  
+| `address`               | object  		| **Optional** | **TBD**			|  
+| `billingAddress`        | object  		| **Optional** | **TBD**			|  
+| `description`           | string  		| **Optional** | **TBD**			|  
+| `efoParticipantNumber`  | array of integers 	| **Optional** | **TBD**			| Any change to this field must include the whole array
+| `email`                 | string  		| **Optional** | ptycustomerserviceemail	| 
+| `glnNumbers`            | array of strings 	| **Optional** | **TBD**			| Any change to this field must include the whole array
+| `logoUrl`               | string  		| **Optional** | **TBD**			|  
+| `marketingName`         | string  		| **Optional** | ptymarketingname		|  
+| `name`                  | string  		| **Optional** | ptypartyname			|  
+| `nrfParticipantNumbers` | array of integers 	| **Optional** | **TBD**			| Any change to this field must include the whole array
+| `organizationNumber`    | string 		| **Optional** | ptyorgnumber			|  
+| `parentCompanyId`       | string  		| **Optional** | **TBD**			|  
+| `phone`                 | string  		| **Optional** | ptycustomerservicephonenumber	| 
+| `subscriptions`         | array of objects 	| **Optional** | **TBD**			| Any change to this field must include the whole array
+| `vvsCompany`            | boolean 		| **Optional** | **TBD**			| 
+| `website`               | string  		| **Optional** | ptycustomerwebadress		| 
 
 #### subscription
 

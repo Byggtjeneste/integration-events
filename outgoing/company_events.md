@@ -73,9 +73,9 @@ The data model depends on the event type, see below.
 | Property     | Type   | Required     | Description 		| Riversand Comment
 | ------------ | ------ | ------------ | ---------------------- | --------------------
 | `address`    | string | **Required** |			| **TBD**	
-| `country`    | string | **Required** | 2 character ISO code	| TBD
-| `postalArea` | string | **Required** |			| TBD
-| `postalCode` | string | **Required** |			| TBD
+| `country`    | string | **Required** | 2 character ISO code	| **TBD**
+| `postalArea` | string | **Required** |			| **TBD**
+| `postalCode` | string | **Required** |			| **TBD**
 
 
 
@@ -84,11 +84,11 @@ The data model depends on the event type, see below.
 `object` with the following properties:
 
 | Property     | Type   | Required     | Description 		| Riversand Comment
-| ------------ | ------ | ------------ | ---------------------- |
-| `address`    | string | **Required** |			| TBD	
-| `country`    | string | **Required** | 2 character ISO code	| TBD	
-| `postalArea` | string | **Required** |			| TBD	
-| `postalCode` | string | **Required** |			| TBD	
+| ------------ | ------ | ------------ | ---------------------- | --------------------
+| `address`    | string | **Required** |			| **TBD**	
+| `country`    | string | **Required** | 2 character ISO code	| **TBD**	
+| `postalArea` | string | **Required** |			| **TBD**	
+| `postalCode` | string | **Required** |			| **TBD**	
 
 
 

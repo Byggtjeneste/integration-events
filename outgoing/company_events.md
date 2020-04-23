@@ -41,7 +41,7 @@ The data model depends on the event type, see below.
 | `active`                | boolean 		| **Required** | `ptyactive`							|  																
 | `address`               | object  		| **Optional** | **TBD**							| Optional but most likely populated as it comes from a registrar.								
 | `billingAddress`        | object  		| **Required** | **TBD**							| Required to add a subscription to the company. If this is not populated, then the company won't have an active subscription.	
-| `description`           | string  		| **Optional** | **TBD**							|  																	
+| `description`           | string  		| **Optional** | **No mapping**							|  																	
 | `efoParticipantNumber`  | array of integers 	| **Optional** | `ptyefoparticipantnumber` (multiselect textbox)		| Participant number(s) for company in EFO database											
 | `email`                 | string  		| **Optional** | `ptycustomerserviceemail`					| 																
 | `glnNumbers`            | array of strings 	| **Optional** | **TBD** (only single select in party?)				| Global Location Numbers													
@@ -52,7 +52,7 @@ The data model depends on the event type, see below.
 | `organizationNumber`    | string  		| **Optional** | `ptyorgnumber`							|  																	
 | `parentCompanyId`       | string  		| **Optional** | `grouptocompany` (Relationship)				| GUID of parent company. Default is null.												
 | `phone`                 | string  		| **Optional** | `ptycustomerservicephonenumber`				| 																	
-| `subscriptions`         | array of objects 	| **Required** | `ptycompanycertificates` (referencelist `rdcertificate`)	| 																	
+| `subscriptions`         | array of objects 	| **Required** | **TBD**							| This vs `Active`?																	
 | `vvsCompany`            | boolean 		| **Required** | No mapping (Only used internal communication) 			| Internal usage.														
 | `website`               | string  		| **Optional** | `ptycustomerwebadress`						| External URI to company website													
 
@@ -159,7 +159,7 @@ The identifiers will be part of the event data. Otherwise, only changed fields w
 | `active`                | boolean 		| **Optional** | `ptyactive`							|  
 | `address`               | object  		| **Optional** | **TBD**							|  
 | `billingAddress`        | object  		| **Optional** | **TBD**							|  
-| `description`           | string  		| **Optional** | **TBD**							|  
+| `description`           | string  		| **Optional** | **No mapping**							|  
 | `efoParticipantNumber`  | array of integers 	| **Optional** | `ptyefoparticipantnumber` (multiselect textbox)		| Any change to this field must include the whole array
 | `email`                 | string  		| **Optional** | `ptycustomerserviceemail`					| 
 | `glnNumbers`            | array of strings 	| **Optional** | **TBD** (only single select in party?)				| Any change to this field must include the whole array
@@ -170,7 +170,7 @@ The identifiers will be part of the event data. Otherwise, only changed fields w
 | `organizationNumber`    | string 		| **Optional** | `ptyorgnumber`							|  
 | `parentCompanyId`       | string  		| **Optional** | `grouptocompany` (Relationship)				|  
 | `phone`                 | string  		| **Optional** | `ptycustomerservicephonenumber`				| 
-| `subscriptions`         | array of objects 	| **Optional** | `ptycompanycertificates` (referencelist `rdcertificate`)	| Any change to this field must include the whole array
+| `subscriptions`         | array of objects 	| **Optional** | **TBD**							| This vs `Active`? Any change to this field must include the whole array
 | `vvsCompany`            | boolean 		| **Optional** | No mapping (Only used internal communication) 			| 
 | `website`               | string  		| **Optional** | `ptycustomerwebadress`						| 
 

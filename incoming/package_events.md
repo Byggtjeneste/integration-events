@@ -41,10 +41,12 @@ The data model depends on the event type, see below.
 ## Preconditions
 - the item the package belongs to must have been published/approved
 - only sent once (any later update to a package triggers a "Package updated" event)
+- for packages that belongs to an item of type Display or Composite, the PackageCreated event must have been sent for packages referred within the "bundleItems" object.
 
 ## Dependencies
 - ItemCreated
 - UnitCreated (unit, consistsOfUnit)
+- PackageCreated (bundleItems)
 
 ## Properties
 
@@ -75,6 +77,19 @@ The data model depends on the event type, see below.
 | `volume`            | decimal | **Optional** | dm3						| thgvolume 						|
 | `weight`            | decimal	| **Optional** | kg						| thgweight 						|
 | `width`             | decimal | **Optional** | millimeters					| thgwidth 						|
+| `bundleItems`       | array of objects    | **Optional** | Only used for Display and Composite items                      | __relationship__ see `bundleItems Type` |
+
+#### bundleItems Type
+
+Array type: `object[]`
+
+All items must be of the type: `object` with following properties:
+
+| Property    | Type    | Required     |	Description         | Riversand Comment                                 |
+| ----------- | ------- | ------------ | ---------------------- | ------------------------------------------------- |
+| `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware.  |
+| `quantity`  | integer | **Required** |                        | **TBD**    
+
 
 
 ## Sample json
@@ -82,37 +97,40 @@ The data model depends on the event type, see below.
 ```json
 {
 	"metadata": {
-		"eventType": "Create", // string
-		"event": "Package", // string
+		"eventType": "Create",
+		"event": "Package",
 		"date": "2019-09-30T12:34:56",
-		"author": "Glava AS" // string
+		"author": "Glava AS"
 	},
 	
 	"data": {
-		// identifier
-		"id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63", // GUID
-
-		// other data fields
-		"nobbNumber": 44445555, // integer
-		"type": "F-PAK", // string
-		"packageNumber": 1, // integer
-		"gtin": "022266667777", // string, optional
-		"stocked": true, // boolean
-		"deliverable": false, // boolean
-		"unit": "PAK", // string
-		"consistsOfUnit": "STK", // string
-		"consistsOfCount": 5.0, // decimal
-		"calculatedCount": 10.0, // decimal
-		"weight": 2.2, // decimal (kg), optional
-		"height": 100.0, // decimal (millimeters), optional
-		"length": 200.0, // decimal (millimeters), optional
-		"width": 300.0, // decimal (millimeters), optional
-		"volume": 60.0, // decimal (dm^3), optional
-		"dPakLayerCount": 4, // integer, optional
-		"maxStackingWeight": 100.0, // decimal (kg), optional
-		"minOrderQuantity": 6, // integer, optional
-		"availableFrom": "2019-05-01", // date in yyyy-MM-dd, optional
-		"availableTo": "2020-05-01", // date in yyyy-MM-dd, optional
+		"id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
+		"nobbNumber": 44445555,
+		"type": "F-PAK",
+		"packageNumber": 1,
+		"gtin": "022266667777",
+		"stocked": true,
+		"deliverable": false,
+		"unit": "PAK",
+		"consistsOfUnit": "STK",
+		"consistsOfCount": 5.0,
+		"calculatedCount": 10.0,
+		"weight": 2.2,
+		"height": 100.0,
+		"length": 200.0,
+		"width": 300.0,
+		"volume": 60.0,
+		"dPakLayerCount": 4,
+		"maxStackingWeight": 100.0,
+		"minOrderQuantity": 6,
+		"availableFrom": "2019-05-01",
+		"availableTo": "2020-05-01",
+		"bundleItems": [
+            {
+                "packageId": "a279846f-6654-4394-84f8-4f99b170fad9",
+                "quantity": 2,
+            }
+        ]
 	}
 }
 ```
@@ -159,9 +177,18 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `volume`            | decimal | **Optional** | dm3						| thgvolume						|
 | `weight`            | decimal | **Optional** | kg						| thgweight 						|
 | `width`             | decimal | **Optional** | millimeters					| thgwidth 						|
+| `bundleItems`       | array of objects    | **Optional** | Only used for Display and Composite items                      | __relationship__ see `bundleItems Type` |
 
+#### bundleItems Type
 
+Array type: `object[]`
 
+All items must be of the type: `object` with following properties:
+
+| Property    | Type    | Required     |	Description         | Riversand Comment                                 |
+| ----------- | ------- | ------------ | ---------------------- | ------------------------------------------------- |
+| `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware.  |
+| `quantity`  | integer | **Required** |                        | **TBD**    
 
 ## Sample json
 

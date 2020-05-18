@@ -38,7 +38,6 @@ The data model depends on the event type, see below.
 - ModuleCreated
 - ManufacturerCreated
 - UnitCreated (for priceunit)
-- PackageCreated (for bundle items)
 
 ## Properties
 
@@ -55,7 +54,6 @@ The data model depends on the event type, see below.
 | `id`                        | string              | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware.  |
 | `nobbNumber`                | integer             | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
 | `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | __relationships__ [ serviceaccessories, standardaccessories ]  |
-| `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | __relationship__ see `bundleItems Type` |
 | `customsEuCode`             | string              | **Optional** |                                                                | thgeucustomcode |
 | `customsNoCode`             | string              | **Optional** |                                                                | thgnocustomcode |
 | `dangerousGoods`            | object              | **Optional** |                                                                | see `dangerousGoods Type` |
@@ -85,18 +83,6 @@ The data model depends on the event type, see below.
 | `tunNumber`                 | string              | **Optional** |                                                                | thgtunno |
 | `type`                      | string              | **Required** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type. |
 | `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
-
-#### bundleItems Type
-
-Array type: `object[]`
-
-All items must be of the type: `object` with following properties:
-
-| Property    | Type    | Required     |	Description         | Riversand Comment                                 |
-| ----------- | ------- | ------------ | ---------------------- | ------------------------------------------------- |
-| `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware.  |
-| `quantity`  | integer | **Required** |                        | **TBD**                                           |
-
 
 
 ##### dangerousGoods Type
@@ -188,12 +174,6 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
         },
         "tunNumber": "00001748433",
         "finfoNumber": "004101343",
-        "bundleItems": [
-            {
-                "packageId": "a279846f-6654-4394-84f8-4f99b170fad9",
-                "quantity": 2,
-            }
-        ],
         "uniqueSellingPoints": [
             "Kan leveres med funksjonsglass",
             "Samme profil som øvrige produkter"
@@ -215,7 +195,7 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 - Other dependencies depends on the data being updated (see dependencies for ItemCreated event)
 
 ## Note
-The identifiers must be part of the event data. Otherwise, only changed fields can be part of the event data. If there is a change inside a list field (like "bundleItems"), the whole list must be part of the event data.
+The identifiers must be part of the event data. Otherwise, only changed fields can be part of the event data. If there is a change inside a list field (like "hazardLabels"), the whole list must be part of the event data.
 
 
 ## Properties
@@ -232,7 +212,6 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `id`                        | string              | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware. | 
 | `nobbNumber`                | integer             | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
 | `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | __relationships__  [ serviceaccessories, standardaccessories ] |
-| `bundleItems`               | array of objects    | **Optional** | Only used for Display and Composite items                      | __relationship__ see `bundleItems Type`|
 | `customsEuCode`             | string              | **Optional** |                                                                | thgeucustomcode      |
 | `customsNoCode`             | string              | **Optional** |                                                                | thgnocustomcode      |]
 | `dangerousGoods`            | object              | **Optional** |                                                                | see `dangerousGoods Type` |
@@ -262,18 +241,6 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `tunNumber`                 | string              | **Optional** |                                                                | thgtunno |
 | `type`                      | string              | **Optional** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type.|
 | `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
-
-#### bundleItems
-
-Array type: `object[]`
-
-All items must be of the type: `object` with following properties:
-
-| Property    | Type    | Required     | Description            | Riversand Comment                                 |
-| ----------- | ------- | ------------ | ---------------------- | ------------------------------------------------- |
-| `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware.  |
-| `quantity`  | integer | **Required** |                        | **TBD**                                           |
-
 
 
 ##### dangerousGoods Type
@@ -312,7 +279,6 @@ Example which does the following:
 - Removes expiry date
 - Updates description
 - Updates dangerous goods class
-- Updates quantity for a bundled item
 
 ```json
 {
@@ -331,13 +297,7 @@ Example which does the following:
         "description": "Natre Fastkarm - isolerer best...",
         "dangerousGoods": {
             "class": "5.2"
-        },
-        "bundleItems": [
-            {
-                "packageId": "a279846f-6654-4394-84f8-4f99b170fad9",
-                "quantity": 3
-            }
-        ]
+        }
     }
 }
 ```

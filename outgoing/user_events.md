@@ -1,4 +1,4 @@
-# User events
+# NobbSupplierUser events
 
 The events related to users will be sent from Byggtjeneste's Subscription System to an Azure Service Bus queue for consumption by the Avensia middleware.
 
@@ -16,14 +16,14 @@ The events related to users will be sent from Byggtjeneste's Subscription System
 | Property          | Type    | Required     | Description |
 | ------------------| ------- | ------------ | ------- |
 | `eventType`       | string  | **Required** | Either "Create", "Update", or "Delete".
-| `event`           | string  | **Required** | Always "User" for user events.
+| `event`           | string  | **Required** | Always "NobbSupplierUser" for user events.
 | `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
 
 ### data
 The data model depends on the event type, see below.
 
-# User created
+# NobbSupplierUser created
 
 ## Preconditions
 - The user must exist in Auth0 and be assigned to a company.
@@ -50,7 +50,7 @@ The data model depends on the event type, see below.
 {
     "metadata": {
         "eventType": "Create",
-        "event": "User",
+        "event": "NobbSupplierUser",
         "date": "2019-09-30T12:34:56",
         "author": "Glava AS"
     },
@@ -96,7 +96,7 @@ Example of updating roles:
 {
     "metadata": {
         "eventType": "Update",
-        "event": "User",
+        "event": "NobbSupplierUser",
         "date": "2019-09-30T12:34:56",
         "author": "Glava AS"
     },
@@ -135,7 +135,7 @@ Example of updating roles:
 {
     "metadata": {
         "eventType": "Delete",
-        "event": "User",
+        "event": "NobbSupplierUser",
         "date": "2019-09-30T12:34:56",
         "author": "Glava AS"
     },

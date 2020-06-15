@@ -65,7 +65,6 @@ The data model depends on the event type, see below.
 | `participantNumber` | integer | **Required** | Participant number of documentation owner.
 | `referencedByItems` | array of integers | **Optional** | NOBB numbers of items that references this documentation.
 | `referencedByModules` | array of integers | **Optional** | Module numbers of modules that references this documentation.
-| `referencedByProductGroups` | array of strings | **Optional** | Product group numbers of product groups that references this documentation.
 | `size`              | string  | **Optional** |
 | `title`             | string  | **Optional** |
 | `type`              | string  | **Required** | Type of documentation, from reference data. E.g. "FDV".
@@ -89,7 +88,6 @@ The data model depends on the event type, see below.
 		"fileName": "rormansjett.pdf",
 		"participantNumber": 51128,
 		"referencedByItems": [ 49831963, 49831952 ],
-		"referencedByProductGroups": [ "0930400" ],
 		"type": "FDV",
 		"url": "https://blobs.riversand.com/docs/e7befba3-0f92-44c6-9b5a-1e88b33b83f3"
 	}
@@ -127,7 +125,6 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `participantNumber` | integer | **Optional** | Participant number of documentation owner.
 | `referencedByItems` | array of integers | **Optional** | NOBB numbers of items that references this documentation.
 | `referencedByModules` | array of integers | **Optional** | Module numbers of modules that references this documentation.
-| `referencedByProductGroups` | array of strings | **Optional** | Product group numbers of product groups that references this documentation.
 | `size`              | string  | **Optional** |
 | `title`             | string  | **Optional** |
 | `type`              | string  | **Optional** | Type of documentation, from reference data. E.g. "FDV".
@@ -138,7 +135,7 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 
 ## Sample JSON
 
-Example of when the image has been referenced from one more product group:
+Example of when the document has been referenced from one more modules:
 
 ```json
 {
@@ -150,7 +147,7 @@ Example of when the image has been referenced from one more product group:
 	},	
 	"data": {
 		"id": "4f214662-ba42-491c-b230-37b1420a4db9",
-		"referencedByProductGroups": [ "0930400", "0930500" ]
+		"referencedByModules": [ "45236587", "32562517" ]
 	}
 }
 ```

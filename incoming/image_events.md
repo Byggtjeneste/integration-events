@@ -69,7 +69,6 @@ The data model depends on the event type, see below.
 | `participantNumber` | integer | **Required** | Participant number of image owner.
 | `referencedByItems` | array of integers | **Optional** | NOBB numbers of items that references this image.
 | `referencedByModules` | array of integers | **Optional** | Module numbers of modules that references this image.
-| `referencedByProductGroups` | array of strings | **Optional** | Product group numbers of product groups that references this image.
 | `resolutionX`       | decimal | **Optional** | From EXIF data.
 | `resolutionY`       | decimal | **Optional** | From EXIF data.
 | `side`              | string  | **Optional** |
@@ -112,7 +111,6 @@ All items must be of the type: `object` with following properties:
 		"fileName": "rormansjett.jpg",
 		"participantNumber": 51128,
 		"referencedByItems": [ 49831963, 49831952 ],
-		"referencedByProductGroups": [ "0930400" ],
 		"type": "PB",
 		"urls": [
 			{
@@ -161,7 +159,6 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `participantNumber` | integer | **Optional** | Participant number of image owner.
 | `referencedByItems` | array of integers | **Optional** | NOBB numbers of items that references this image.
 | `referencedByModules` | array of integers | **Optional** | Module numbers of modules that references this image.
-| `referencedByProductGroups` | array of strings | **Optional** | Product group numbers of product groups that references this image.
 | `resolutionX`       | decimal | **Optional** | From EXIF data.
 | `resolutionY`       | decimal | **Optional** | From EXIF data.
 | `side`              | string  | **Optional** |

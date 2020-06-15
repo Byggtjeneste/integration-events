@@ -43,7 +43,6 @@ The data model depends on the event type, see below.
 ## Dependencies
 - Item Created (for `referencedByItems`)
 - Module Created (for `referencedByModules`)
-- Product Group Created (for `referencedByProductGroups`)
 - MediaType Created (for `type`)
 - Supplier Created (for `participantNumber`)
 

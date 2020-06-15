@@ -51,7 +51,7 @@ The data model depends on the event type, see below.
 | `organizationNumber`    | string  		| **Optional** | `ptyorgnumber`							|  																	
 | `parentCompanyId`       | string  		| **Optional** | `grouptocompany` (Relationship)				| ID of parent company. Default is null.												
 | `phone`                 | string  		| **Optional** | `ptycustomerservicephonenumber`				| 																	
-| `subscriptions`         | array of objects 	| **Required** | **TBD**							| This vs `Active`?																	
+| `subscriptions`         | array of objects 	| **Required** | **TBD**							| 			
 | `vvsCompany`            | boolean 		| **Required** | No mapping (Only used internal communication) 			| Internal usage.														
 | `website`               | string  		| **Optional** | `ptycustomerwebadress`						| External URI to company website													
 

@@ -42,7 +42,7 @@ The data model depends on the event type, see below.
 | `logoUrl`               | string  		| **Optional** | 																			
 | `isVvsCompany`          | boolean 		| **Required** | Internal usage for Nobb.no						
 | `efoParticipantNumbers`  | string 	| **Optional** | Comma separated list of Participant number(s) for company in EFO database											
-| `nrfParticipantNumbers`  | string 	| **Optional** | Comma separated list of Participant number(s) for company in EFO database											
+| `nrfParticipantNumbers`  | string 	| **Optional** | Comma separated list of Participant number(s) for company in NRF database											
 | `glnNumber`            | string 	| **Optional** | Global Location Number						
 | `organizationNumber`               | object  		| **Required** | 
 | `address`               | object  		| **Optional** | 							
@@ -57,7 +57,7 @@ The data model depends on the event type, see below.
 `object` with the following properties:
 
 | Property     	| Type   | Required     |  Description 
-| ------------ 	| ------ | ------------ | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| ------------ 	| ------ | ------------ | ----------------------------- 
 | `product`    	| string | **Required** |
 | `level`    	| string | **Required** | 
 | `active`    	| boolean | **Required** | Indicates whether the subscription is active or not. 
@@ -170,7 +170,7 @@ The data model depends on the event type, see below.
 # Company updated
 
 ## Note
-The identifiers will be part of the event data.
+Any update an a company will publish this event, with all data and not only changed fields.
 
 ## Properties
 
@@ -186,7 +186,7 @@ The identifiers will be part of the event data.
 | `logoUrl`               | string  		| **Optional** | 																			
 | `isVvsCompany`          | boolean 		| **Required** | Internal usage for Nobb.no						
 | `efoParticipantNumbers`  | string 	| **Optional** | Comma separated list of Participant number(s) for company in EFO database											
-| `nrfParticipantNumbers`  | string 	| **Optional** | Comma separated list of Participant number(s) for company in EFO database											
+| `nrfParticipantNumbers`  | string 	| **Optional** | Comma separated list of Participant number(s) for company in NRF database											
 | `glnNumber`            | string 	| **Optional** | Global Location Number						
 | `organizationNumber`               | object  		| **Required** | 
 | `address`               | object  		| **Optional** | 							
@@ -201,7 +201,7 @@ The identifiers will be part of the event data.
 `object` with the following properties:
 
 | Property     	| Type   | Required     |  Description 
-| ------------ 	| ------ | ------------ | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| ------------ 	| ------ | ------------ | ----------------------------- 
 | `product`    	| string | **Required** |
 | `level`    	| string | **Required** | 
 | `active`    	| boolean | **Required** | Indicates whether the subscription is active or not. 
@@ -269,10 +269,10 @@ Example of updating marketing name and adding an NRF participant number:
     "Id": 1098,
     "LegalName": "AS Rockwool",
     "Name": "Rockwool",
-    "LogoUrl": "../assets/img/defaultCompanyLogo.svg",
+    "LogoUrl": null,
     "IsVvsCompany": false,
     "EfoParticipantNumbers": "1234",
-    "GlnNumber": "0",
+    "GlnNumber": null,
     "NrfParticipantNumbers": "4321",
     "OrganizationNumber": {
       "Number": "923828583",
@@ -297,7 +297,15 @@ Example of updating marketing name and adding an NRF participant number:
       "PostalArea": null,
       "CountryCode": "NO"
     },
-    "Participants": []
+    "Participants": [
+      {
+        "Number": 75,
+        "CompanyId": 1098,
+        "Name": "Rockwool",
+        "CustomerNumber": 123123,
+        "Subscriptions": null
+      }
+    ]
   }
 }
 

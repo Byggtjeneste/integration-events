@@ -15,7 +15,7 @@ The events related to participants will be sent from Byggtjeneste's Subscription
 
 | Property          | Type    | Required     | Description |
 | ------------------| ------- | ------------ | ------- |
-| `eventType`       | string  | **Required** | Either "Create" or "Update".
+| `eventType`       | string  | **Required** | Either "Create", "Update" or "Delete".
 | `event`           | string  | **Required** | Always "Participant" for participant events.
 | `date`            | string  | **Required** | Date and time in UTC for the action that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
@@ -99,4 +99,38 @@ Any update on a participant will publish this event, with all data and not only 
   }
 }
 
+```
+
+
+# Participant deleted
+
+## Properties
+
+### data
+
+`object` with the following properties:
+
+| Property                | Type    		| Required     | Description 															
+| ----------------------- | ------------| ------------ | -------------------------------------------------------------- 
+| `number`                    | integer  		| **Required** |  Participant number for deleted participant 											
+| `companyId`             | integer 		| **Required** | Internal ID of participants company																
+
+
+
+### Sample JSON
+
+```json
+{
+  "metadata": {
+    "eventType": "Delete",
+    "event": "Participant",
+    "origin": "SubscriptionApi",
+    "author": "Norsk Byggtjeneste AS",
+    "date": "2020-06-25T10:25:17.887Z"
+  },
+  "Data": {
+    "Number": 111,
+    "CompanyId": 1098
+  }
+}
 ```

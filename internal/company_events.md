@@ -17,7 +17,7 @@ The events related to companies will be sent from Byggtjeneste's Subscription Sy
 | ------------------| ------- | ------------ | ------- |
 | `eventType`       | string  | **Required** | Either "Create" or "Update".
 | `event`           | string  | **Required** | Always "Company" for company events.
-| `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
+| `date`            | string  | **Required** | Date and time in UTC for the action that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
 
 ### data

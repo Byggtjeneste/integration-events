@@ -25,8 +25,6 @@ The data model depends on the event type, see below.
 
 # Participant created
 
-## Preconditions
-
 ## Properties
 
 ### data
@@ -83,7 +81,6 @@ Any update on a participant will publish this event, with all data and not only 
 
 ### Sample JSON
 
-Example of updating marketing name and adding an NRF participant number:
 
 ```json
 {

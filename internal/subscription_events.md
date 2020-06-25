@@ -1,6 +1,7 @@
 # Subscription events
 
 The events related to subscriptions will be sent from Byggtjeneste's Subscription System to an Azure Service Bus queue for consumption by internal subscribers. 
+A subscription will always relate to a Participant and not directly to the Company.
 
 ## Properties
 
@@ -24,8 +25,6 @@ The events related to subscriptions will be sent from Byggtjeneste's Subscriptio
 The data model depends on the event type, see below.
 
 # Subscription created
-
-## Preconditions
 
 ## Properties
 

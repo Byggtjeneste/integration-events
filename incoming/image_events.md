@@ -66,8 +66,8 @@ The data model depends on the event type, see below.
 | `fileType`          | string  | **Optional** |
 | `imageTakenDate`    | string  | **Optional** | Date for when the image was taken in format yyyy-MM-dd.
 | `participantNumber` | integer | **Required** | Participant number of image owner.
-| `referencedByItems` | array of integers | **Optional** | NOBB numbers of items that references this image.
-| `referencedByModules` | array of integers | **Optional** | Module numbers of modules that references this image.
+| `referencedByItems` | array of objects | **Optional** | NOBB numbers of items that references this image.
+| `referencedByModules` | array of objects | **Optional** | Module numbers of modules that references this image.
 | `resolutionX`       | decimal | **Optional** | From EXIF data.
 | `resolutionY`       | decimal | **Optional** | From EXIF data.
 | `side`              | string  | **Optional** |
@@ -80,6 +80,23 @@ The data model depends on the event type, see below.
 | `validToDate`       | string  | **Optional** | Date in format yyyy-MM-dd.
 
 
+#### referencedByItems
+
+`object` with the following properties:
+
+| Property          | Type    | Required     | Description |
+| ------------------| ------- | ------------ | ------- |
+| `number`       | integer  | **Required** | NOBB number referenced by image.
+| `isPrimary`    | boolean  | **Required** | Indicates whether the image is the primary image for the NOBB number.
+
+#### referencedByModules
+
+`object` with the following properties:
+
+| Property          | Type    | Required     | Description |
+| ------------------| ------- | ------------ | ------- |
+| `number`       | integer  | **Required** | NOBB module number referenced by image.
+| `isPrimary`    | boolean  | **Required** | Indicates whether the image is the primary image for the NOBB module number.
 
 #### urls
 
@@ -109,7 +126,22 @@ All items must be of the type: `object` with following properties:
 		"id": "4f214662-ba42-491c-b230-37b1420a4db9",
 		"fileName": "rormansjett.jpg",
 		"participantNumber": 51128,
-		"referencedByItems": [ 49831963, 49831952 ],
+		"referencedByItems": [ 
+			{
+				"number":49831963,
+				"isPrimary": true
+			},
+			{
+				"number":49831952,
+				"isPrimary": true
+			}					
+		],
+		"referencedByModules": [ 
+			{
+				"number":49831970,
+				"isPrimary": false
+			}				
+		],
 		"type": "PB",
 		"urls": [
 			{
@@ -156,8 +188,8 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `fileType`          | string  | **Optional** |
 | `imageTakenDate`    | string  | **Optional** | Date for when the image was taken in format yyyy-MM-dd.
 | `participantNumber` | integer | **Optional** | Participant number of image owner.
-| `referencedByItems` | array of integers | **Optional** | NOBB numbers of items that references this image.
-| `referencedByModules` | array of integers | **Optional** | Module numbers of modules that references this image.
+| `referencedByItems` | array of objects | **Optional** | NOBB numbers of items that references this image.
+| `referencedByModules` | array of objects | **Optional** | Module numbers of modules that references this image.
 | `resolutionX`       | decimal | **Optional** | From EXIF data.
 | `resolutionY`       | decimal | **Optional** | From EXIF data.
 | `side`              | string  | **Optional** |
@@ -184,7 +216,16 @@ Example of when the image has been referenced from one more item:
 	},	
 	"data": {
 		"id": "4f214662-ba42-491c-b230-37b1420a4db9",
-		"referencedByItems": [ 49831963, 49831952, 49831944 ]
+		"referencedByItems": [ 
+			{
+				"number":49831963,
+				"primaryImage": true
+			},
+			{
+				"number":49831952,
+				"primaryImage": true
+			}					
+		]
 	}
 }
 ```

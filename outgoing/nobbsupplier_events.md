@@ -113,7 +113,6 @@ The data model depends on the event type, see below.
 		"nrfParticipantNumbers": [1060, 1061],
 		"glnNumbers": ["3250617851367"],
 		"parentCompanyId": "51130",
-		"active": true,
 		"vvsCompany": false,
 		"subscriptions": [
 			{"product": "NOBB Supplier", "level": "N/A", "active": true},

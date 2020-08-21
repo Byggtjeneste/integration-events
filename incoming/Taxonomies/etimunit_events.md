@@ -2,6 +2,8 @@
 
 The events related to ETIM Units will be sent from Avensia Middleware to an Azure Service Bus queue for consumption by Byggtjeneste.
 
+### Note: Only "Create" events will be published in the intial release
+
 ## Message properties
 
 ### SessionID: 	<data.id>
@@ -19,7 +21,7 @@ The events related to ETIM Units will be sent from Avensia Middleware to an Azur
 
 | Property          | Type    | Required     | Description |
 | ------------------| ------- | ------------ | ------- |
-| `eventType`       | string  | **Required** | Either "Create" or "Update".
+| `eventType`       | string  | **Required** | Either "Create" or "Update". Only "Create" events will be published in the intial release
 | `event`           | string  | **Required** | Always "EtimUnit" for Etim Unit events.
 | `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.

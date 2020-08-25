@@ -19,7 +19,7 @@ The events related to ETIM Feature values will be sent from Avensia Middleware t
 
 | Property          | Type    | Required     | Description |
 | ------------------| ------- | ------------ | ------- |
-| `eventType`       | string  | **Required** | Either "Create", "Update" or "Delete".
+| `eventType`       | string  | **Required** | Either "Create" or "Update".
 | `event`           | string  | **Required** | Always "EtimFeatureValue" for ETIM Feature value events.
 | `date`            | string  | **Required** | Date and time in UTC for the action in Riversand that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 | `author`          | string  | **Required** | Author of the action that triggered the event.
@@ -31,23 +31,34 @@ The data model depends on the event type, see below.
 # ETIM Feature value created
 
 ## Preconditions
-- the item the ETIM Feature value belongs to must have been published/approved
-- the referenced ETIM Feature must have been published
-- only sent once (any later update to an ETIM Feature value triggers an "ETIM Feature value updated" event)
+- the item the ETIM Feature value(s) belong to must have been published/approved
+- the referenced ETIM Feature(s) must have been published
+- only sent once (any later update to an item's ETIM Feature values triggers an "ETIM Feature value updated" event)
 
 ## Dependencies
 - Item
-- ETIM feature
+- ETIM feature(s)
 
 ## Properties
 ### data
 
 `object` with the following properties:
 
+| Property                 | Type             | Required     | Description |
+| ------------------------ | ---------------- | ------------ | ----------- |
+| `nobbNumber`             | integer          | **Required** | NOBB number of the item.
+| `etimFeatures`           | array of objects | **Required** | Array of all ETIM Feature values for the item. Note that this array can be empty, like in update events when all ETIM feature values have been removed from an item.
+
+
+#### etimFeatures Type
+
+Array type: `object[]`
+
+All items must be of the type: `object` with following properties:
+
 | Property                 | Type         | Required     | Description |
 | ------------------------ | ------------ | ------------ | ----------- |
-| `nobbNumber`             | integer      | **Required** | NOBB number of the item.
-| `etimFeatureCode`        | string       | **Required** | ETIM Feature code.
+| `code`                   | string       | **Required** | ETIM Feature code.
 | `value`                  | string       | **Required** | ETIM Feature value for the item. See below for more description.
 | `secondaryValue`         | string       | **Optional** | Secondary ETIM Feature value for the item. Only used when ETIM Feature datatype is "R" (Range). See below for more description.
 
@@ -63,6 +74,11 @@ The ETIM Feature value depends on the datatype of the ETIM Feature:
 
 
 ## Sample JSON
+In this sample:
+- ETIM Feature EF000008 is of type Logical
+- ETIM Feature EF111111 is of type Alphanumeric
+- ETIM Feature EF222222 is of type Range
+
 ```json
 {
     "metadata": {
@@ -74,8 +90,21 @@ The ETIM Feature value depends on the datatype of the ETIM Feature:
 
     "data": {
         "nobbNumber": 44445555,
-        "etimFeatureCode": "EF000008",
-        "value": "true"
+        "etimFeatures": [
+            {
+                "code": "EF000008",
+                "value": "true"
+            },
+            {
+                "code": "EF111111",
+                "value": "EV333333"
+            },
+            {
+                "code": "EF222222",
+                "value": "-10",
+                "secondaryValue": "15.2"
+            }
+        ]
     }
 }
 ```
@@ -86,72 +115,41 @@ The ETIM Feature value depends on the datatype of the ETIM Feature:
 - the "ETIM Feature value created" event has already been sent
 
 ## Note
-NOBB number and ETIM Feature code must be part of the event data. Otherwise, only changed fields can be part of the event data.
+The NOBB number and the ETIM features array must be part of the event data. The ETIM features array must include all ETIM feature values for the item, even those that didn't change since the last event was sent.
 
 ## Properties
-### data
-
-`object` with the following properties:
-
-| Property                 | Type         | Required     | Description |
-| ------------------------ | ------------ | ------------ | ----------- |
-| `nobbNumber`             | integer      | **Required** | NOBB number of the item.
-| `etimFeatureCode`        | string       | **Required** | ETIM Feature code.
-| `value`                  | string       | **Optional** | Same rules as in create events, see above for more description.
-| `secondaryValue`         | string       | **Optional** | Same rules as in create events, see above for more description.
+Identical as for create events, see above for more description.
 
 
 ## Sample JSON
-Example of changing the ETIM Feature value for an ETIM Feature of type "N" (Numeric):
+Assuming that the sample create event above was sent, then this sample will:
+- Remove the value for ETIM Feature EF111111
+- Update the values for ETIM Feature EF222222
+
+Note that existing ETIM Feature EF000008 is also part of the event even though it was not changed:
+
 ```json
 {
     "metadata": {
         "eventType": "Update",
         "event": "EtimFeatureValue",
-        "date": "2019-09-30T16:34:56",
+        "date": "2019-09-30T22:34:56",
         "author": "Glava AS"
     },
 
     "data": {
         "nobbNumber": 44445555,
-        "etimFeatureCode": "EF550005",
-        "value": "1.25"
-    }
-}
-```
-
-# ETIM Feature value deleted
-
-## Preconditions
-- the "ETIM Feature value created" event has already been sent
-
-## Note
-NOBB number and ETIM Feature code must be part of the event data.
-
-## Properties
-### data
-
-`object` with the following properties:
-
-| Property                 | Type         | Required     | Description |
-| ------------------------ | ------------ | ------------ | ----------- |
-| `nobbNumber`             | integer      | **Required** | NOBB number of the item.
-| `etimFeatureCode`        | string       | **Required** | ETIM Feature code.
-
-
-## Sample JSON
-```json
-{
-    "metadata": {
-        "eventType": "Delete",
-        "event": "EtimFeatureValue",
-        "date": "2019-09-30T16:34:56",
-        "author": "Glava AS"
-    },
-
-    "data": {
-        "nobbNumber": 44445555,
-        "etimFeatureCode": "EF550005"
+        "etimFeatures": [
+            {
+                "code": "EF000008",
+                "value": "true"
+            },
+            {
+                "code": "EF222222",
+                "value": "-12",
+                "secondaryValue": "24.8"
+            }
+        ]
     }
 }
 ```

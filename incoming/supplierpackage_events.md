@@ -12,7 +12,7 @@ The events related to supplier packages will be sent from Avensia Middleware to 
 
 ## Message properties
 
-### SessionID: 	<data.id>
+### SessionID: <data.id>
 
 ## Payload properties
 
@@ -55,12 +55,10 @@ The data model depends on the event type, see below.
 | Property                | Type    | Required     | Description |
 | ----------------------- | ------- | ------------ | ------- |
 | `id`                    | string  | **Required** | 
-| `participantNumber`	  | integer | **Required** | Alternative supplier participant number
-| `packageId`          	  | string  | **Required** | Parent package GUID
-| `stocked`          	  | boolean | **Required** | 
+| `participantNumber`     | integer | **Required** | Alternative supplier participant number
+| `packageId`             | string  | **Required** | Parent package GUID
+| `stocked`               | boolean | **Required** | 
 | `deliverable`           | boolean | **Required** | 
-| `dPakLayerCount`  	  | integer  | **Optional** | 
-| `maxStackingWeight`     | decimal  | **Optional** | 
 
 
 ## Sample json
@@ -79,7 +77,7 @@ The data model depends on the event type, see below.
         "packageId": "52b552a7-274c-4610-b3f7-3bc43663ab50",
 
         "stocked": true,
-        "deliverable": false,
+        "deliverable": false
     }
 }
 
@@ -110,8 +108,6 @@ Otherwise, only changed fields can be part of the event data.
 | `packageId`             | string  | **Required** | Parent package (item owners package) GUID
 | `stocked`               | boolean | **Optional** | 
 | `deliverable`           | boolean | **Optional** | 
-| `dPakLayerCount`        | integer  | **Optional** | 
-| `maxStackingWeight`     | decimal  | **Optional** | 
 
 ## Sample json
 Example of updating stocked:
@@ -155,8 +151,8 @@ The identifiers must be part of the event data.
 | Property                | Type    | Required     | Description |
 | ----------------------- | ------- | ------------ | ------- |
 | `id`                    | string  | **Required** | 
-| `participantNumber`	  | integer | **Required** | Alternative supplier participant number
-| `packageId`          	  | string  | **Required** | Parent package 
+| `participantNumber`     | integer | **Required** | Alternative supplier participant number
+| `packageId`             | string  | **Required** | Parent package 
 
 
 ## Sample json

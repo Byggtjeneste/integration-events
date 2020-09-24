@@ -83,6 +83,7 @@ The data model depends on the event type, see below.
 | `tunNumber`                 | string              | **Optional** |                                                                | thgtunno |
 | `type`                      | string              | **Required** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type. |
 | `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
+| `videos`       | array of objects     | **Optional** |                                                                | see `videos Type` |
 
 
 ##### dangerousGoods Type
@@ -96,6 +97,17 @@ The data model depends on the event type, see below.
 | `className`    | string  | **Optional** | Eg "Oxidizing substances"       | thgdangerclass => rddangerclass::refvalue         |
 | `number`       | integer | **Required** | 4 digit number                  | thgunno                                           |
 | `packingGroup` | integer | **Optional** | Emballasjegruppe, ex 1, 2 or 3  | thgpackaginggroup => rdpackaginggroup::refcode    |
+
+
+##### videos Type
+
+`object` with following properties:
+
+| Property       | Type    | Required     |	Description                     | Riversand Comment                                 |
+| -------------- | ------- | ------------ | ------------------------------- | ------------------------------------------------- |
+| `type`      | string  | **Required** |    "Vimeo" or "Youtube"                             |                                     |
+| `description`        | string  | **Optional** |                        | thgtyoutube=>thgyoutubedescription / thgvimeo=>thgvimedescription |
+| `code`    | string  | **Optional** |Vimeo/Youtube ID for the video      | thgtyoutube=>thgyoutubecode / thgvimeo=>thgvimecode |
 
 
 
@@ -177,6 +189,18 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
         "uniqueSellingPoints": [
             "Kan leveres med funksjonsglass",
             "Samme profil som øvrige produkter"
+        ],
+        "videos": [
+            {
+                "type":"Vimeo",
+                "description":"A Vimeo video",
+                "code": "vimeoId"
+            },
+            {
+                "type":"Youtube",
+                "description":"A Youtube video",
+                "code": "youtubeId"
+            },
         ]
     }
 }
@@ -241,6 +265,8 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `tunNumber`                 | string              | **Optional** |                                                                | thgtunno |
 | `type`                      | string              | **Optional** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type.|
 | `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
+| `videos`       | array of objects     | **Optional** |                                                                | see `videos Type` |
+
 
 
 ##### dangerousGoods Type
@@ -255,6 +281,15 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `number`       | integer | **Required** | 4 digit number                  | thgunno                                           |
 | `packingGroup` | integer | **Optional** | Emballasjegruppe, ex 1, 2 or 3  | thgpackaginggroup => rdpackaginggroup::refcode    |
 
+##### videos Type
+
+`object` with following properties:
+
+| Property       | Type    | Required     |	Description                     | Riversand Comment                                 |
+| -------------- | ------- | ------------ | ------------------------------- | ------------------------------------------------- |
+| `type`      | string  | **Required** |    "Vimeo" or "Youtube"                             |                                     |
+| `description`        | string  | **Optional** |                        | thgtyoutube=>thgyoutubedescription / thgvimeo=>thgvimedescription |
+| `code`    | string  | **Optional** |Vimeo/Youtube ID for the video      | thgtyoutube=>thgyoutubecode / thgvimeo=>thgvimecode |
 
 
 ##### nrfInfo Type

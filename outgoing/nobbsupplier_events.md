@@ -142,7 +142,7 @@ The data model depends on the event type, see below.
 # NOBB Supplier updated
 
 ## Note
-The identifiers will be part of the event data. Otherwise, only changed fields will be part of the event data. If there is a change inside a list field (like "nrfParticipantNumbers"), the whole list will be part of the event data.
+The identifiers will be part of the event data. Otherwise, all fields will be part of the message. If an optional field value is removed it will be assigned "null". If there is a change inside a list field (like "nrfParticipantNumbers"), the whole list will be part of the event data.
 
 ## Properties
 
@@ -155,20 +155,20 @@ The identifiers will be part of the event data. Otherwise, only changed fields w
 | `id`                    | string  		| **Required** | `ptypartyid`							| The identifier to the company that should be updated
 | `nobbParticipantNumber` | integer 		| **Required** | `ptynobbparticipantnumber`					| The participant number of the company that should be updated
 | `address`               | object  		| **Optional** | **TBD**							|  
-| `billingAddress`        | object  		| **Optional** | **TBD**							|  
+| `billingAddress`        | object  		| **Required** | **TBD**							|  
 | `description`           | string  		| **Optional** | **No mapping**							|  
 | `efoParticipantNumber`  | array of integers 	| **Optional** | `ptyefoparticipantnumber` (multiselect textbox)		| Any change to this field must include the whole array
 | `email`                 | string  		| **Optional** | `ptycustomerserviceemail`					| 
 | `glnNumbers`            | array of strings 	| **Optional** | **TBD** (only single select in party?)				| Any change to this field must include the whole array
 | `logoUrl`               | string  		| **Optional** | **TBD**							|  
-| `marketingName`         | string  		| **Optional** | `ptymarketingname`						|  
-| `name`                  | string  		| **Optional** | `ptypartyname`							|  
+| `marketingName`         | string  		| **Required** | `ptymarketingname`						|  
+| `name`                  | string  		| **Required** | `ptypartyname`							|  
 | `nrfParticipantNumbers` | array of integers 	| **Optional** | `ptynrfparticipantnumber` (multiselect textbox)		| Any change to this field must include the whole array
 | `organizationNumber`    | string 		| **Optional** | `ptyorgnumber`							|  
 | `parentCompanyId`       | string  		| **Optional** | `grouptocompany` (Relationship)				|  
 | `phone`                 | string  		| **Optional** | `ptycustomerservicephonenumber`				| 
-| `subscriptions`         | array of objects 	| **Optional** | **TBD**							| This vs `Active`? Any change to this field must include the whole array
-| `vvsCompany`            | boolean 		| **Optional** | No mapping (Only used internal communication) 			| 
+| `subscriptions`         | array of objects 	| **Required** | **TBD**							| This vs `Active`? Any change to this field must include the whole array
+| `vvsCompany`            | boolean 		| **Required** | No mapping (Only used internal communication) 			| 
 | `website`               | string  		| **Optional** | `ptycustomerwebadress`						| 
 
 #### subscription
@@ -208,24 +208,47 @@ The identifiers will be part of the event data. Otherwise, only changed fields w
 
 ### Sample JSON
 
-Example of updating marketing name and adding an NRF participant number:
-
 ```json
 {
 	"metadata": {
 		"eventType": "Update",
 		"event": "NobbSupplier",
 		"date": "2019-09-30T12:34:56",
-		"author": "Glava AS"
+		"author": "Norsk Byggtjeneste AS"
 	},
 	
 	"data": {
 		"id": "51128",
 		"nobbParticipantNumber": 51128,
-
-		"marketingName": "Glava", 
-		"nrfParticipantNumbers": [1060, 1061, 1062]		
+		"name": "Glava AS",
+		"marketingName": "Glava",
+		"organizationNumber": "943049467",
+		"efoParticipantNumber": [44322],
+		"nrfParticipantNumbers": [1060, 1061, 1062],
+		"glnNumbers": ["3250617851367"],
+		"parentCompanyId": "51130",
+		"vvsCompany": false,
+		"subscriptions": [
+			{"product": "NOBB Supplier", "level": "N/A", "active": true},
+			{"product": "Nobb Kontrakt", "level": "API", "active": true }
+		],
+		"address": {
+			"address": "Nybråtveien 2",
+			"postalCode": "1832",
+			"postalArea": "Askim",
+			"country": "NO"
+		},
+		"billingAddress": {
+			"address": "Postboks 2006",
+			"postalCode": "1801",
+			"postalArea": "Askim",
+			"country": "NO"
+		},
+		"email": "firmapost@glava.no",
+		"phone": null,
+		"website": "https://glava.no",
+		"description": null,
+		"logoUrl": "https://glava.no/images/somelogo.jpg"
 	}
 }
-
 ```

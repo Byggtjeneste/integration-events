@@ -69,6 +69,9 @@ The data model depends on the event type, see below.
 
 # User updated
 
+## Note
+The identifiers will be part of the event data. Otherwise, all fields will be part of the message. If an optional field value is removed it will be assigned "null". If there is a change inside a list field (like "ownerships"), the whole list will be part of the event data.
+
 ## Preconditions
 - The user must be assigned to a subscription.
 
@@ -82,31 +85,35 @@ The data model depends on the event type, see below.
 | ----------------------- | ------- | ------------ | ------- |
 | `id`                    | string  | **Required** | The identifier to the user that should be updated
 | `email`                 | string  | **Required** |
-| `firstName`             | string  | **Optional** |
-| `surname`               | string  | **Optional** |
+| `firstName`             | string  | **Required** |
+| `surname`               | string  | **Required** |
 | `ownerships`            | array of integer  | **Optional** | Any change to this field must include the whole array
-| `roles`                 | array of string  | **Optional** | Any change to this field must include the whole array
+| `roles`                 | array of string  | **Required** | Any change to this field must include the whole array
 
 
 
 
 ## Sample JSON
-Example of updating roles:
+
 ```json
+
 {
     "metadata": {
         "eventType": "Update",
         "event": "NobbSupplierUser",
         "date": "2019-09-30T12:34:56",
         "author": "Glava AS"
-    },
-    
+    },    
     "data": {
         "id": "auth0|103547991597142817347",
         "email": "ola@nordmann.no",
+        "firstName": "Ola",
+        "surname": "Nordmann",
+        "ownerships": [51128, 206198],
         "roles": ["supplier"]
     }
 }
+
 
 ```
 

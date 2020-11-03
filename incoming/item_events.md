@@ -74,7 +74,7 @@ The data model depends on the event type, see below.
 | `primaryText`               | string              | **Required** | "Varetekst 1"                                                  | thgtext1 |
 | `productNumber`             | integer             | **Optional** | Reference to Product                                           | **TBD** |
 | `itemOwnerItemNumber`       | string              | **Required** |                                                                |  thgsupplieritemno | 
-| `replacesNobbNumber`        | integer             | **Optional** |                                                                | thgreplacesnobbnumber |
+| `replacesNobbNumbers`       | array of integers   | **Optional** |                                                                | thgreplacesnobbnumber |
 | `secondaryText`             | string              | **Optional** | "Varetekst 2" in NOBB domain language.                         | thgtext2 |
 | `seriesName`                | string              | **Optional** |                                                                | thgserialname |
 | `stocked`                   | boolean             | **Required** |                                                                | thgstocked |
@@ -161,7 +161,7 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
         "expiryDate": "2020-01-01",
         "hasDurabilityDate": false,
         "toleratesFrost": true,
-        "replacesNobbNumber": 77778888,
+        "replacesNobbNumbers": [44553344, 55667123],
         "accessories": [11223344, 55667788],
         "freightGroup": "T500",
         "hazardLabels": ["Very Flammable", "Poisonous"],
@@ -256,7 +256,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `primaryText`               | string              | **Optional** |                                                                | thgtext1 |
 | `productNumber`             | integer             | **Optional** |                                                                | **TBD**           |
 | `itemOwnerItemNumber`       | string              | **Optional** |                                                                | thgsupplieritemno |
-| `replacesNobbNumber`        | integer             | **Optional** |                                                                | thgreplacesnobbnumber |
+| `replacesNobbNumbers`       | array of integers   | **Optional** |                                                                | thgreplacesnobbnumber |
 | `secondaryText`             | string              | **Optional** |                                                                | thgtext2 |
 | `seriesName`                | string              | **Optional** |                                                                | thgserialname |
 | `stocked`                   | boolean             | **Optional** |                                                                | thgstocked |

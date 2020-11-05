@@ -90,7 +90,9 @@ All items must be of the type: `object` with following properties:
 | `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware.  |
 | `quantity`  | integer | **Required** |                        | **TBD**    
 
-
+Note: 
+1. For package events for **F-Pack** that belongs to a **Composite**, if the Composite itself has any standard items and/or special items, retrieve the packageId from the matching **F-pack** of the items.
+2. For package events for **D-Pack** that belongs to a **Display**, if the Display itself has any standard items and/or special items, retrieve the packageId from the matching **F-pack** of the items.
 
 ## Sample json
 
@@ -190,6 +192,7 @@ All items must be of the type: `object` with following properties:
 | `packageId` | string  | **Required** | GUID of package entity | This will be generated and stored in Middleware.  |
 | `quantity`  | integer | **Required** |                        | **TBD**    
 
+Note: See rules for setting packageId in the create section
 ## Sample json
 
 ```json

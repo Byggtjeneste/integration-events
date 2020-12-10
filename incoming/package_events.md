@@ -60,8 +60,8 @@ The data model depends on the event type, see below.
 | `mainSupplier`      | boolean | **Required** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
 | `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| thgpackageavailablefrom 				|
 | `availableTo`       | string  | **Optional** | yyyy-MM-dd					| thgexpiredate 					|
-| `calculatedCount`   | integer | **Required** | 						| thgcalculatedcount 					|
-| `consistsOfCount`   | integer | **Required** | 						| thgconsistsofcount 					|
+| `calculatedCount`   | decimal | **Required** | 						| thgcalculatedcount 					|
+| `consistsOfCount`   | decimal | **Required** | 						| thgconsistsofcount 					|
 | `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"			| thgconsistsofunit (rdunit) 				|
 | `dPakLayerCount`    | integer | **Optional** | Only "T-PAK"					| thgdpaklayercount 					|	
 | `deliverable`       | boolean | **Required** |						| thgcanbeordered 					|
@@ -166,8 +166,8 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `mainSupplier`      | boolean | **Required** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
 | `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| thgpackageavailablefrom 				|
 | `availableTo`       | string  | **Optional** | yyyy-MM-dd					| thgexpiredate						|
-| `calculatedCount`   | integer | **Optional** | 						| thgcalculatedcount 					|
-| `consistsOfCount`   | integer | **Optional** | 						| thgconsistsofcount 					|
+| `calculatedCount`   | decimal | **Optional** | 						| thgcalculatedcount 					|
+| `consistsOfCount`   | decimal | **Optional** | 						| thgconsistsofcount 					|
 | `consistsOfUnit`    | string  | **Optional** | From reference data, eg. "STK"			| thgconsistsofunit (rdunit) 				|
 | `dPakLayerCount`    | integer | **Optional** | Only "T-PAK"					| thgdpaklayercount 					|
 | `deliverable`       | boolean | **Optional** |						| thgcanbeordered 					|

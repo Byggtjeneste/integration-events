@@ -1,7 +1,5 @@
 # Package events
 
-These events are triggered by the owner of the related item. Changes made by alternative suppliers are separate events. 
-
 The events related to packages will be sent from Avensia Middleware to an Azure Service Bus queue for consumption by Byggtjeneste.
 
 [Package Created](#Package-Created)
@@ -58,6 +56,8 @@ The data model depends on the event type, see below.
 | ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
 | `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
 | `nobbNumber`        | integer | **Required** |						| thgnobbno 						|
+| `participantNumber` | integer | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
+| `mainSupplier`      | boolean | **Required** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
 | `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| thgpackageavailablefrom 				|
 | `availableTo`       | string  | **Optional** | yyyy-MM-dd					| thgexpiredate 					|
 | `calculatedCount`   | integer | **Required** | 						| thgcalculatedcount 					|
@@ -98,42 +98,44 @@ Note:
 
 ```json
 {
-	"metadata": {
-		"eventType": "Create",
-		"event": "Package",
-		"date": "2019-09-30T12:34:56",
-		"author": "Glava AS"
-	},
-	
-	"data": {
-		"id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
-		"nobbNumber": 44445555,
-		"type": "F-PAK",
-		"packageNumber": 1,
-		"gtin": "022266667777",
-		"stocked": true,
-		"deliverable": false,
-		"unit": "PAK",
-		"consistsOfUnit": "STK",
-		"consistsOfCount": 5.0,
-		"calculatedCount": 10.0,
-		"weight": 2.2,
-		"height": 100.0,
-		"length": 200.0,
-		"width": 300.0,
-		"volume": 60.0,
-		"dPakLayerCount": 4,
-		"maxStackingWeight": 100.0,
-		"minOrderQuantity": 6,
-		"availableFrom": "2019-05-01",
-		"availableTo": "2020-05-01",
-		"bundleItems": [
+    "metadata": {
+        "eventType": "Create",
+        "event": "Package",
+        "date": "2019-09-30T12:34:56",
+        "author": "Glava AS"
+    },
+    
+    "data": {
+        "id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
+        "nobbNumber": 44445555,
+        "participantNumber": 51128,
+        "mainSupplier": true,
+        "type": "F-PAK",
+        "packageNumber": 1,
+        "gtin": "022266667777",
+        "stocked": true,
+        "deliverable": false,
+        "unit": "PAK",
+        "consistsOfUnit": "STK",
+        "consistsOfCount": 5.0,
+        "calculatedCount": 10.0,
+        "weight": 2.2,
+        "height": 100.0,
+        "length": 200.0,
+        "width": 300.0,
+        "volume": 60.0,
+        "dPakLayerCount": 4,
+        "maxStackingWeight": 100.0,
+        "minOrderQuantity": 6,
+        "availableFrom": "2019-05-01",
+        "availableTo": "2020-05-01",
+        "bundleItems": [
             {
                 "packageId": "a279846f-6654-4394-84f8-4f99b170fad9",
                 "quantity": 2,
             }
         ]
-	}
+    }
 }
 ```
 
@@ -160,6 +162,8 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | Property            | Type    | Required     | Description 					| Riversand Comment                                 	|
 | ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
 | `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
+| `participantNumber` | integer | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
+| `mainSupplier`      | boolean | **Required** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
 | `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| thgpackageavailablefrom 				|
 | `availableTo`       | string  | **Optional** | yyyy-MM-dd					| thgexpiredate						|
 | `calculatedCount`   | integer | **Optional** | 						| thgcalculatedcount 					|
@@ -193,27 +197,29 @@ All items must be of the type: `object` with following properties:
 | `quantity`  | integer | **Required** |                        | **TBD**    
 
 Note: See rules for setting packageId in the create section
+
 ## Sample json
+Example which does the following:
+- Updates `weight`
+- Removes `availableTo`
 
 ```json
 {
-	"metadata": {
-		"eventType": "Update", // string
-		"event": "Package", // string
-		"date": "2019-09-30T13:34:56",
-		"author": "Glava AS" // string
-	},
-	
-	"data": {
-		// the identifier must always be part of the event and can't change value
-		"id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
-		
-		// an example of updating weight
-		"weight": 3.2,
-		
-		// an example of removing availableTo
-		"availableTo": null
-	}
+    "metadata": {
+        "eventType": "Update",
+        "event": "Package",
+        "date": "2019-09-30T13:34:56",
+        "author": "Glava AS"
+    },
+    
+    "data": {
+        "id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
+        "participantNumber": 51128,
+        "mainSupplier": true,
+
+        "weight": 3.2,
+        "availableTo": null
+    }
 }
 ```
 # Package Deleted
@@ -238,6 +244,8 @@ The identifier must be part of the event data.
 | Property            | Type    | Required     | Description	| Riversand Comment                                |
 | ------------------- | ------- | ------------ | -------------- | ------------------------------------------------ |
 | `id`                | string  | **Required** |		| This will be generated and stored in Middleware. |
+| `participantNumber` | integer | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
+| `mainSupplier`      | boolean | **Required** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
 
 
 
@@ -245,16 +253,17 @@ The identifier must be part of the event data.
 
 ```json
 {
-	"metadata": {
-		"eventType": "Delete", // string
-		"event": "Package", // string
-		"date": "2019-09-30T13:34:56",
-		"author": "Glava AS" // string
-	},
-	
-	"data": {
-		// the identifier to the package that was deleted
-		"id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63"
-	}
+    "metadata": {
+        "eventType": "Delete",
+        "event": "Package",
+        "date": "2019-09-30T13:34:56",
+        "author": "Glava AS"
+    },
+    
+    "data": {
+        "id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
+        "participantNumber": 51128,
+        "mainSupplier": true
+    }
 }
 ```

@@ -49,44 +49,46 @@ The data model depends on the event type, see below.
 
 `object` with following properties:
 
-| Property                    | Type                | Required     | Description                                                    | Riversand Comment                                 |
-| --------------------------- | ------------------- | ------------ | -------------------------------------------------------------- | ------------------------------------------------- |
-| `id`                        | string              | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware.  |
-| `nobbNumber`                | integer             | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
-| `participantNumber`         | integer             | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
-| `mainSupplier`              | boolean             | **Required** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
-| `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | __relationships__ [ serviceaccessories, standardaccessories ]  |
-| `customsEuCode`             | string              | **Optional** |                                                                | thgeucustomcode |
-| `customsNoCode`             | string              | **Optional** |                                                                | thgnocustomcode |
-| `dangerousGoods`            | object              | **Optional** |                                                                | see `dangerousGoods Type` |
-| `description`               | string              | **Optional** |                                                                | thgdescription |
-| `environmentLabels`         | array of string     | **Optional** |                                                                | thgenvironmentlabels |
-| `expiryDate`                | string              | **Optional** | In format `yyyy-MM-dd`. Different suppliers can have different expiry dates. | thgexpiredate |
-| `finfoNumber`               | string              | **Optional** |                                                                | thgfinfono |
-| `freightGroup`              | string              | **Optional** | Different suppliers can have different freight groups.         | thgfreightgroup |
-| `hasDurabilityDate`         | boolean             | **Required** |                                                                | thghasdurabilitydate |
-| `hazardLabels`              | array of string     | **Optional** |                                                                | thgpackaginglabels |
-| `launchDate`                | string              | **Optional** | yyyy-MM-dd                                                     | thglaunchdate |
-| `manufacturerItemNumber`    | string              | **Required** |                                                                | thgmanufactureritemno |
-| `marketingText`             | string              | **Optional** | Different suppliers can have different marketing texts.        | **TBD** |
-| `modelName`                 | string              | **Optional** |                                                                | thgmodelname |
-| `moduleNumber`              | integer             | **Required** |                                                                | thgmoduleno |
-| `nrfInfo`                   | object              | **Optional** |                                                                | __NRF Taxonomy__ => see `nrfInfo Type` |
-| `priceUnit`                 | string              | **Required** |                                                                | thgpriceunit |
-| `primaryText`               | string              | **Required** | "Varetekst 1"                                                  | thgtext1 |
-| `productNumber`             | integer             | **Optional** | Reference to Product                                           | **TBD** |
-| `replacesNobbNumbers`       | array of integers   | **Optional** |                                                                | thgreplacesnobbnumber |
-| `secondaryText`             | string              | **Optional** | "Varetekst 2" in NOBB domain language.                         | thgtext2 |
-| `seriesName`                | string              | **Optional** |                                                                | thgserialname |
-| `stocked`                   | boolean             | **Required** |                                                                | thgstocked |
-| `supplierItemNumber`        | string              | **Required** | Different suppliers can have different supplier item numbers.  | thgsupplieritemno | 
-| `tax`                       | string              | **Optional** |                                                                | thgtax |
-| `toleratesFrost`            | boolean             | **Optional** |                                                                | thgtoleratesfrost |
-| `tunNumber`                 | string              | **Optional** |                                                                | thgtunno |
-| `type`                      | string              | **Required** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type. |
-| `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
-| `videos`       | array of objects     | **Optional** |                                                                | see `videos Type` |
+| Property                    | Type                | Required when `mainSupplier` is `true` | Required when `mainSupplier` is `false` | Description                                                    | Riversand Comment                                 |
+| --------------------------- | ------------------- | ------------ | ------------ | -------------------------------------------------------------- | ------------------------------------------------- |
+| `id`                        | string              | **Required** | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware.  |
+| `nobbNumber`                | integer             | **Required** | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
+| `participantNumber`         | integer             | **Required** | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
+| `mainSupplier`              | boolean             | **true**     | **false** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
+| `accessories`               | array of integers   | **Optional** | **N/A** | Array of NOBB numbers.                                         | __relationships__ [ serviceaccessories, standardaccessories ]  |
+| `customsEuCode`             | string              | **Optional** | **N/A** |                                                                | thgeucustomcode |
+| `customsNoCode`             | string              | **Optional** | **N/A** |                                                                | thgnocustomcode |
+| `dangerousGoods`            | object              | **Optional** | **N/A** |                                                                | see `dangerousGoods Type` |
+| `description`               | string              | **Optional** | **N/A** |                                                                | thgdescription |
+| `environmentLabels`         | array of string     | **Optional** | **N/A** |                                                                | thgenvironmentlabels |
+| `expiryDate`                | string              | **Optional** | **Optional** | In format `yyyy-MM-dd`. Different suppliers can have different expiry dates. | thgexpiredate |
+| `finfoNumber`               | string              | **Optional** | **N/A** |                                                                | thgfinfono |
+| `freightGroup`              | string              | **Optional** | **Optional** | Different suppliers can have different freight groups.         | thgfreightgroup |
+| `hasDurabilityDate`         | boolean             | **Required** | **N/A** |                                                                | thghasdurabilitydate |
+| `hazardLabels`              | array of string     | **Optional** | **N/A** |                                                                | thgpackaginglabels |
+| `launchDate`                | string              | **Optional** | **N/A** | yyyy-MM-dd                                                     | thglaunchdate |
+| `manufacturerItemNumber`    | string              | **Required** | **N/A** |                                                                | thgmanufactureritemno |
+| `marketingText`             | string              | **Optional** | **Optional** | Different suppliers can have different marketing texts.        | **TBD** |
+| `modelName`                 | string              | **Optional** | **N/A** |                                                                | thgmodelname |
+| `moduleNumber`              | integer             | **Required** | **N/A** |                                                                | thgmoduleno |
+| `nrfInfo`                   | object              | **Optional** | **N/A** |                                                                | __NRF Taxonomy__ => see `nrfInfo Type` |
+| `priceUnit`                 | string              | **Required** | **N/A** |                                                                | thgpriceunit |
+| `primaryText`               | string              | **Required** | **N/A** | "Varetekst 1"                                                  | thgtext1 |
+| `productNumber`             | integer             | **Optional** | **N/A** | Reference to Product                                           | **TBD** |
+| `replacesNobbNumbers`       | array of integers   | **Optional** | **N/A** |                                                                | thgreplacesnobbnumber |
+| `secondaryText`             | string              | **Optional** | **N/A** | "Varetekst 2" in NOBB domain language.                         | thgtext2 |
+| `seriesName`                | string              | **Optional** | **N/A** |                                                                | thgserialname |
+| `stocked`                   | boolean             | **Required** | **N/A** |                                                                | thgstocked |
+| `supplierItemNumber`        | string              | **Required** | **Required** | Different suppliers can have different supplier item numbers.  | thgsupplieritemno | 
+| `tax`                       | string              | **Optional** | **N/A** |                                                                | thgtax |
+| `toleratesFrost`            | boolean             | **Optional** | **N/A** |                                                                | thgtoleratesfrost |
+| `tunNumber`                 | string              | **Optional** | **N/A** |                                                                | thgtunno |
+| `type`                      | string              | **Required** | **N/A** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type. |
+| `uniqueSellingPoints`       | array of string     | **Optional** | **N/A** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
+| `videos`                    | array of objects    | **Optional** | **N/A** |                                                                | see `videos Type` |
 
+
+### Sub-types (Only relevant when `mainSupplier` is `true`)
 
 ##### dangerousGoods Type
 
@@ -235,45 +237,46 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 
 `object` with following properties:
 
-| Property                    | Type                | Required     | Description                                                    | Riversand Comment |
-| --------------------------- | ------------------- | ------------ | -------------------------------------------------------------- | ----------------- |
-| `id`                        | string              | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware. | 
-| `nobbNumber`                | integer             | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
-| `participantNumber`         | integer             | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
-| `mainSupplier`              | boolean             | **Required** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
-| `accessories`               | array of integers   | **Optional** | Array of NOBB numbers.                                         | __relationships__  [ serviceaccessories, standardaccessories ] |
-| `customsEuCode`             | string              | **Optional** |                                                                | thgeucustomcode      |
-| `customsNoCode`             | string              | **Optional** |                                                                | thgnocustomcode      |]
-| `dangerousGoods`            | object              | **Optional** |                                                                | see `dangerousGoods Type` |
-| `description`               | string              | **Optional** |                                                                | thgdescription |
-| `environmentLabels`         | array of string     | **Optional** |                                                                | thgenvironmentlabels |
-| `expiryDate`                | string              | **Optional** |                                                                | thgexpiredate |
-| `finfoNumber`               | string              | **Optional** |                                                                | thgfinfono |
-| `freightGroup`              | string              | **Optional** |                                                                | thgfreightgroup |
-| `hasDurabilityDate`         | boolean             | **Optional** |                                                                | thghasdurabilitydate |
-| `hazardLabels`              | array of string     | **Optional** |                                                                | thgpackaginglabels |
-| `launchDate`                | string              | **Optional** | yyyy-MM-dd                                                     | thglaunchdate |
-| `manufacturerItemNumber`    | string              | **Optional** |                                                                | thgmanufactureritemno |
-| `marketingText`             | string              | **Optional** |                                                                | **TBD**           |
-| `modelName`                 | string              | **Optional** |                                                                | thgmodelname |
-| `moduleNumber`              | integer             | **Optional** |                                                                | thgmoduleno |
-| `nrfInfo`                   | object              | **Optional** |                                                                | __NRF Taxonomy__ => see `nrfInfo Type` |
-| `priceUnit`                 | string              | **Optional** |                                                                | thgpriceunit |
-| `primaryText`               | string              | **Optional** |                                                                | thgtext1 |
-| `productNumber`             | integer             | **Optional** |                                                                | **TBD**           |
-| `replacesNobbNumbers`       | array of integers   | **Optional** |                                                                | thgreplacesnobbnumber |
-| `secondaryText`             | string              | **Optional** |                                                                | thgtext2 |
-| `seriesName`                | string              | **Optional** |                                                                | thgserialname |
-| `stocked`                   | boolean             | **Optional** |                                                                | thgstocked |
-| `supplierItemNumber`        | string              | **Optional** |                                                                | thgsupplieritemno |
-| `tax`                       | string              | **Optional** |                                                                | thgtax |       
-| `toleratesFrost`            | boolean             | **Optional** |                                                                | thgtoleratesfrost |  
-| `tunNumber`                 | string              | **Optional** |                                                                | thgtunno |
-| `type`                      | string              | **Optional** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type.|
-| `uniqueSellingPoints`       | array of string     | **Optional** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
-| `videos`       | array of objects     | **Optional** |                                                                | see `videos Type` |
+| Property                    | Type                | Required when `mainSupplier` is `true` | Required when `mainSupplier` is `false` | Description                                                    | Riversand Comment |
+| --------------------------- | ------------------- | ------------ | ------------ | -------------------------------------------------------------- | ----------------- |
+| `id`                        | string              | **Required** | **Required** | GUID (must be generated and can't be changed)                  | This will be generated and stored in Middleware. | 
+| `nobbNumber`                | integer             | **Required** | **Required** | Must be generated and can't be changed. 8 digits.              | thgnobbno |
+| `participantNumber`         | integer             | **Required** | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
+| `mainSupplier`              | boolean             | **true**     | **false** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
+| `accessories`               | array of integers   | **Optional** | **N/A** | Array of NOBB numbers.                                         | __relationships__  [ serviceaccessories, standardaccessories ] |
+| `customsEuCode`             | string              | **Optional** | **N/A** |                                                                | thgeucustomcode      |
+| `customsNoCode`             | string              | **Optional** | **N/A** |                                                                | thgnocustomcode      |]
+| `dangerousGoods`            | object              | **Optional** | **N/A** |                                                                | see `dangerousGoods Type` |
+| `description`               | string              | **Optional** | **N/A** |                                                                | thgdescription |
+| `environmentLabels`         | array of string     | **Optional** | **N/A** |                                                                | thgenvironmentlabels |
+| `expiryDate`                | string              | **Optional** | **Optional** |                                                                | thgexpiredate |
+| `finfoNumber`               | string              | **Optional** | **N/A** |                                                                | thgfinfono |
+| `freightGroup`              | string              | **Optional** | **Optional** |                                                                | thgfreightgroup |
+| `hasDurabilityDate`         | boolean             | **Optional** | **N/A** |                                                                | thghasdurabilitydate |
+| `hazardLabels`              | array of string     | **Optional** | **N/A** |                                                                | thgpackaginglabels |
+| `launchDate`                | string              | **Optional** | **N/A** | yyyy-MM-dd                                                     | thglaunchdate |
+| `manufacturerItemNumber`    | string              | **Optional** | **N/A** |                                                                | thgmanufactureritemno |
+| `marketingText`             | string              | **Optional** | **Optional** |                                                                | **TBD**           |
+| `modelName`                 | string              | **Optional** | **N/A** |                                                                | thgmodelname |
+| `moduleNumber`              | integer             | **Optional** | **N/A** |                                                                | thgmoduleno |
+| `nrfInfo`                   | object              | **Optional** | **N/A** |                                                                | __NRF Taxonomy__ => see `nrfInfo Type` |
+| `priceUnit`                 | string              | **Optional** | **N/A** |                                                                | thgpriceunit |
+| `primaryText`               | string              | **Optional** | **N/A** |                                                                | thgtext1 |
+| `productNumber`             | integer             | **Optional** | **N/A** |                                                                | **TBD**           |
+| `replacesNobbNumbers`       | array of integers   | **Optional** | **N/A** |                                                                | thgreplacesnobbnumber |
+| `secondaryText`             | string              | **Optional** | **N/A** |                                                                | thgtext2 |
+| `seriesName`                | string              | **Optional** | **N/A** |                                                                | thgserialname |
+| `stocked`                   | boolean             | **Optional** | **N/A** |                                                                | thgstocked |
+| `supplierItemNumber`        | string              | **Optional** | **Optional** |                                                                | thgsupplieritemno |
+| `tax`                       | string              | **Optional** | **N/A** |                                                                | thgtax |       
+| `toleratesFrost`            | boolean             | **Optional** | **N/A** |                                                                | thgtoleratesfrost |  
+| `tunNumber`                 | string              | **Optional** | **N/A** |                                                                | thgtunno |
+| `type`                      | string              | **Optional** | **N/A** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type.|
+| `uniqueSellingPoints`       | array of string     | **Optional** | **N/A** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
+| `videos`                    | array of objects    | **Optional** | **N/A** |                                                                | see `videos Type` |
 
 
+### Sub-types (Only relevant when `mainSupplier` is `true`)
 
 ##### dangerousGoods Type
 

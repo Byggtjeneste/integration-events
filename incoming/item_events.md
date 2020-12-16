@@ -133,7 +133,7 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 
 
 
-## Sample json
+## Sample json (main supplier)
 
 ```json
 {
@@ -208,6 +208,31 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
                 "code": "youtubeId"
             },
         ]
+    }
+}
+```
+
+## Sample json (alternative supplier)
+
+```json
+{
+    "metadata": {
+        "eventType": "Create",
+        "event": "Item",
+        "date": "2019-09-30T12:34:56",
+        "author": "Icopal AS"
+    },
+    
+    "data": {
+        "id": "4f214662-ba42-491c-b230-37b1420a4db9",
+        "nobbNumber": 55556666,
+        "participantNumber": 207168,
+        "mainSupplier": false,
+
+        "supplierItemNumber": "ABC123",
+        "freightGroup": "100",
+        "expiryDate": "2020-01-01",
+        "marketingText": "Lorem ipsum"
     }
 }
 ```
@@ -318,7 +343,7 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 
 
 
-## Sample json
+## Sample json (main supplier)
 Example which does the following:
 - Removes expiry date
 - Updates description
@@ -344,6 +369,28 @@ Example which does the following:
         "dangerousGoods": {
             "class": "5.2"
         }
+    }
+}
+```
+
+## Sample json (alternative supplier)
+Example of removing expiry date:
+```json
+{
+    "metadata": {
+        "eventType": "Update",
+        "event": "Item",
+        "date": "2019-09-30T12:34:56",
+        "author": "Icopal AS"
+    },
+    
+    "data": {
+        "id": "4f214662-ba42-491c-b230-37b1420a4db9",
+        "nobbNumber": 55556666,
+        "participantNumber": 207168,
+        "mainSupplier": false,
+
+        "expiryDate": null
     }
 }
 ```

@@ -52,32 +52,34 @@ The data model depends on the event type, see below.
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description 					| Riversand Comment                                 	|
-| ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
-| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
-| `nobbNumber`        | integer | **Required** |						| thgnobbno 						|
-| `participantNumber` | integer | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
-| `mainSupplier`      | boolean | **Required** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
-| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| thgpackageavailablefrom 				|
-| `availableTo`       | string  | **Optional** | yyyy-MM-dd					| thgexpiredate 					|
-| `calculatedCount`   | decimal | **Required** | 						| thgcalculatedcount 					|
-| `consistsOfCount`   | decimal | **Required** | 						| thgconsistsofcount 					|
-| `consistsOfUnit`    | string  | **Required** | From reference data, eg. "STK"			| thgconsistsofunit (rdunit) 				|
-| `dPakLayerCount`    | integer | **Optional** | Only "T-PAK"					| thgdpaklayercount 					|	
-| `deliverable`       | boolean | **Required** |						| thgcanbeordered 					|
-| `gtin`              | string  | **Optional** |						| thggtin 						|	
-| `height`            | decimal | **Optional** | millimeters					| thgheight 						|	
-| `length`            | decimal | **Optional** | millimeters					| thglength 						|
-| `maxStackingWeight` | decimal | **Optional** | Only "T-PAK"					| thgmaxstackingweight 					|
-| `minOrderQuantity`  | integer | **Optional** | Only "F-PAK"					| thgminorderquantity 					|
-| `packageNumber`     | integer | **Required** |						| **TBD**						|
-| `stocked`           | boolean | **Required** |						| thgstocked 						|
-| `type`              | string  | **Optional** | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", "UDEF", or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF").| Set by Middleware based on RS entity type.		|
-| `unit`              | string  | **Required** | From reference data, eg. "STK"			| thgpackageunit (rdunit) 				|
-| `volume`            | decimal | **Optional** | dm3						| thgvolume 						|
-| `weight`            | decimal	| **Optional** | kg						| thgweight 						|
-| `width`             | decimal | **Optional** | millimeters					| thgwidth 						|
-| `bundleItems`       | array of objects    | **Optional** | Only used for Display and Composite items                      | __relationship__ see `bundleItems Type` |
+| Property            | Type    | Required when `mainSupplier` is `true` | Required when `mainSupplier` is `false` | Description                    | Riversand Comment                                     |
+| ------------------- | ------- | ------------ | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
+| `id`                | string  | **Required** | **Required** | GUID (must be generated and can't be changed)  | This will be generated and stored in Middleware.  |
+| `nobbNumber`        | integer | **Required** | **Required** |                        | thgnobbno                         |
+| `participantNumber` | integer | **Required** | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
+| `mainSupplier`      | boolean | **true** | **false** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
+| `availableFrom`     | string  | **Optional** | **N/A** | yyyy-MM-dd                 | thgpackageavailablefrom               |
+| `availableTo`       | string  | **Optional** | **N/A** | yyyy-MM-dd                 | thgexpiredate                     |
+| `calculatedCount`   | decimal | **Required** | **N/A** |                        | thgcalculatedcount                    |
+| `consistsOfCount`   | decimal | **Required** | **N/A** |                        | thgconsistsofcount                    |
+| `consistsOfUnit`    | string  | **Required** | **N/A** | From reference data, eg. "STK"         | thgconsistsofunit (rdunit)                |
+| `dPakLayerCount`    | integer | **Optional** | **N/A** | Only "T-PAK"                   | thgdpaklayercount                     |   
+| `deliverable`       | boolean | **Required** | **Required** |                        | thgcanbeordered                   |
+| `gtin`              | string  | **Optional** | **N/A** |                        | thggtin                       |   
+| `height`            | decimal | **Optional** | **N/A** | millimeters                    | thgheight                         |   
+| `length`            | decimal | **Optional** | **N/A** | millimeters                    | thglength                         |
+| `maxStackingWeight` | decimal | **Optional** | **N/A** | Only "T-PAK"                   | thgmaxstackingweight                  |
+| `minOrderQuantity`  | integer | **Optional** | **N/A** | Only "F-PAK"                   | thgminorderquantity                   |
+| `packageNumber`     | integer | **Required** | **N/A** |                        | **TBD**                       |
+| `stocked`           | boolean | **Required** | **Required** |                        | thgstocked                        |
+| `type`              | string  | **Optional** | **N/A** | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", "UDEF", or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF").| Set by Middleware based on RS entity type.        |
+| `unit`              | string  | **Required** | **N/A** | From reference data, eg. "STK"         | thgpackageunit (rdunit)               |
+| `volume`            | decimal | **Optional** | **N/A** | dm3                        | thgvolume                         |
+| `weight`            | decimal | **Optional** | **N/A** | kg                     | thgweight                         |
+| `width`             | decimal | **Optional** | **N/A** | millimeters                    | thgwidth                      |
+| `bundleItems`       | array of objects    | **Optional** | **N/A** | Only used for Display and Composite items                      | __relationship__ see `bundleItems Type` |
+
+### Sub-types (Only relevant when `mainSupplier` is `true`)
 
 #### bundleItems Type
 
@@ -94,7 +96,7 @@ Note:
 1. For package events for **F-Pack** that belongs to a **Composite**, if the Composite itself has any standard items and/or special items, retrieve the packageId from the matching **F-pack** of the items.
 2. For package events for **D-Pack** that belongs to a **Display**, if the Display itself has any standard items and/or special items, retrieve the packageId from the matching **F-pack** of the items.
 
-## Sample json
+## Sample json (main supplier)
 
 ```json
 {
@@ -139,6 +141,29 @@ Note:
 }
 ```
 
+## Sample json (alternative supplier)
+```json
+{
+    "metadata": {
+        "eventType": "Create",
+        "event": "Package",
+        "date": "2019-09-30T12:34:56",
+        "author": "Glava AS"
+    },
+
+    "data": {
+        "id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
+        "nobbNumber": 44445555,
+        "participantNumber": 201768,
+        "mainSupplier": false,
+
+        "stocked": true,
+        "deliverable": false
+    }
+}
+
+```
+
 # Package Updated
 
 ## Preconditions
@@ -159,31 +184,33 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 
 `object` with following properties:
 
-| Property            | Type    | Required     | Description 					| Riversand Comment                                 	|
-| ------------------- | ------- | ------------ | ---------------------------------------------- | ----------------------------------------------------- |
-| `id`                | string  | **Required** | GUID (must be generated and can't be changed)	| This will be generated and stored in Middleware. 	|
-| `participantNumber` | integer | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
-| `mainSupplier`      | boolean | **Required** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
-| `availableFrom`     | string  | **Optional** | yyyy-MM-dd					| thgpackageavailablefrom 				|
-| `availableTo`       | string  | **Optional** | yyyy-MM-dd					| thgexpiredate						|
-| `calculatedCount`   | decimal | **Optional** | 						| thgcalculatedcount 					|
-| `consistsOfCount`   | decimal | **Optional** | 						| thgconsistsofcount 					|
-| `consistsOfUnit`    | string  | **Optional** | From reference data, eg. "STK"			| thgconsistsofunit (rdunit) 				|
-| `dPakLayerCount`    | integer | **Optional** | Only "T-PAK"					| thgdpaklayercount 					|
-| `deliverable`       | boolean | **Optional** |						| thgcanbeordered 					|
-| `gtin`              | string  | **Optional** |						| thggtin 						|	
-| `height`            | decimal | **Optional** | millimeters					| thgheight 						|	
-| `length`            | decimal | **Optional** | millimeters					| thglength 						|
-| `maxStackingWeight` | decimal | **Optional** | Only "T-PAK"					| thgmaxstackingweight 					|
-| `minOrderQuantity`  | integer | **Optional** | Only "F-PAK"					| thgminorderquantity 					|	
-| `packageNumber`     | integer | **Optional** |						| **TBD**						|
-| `stocked`           | boolean | **Optional** |						| thgstocked 						|
-| `type`              | string  | **Optional** | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", "UDEF" or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF"). | Set by Middleware based on RS entity type. 		|
-| `unit`              | string  | **Optional** | From reference data, eg. "STK"			| thgpackageunit (rdunit)				|
-| `volume`            | decimal | **Optional** | dm3						| thgvolume						|
-| `weight`            | decimal | **Optional** | kg						| thgweight 						|
-| `width`             | decimal | **Optional** | millimeters					| thgwidth 						|
-| `bundleItems`       | array of objects    | **Optional** | Only used for Display and Composite items                      | __relationship__ see `bundleItems Type` |
+| Property            | Type    | Required when `mainSupplier` is `true` | Required when `mainSupplier` is `false` | Description                    | Riversand Comment                                     |
+| ------------------- | ------- | ------------ | ------------ |---------------------------------------------- | ----------------------------------------------------- |
+| `id`                | string  | **Required** | **Required** | GUID (must be generated and can't be changed)  | This will be generated and stored in Middleware.  |
+| `participantNumber` | integer | **Required** | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
+| `mainSupplier`      | boolean | **true** | **false** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
+| `availableFrom`     | string  | **Optional** | **N/A** | yyyy-MM-dd                 | thgpackageavailablefrom               |
+| `availableTo`       | string  | **Optional** | **N/A** | yyyy-MM-dd                 | thgexpiredate                     |
+| `calculatedCount`   | decimal | **Optional** | **N/A** |                        | thgcalculatedcount                    |
+| `consistsOfCount`   | decimal | **Optional** | **N/A** |                        | thgconsistsofcount                    |
+| `consistsOfUnit`    | string  | **Optional** | **N/A** | From reference data, eg. "STK"         | thgconsistsofunit (rdunit)                |
+| `dPakLayerCount`    | integer | **Optional** | **N/A** | Only "T-PAK"                   | thgdpaklayercount                     |
+| `deliverable`       | boolean | **Optional** | **Optional** |                        | thgcanbeordered                   |
+| `gtin`              | string  | **Optional** | **N/A** |                        | thggtin                       |   
+| `height`            | decimal | **Optional** | **N/A** | millimeters                    | thgheight                         |   
+| `length`            | decimal | **Optional** | **N/A** | millimeters                    | thglength                         |
+| `maxStackingWeight` | decimal | **Optional** | **N/A** | Only "T-PAK"                   | thgmaxstackingweight                  |
+| `minOrderQuantity`  | integer | **Optional** | **N/A** | Only "F-PAK"                   | thgminorderquantity                   |   
+| `packageNumber`     | integer | **Optional** | **N/A** |                        | **TBD**                       |
+| `stocked`           | boolean | **Optional** | **Optional** |                        | thgstocked                        |
+| `type`              | string  | **Optional** | **N/A** | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", "UDEF" or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF"). | Set by Middleware based on RS entity type.        |
+| `unit`              | string  | **Optional** | **N/A** | From reference data, eg. "STK"         | thgpackageunit (rdunit)               |
+| `volume`            | decimal | **Optional** | **N/A** | dm3                        | thgvolume                     |
+| `weight`            | decimal | **Optional** | **N/A** | kg                     | thgweight                         |
+| `width`             | decimal | **Optional** | **N/A** | millimeters                    | thgwidth                      |
+| `bundleItems`       | array of objects    | **Optional** | **N/A** | Only used for Display and Composite items                      | __relationship__ see `bundleItems Type` |
+
+### Sub-types (Only relevant when `mainSupplier` is `true`)
 
 #### bundleItems Type
 
@@ -198,7 +225,7 @@ All items must be of the type: `object` with following properties:
 
 Note: See rules for setting packageId in the create section
 
-## Sample json
+## Sample json (main supplier)
 Example which does the following:
 - Updates `weight`
 - Removes `availableTo`
@@ -222,6 +249,30 @@ Example which does the following:
     }
 }
 ```
+
+## Sample json (alternative supplier)
+Example of updating stocked:
+```json
+{
+    "metadata": {
+        "eventType": "Update",
+        "event": "Package",
+        "date": "2019-09-30T12:34:56",
+        "author": "Glava AS"
+    },
+
+    "data": {
+        "id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
+        "participantNumber": 201768,
+        "mainSupplier": false,
+
+        "stocked": false
+    }
+}
+
+```
+
+
 # Package Deleted
 
 ## Preconditions

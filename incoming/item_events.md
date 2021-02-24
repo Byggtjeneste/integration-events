@@ -129,7 +129,7 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 | `name`               | string  | **Required** |                       | txnrfname                 |
 | `number`             | integer | **Optional** |                       | txnrfnumber               | 
 | `productGroupNumber` | string  | **Required** | NRF item group number | txnrfvaregruppenr         |
-| `supplierNumber`     | integer | **Required** | NRF Supplier number   | txnrfsuppliernr           |
+| `supplierNumber`     | integer | **Optional** | NRF Supplier number   | txnrfsuppliernr           |
 
 
 
@@ -339,7 +339,7 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 | `name`               | string  | **Required** |                       | txnrfname                 |
 | `number`             | integer | **Optional** |                       | txnrfnumber               |
 | `productGroupNumber` | string  | **Required** |                       | txnrfvaregruppenr         |
-| `supplierNumber`     | integer | **Required** | NRF Supplier number   | txnrfsuppliernr           |
+| `supplierNumber`     | integer | **Optional** | NRF Supplier number   | txnrfsuppliernr           |
 
 
 

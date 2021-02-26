@@ -70,7 +70,6 @@ The data model depends on the event type, see below.
 | `length`            | decimal | **Optional** | **N/A**      | millimeters                                    | thglength                                        |
 | `maxStackingWeight` | decimal | **Optional** | **N/A**      | Only "T-PAK"                                   | thgmaxstackingweight                             |
 | `minOrderQuantity`  | integer | **Optional** | **N/A**      | Only "F-PAK"                                   | thgminorderquantity                              |
-| `packageNumber`     | integer | **Required** | **N/A**      |                                                | **TBD**                                          |
 | `stocked`           | boolean | **Required** | **Required** | Also known as "Lagerført".                     | thgstocked                                       |
 | `type`              | string  | **Optional** | **N/A**      | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", "UDEF", or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF").| Set by Middleware based on RS entity type. | |
 | `unit`              | string  | **Required** | **N/A**      | From reference data, eg. "STK"                 | thgpackageunit (rdunit)                          |
@@ -113,7 +112,6 @@ Note:
         "participantNumber": 51128,
         "mainSupplier": true,
         "type": "F-PAK",
-        "packageNumber": 1,
         "gtin": "022266667777",
         "stocked": true,
         "deliverable": false,
@@ -201,7 +199,6 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `length`            | decimal | **Optional** | **N/A**      | millimeters                                   | thglength                                        |
 | `maxStackingWeight` | decimal | **Optional** | **N/A**      | Only "T-PAK"                                  | thgmaxstackingweight                             |
 | `minOrderQuantity`  | integer | **Optional** | **N/A**      | Only "F-PAK"                                  | thgminorderquantity                              |
-| `packageNumber`     | integer | **Optional** | **N/A**      |                                               | **TBD**                                          |
 | `stocked`           | boolean | **Optional** | **Optional** | Also known as "Lagerført".                    | thgstocked                                       |
 | `type`              | string  | **Optional** | **N/A**      | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", "UDEF" or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF"). | Set by Middleware based on RS entity type. |
 | `unit`              | string  | **Optional** | **N/A**      | From reference data, eg. "STK"                | thgpackageunit (rdunit)                          |

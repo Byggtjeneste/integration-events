@@ -54,7 +54,7 @@ The data model depends on the event type, see below.
 
 | Property            | Type    | Required when `mainSupplier` is `true` | Required when `mainSupplier` is `false` | Description              | Riversand Comment |
 | ------------------- | ------- | ------------ | ------------ | ---------------------------------------------- | ------------------------------------------------ |
-| `id`                | string  | **Required** | **Required** | GUID (must be generated and can't be changed)  | This will be generated and stored in Middleware. |
+| `id`                | string  | **Required** | **Required** | When 'mainSupplier' is 'false' this must be the GUID of main suppliers package. Oterwise a generated GUID that can't be changed  | This will be generated and stored in Middleware. |
 | `nobbNumber`        | integer | **Required** | **Required** | Always main supplier's NOBB number.            | thgnobbno                                        |
 | `participantNumber` | integer | **Required** | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. | |
 | `mainSupplier`      | boolean | **true**     | **false**    | `true` when the participant number belongs to the main supplier, `false` otherwise. |             |
@@ -184,7 +184,7 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 
 | Property            | Type    | Required when `mainSupplier` is `true` | Required when `mainSupplier` is `false` | Description             | Riversand Comment |
 | ------------------- | ------- | ------------ | ------------ |---------------------------------------------- | ------------------------------------------------ |
-| `id`                | string  | **Required** | **Required** | GUID (must be generated and can't be changed) | This will be generated and stored in Middleware. |
+| `id`                | string  | **Required** | **Required** | Always GUID of main suppliers package. | This will be generated and stored in Middleware. |
 | `participantNumber` | integer | **Required** | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
 | `mainSupplier`      | boolean | **true**     | **false**    | `true` when the participant number belongs to the main supplier, `false` otherwise. |            |
 | `availableFrom`     | string  | **Optional** | **N/A**      | yyyy-MM-dd                                    | thgpackageavailablefrom                          |

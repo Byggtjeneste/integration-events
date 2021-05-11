@@ -16,7 +16,7 @@ Error events are sent from Middleware to BT, to notify error scenarios.
 
 | Property          | Type    | Required     | Description |
 | ------------------| ------- | ------------ | ------- |
-| `event`           | string  | **Required** | Always "Error" for error type events. Can be extended at a later point, to eg. "Warning".
+| `event`           | string  | **Required** | Either "Error" or "Warning".
 | `date`            | string  | **Required** | Date and time in UTC for the action that triggered the event. In format `yyyy'-'MM'-'dd'T'HH':'mm':'ss`. Example value: `2020-02-27T23:39:46`.
 
 

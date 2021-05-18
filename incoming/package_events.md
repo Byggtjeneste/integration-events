@@ -64,13 +64,13 @@ The data model depends on the event type, see below.
 | `consistsOfCount`   | decimal | **Required** | **N/A**      |                                                | thgconsistsofcount                               |
 | `consistsOfUnit`    | string  | **Required** | **N/A**      | From reference data, eg. "STK"                 | thgconsistsofunit (rdunit)                       |
 | `dPakLayerCount`    | integer | **Optional** | **N/A**      | Only "T-PAK"                                   | thgdpaklayercount                                |
-| `deliverable`       | boolean | **Required** | **Required** | Also known as "Bestillbar".                    | thgcanbeordered                                  |
+| `deliverable`       | boolean | **Required** | **Optional** | Also known as "Bestillbar".                    | thgcanbeordered                                  |
 | `gtin`              | string  | **Optional** | **N/A**      |                                                | thggtin                                          |
 | `height`            | decimal | **Optional** | **N/A**      | millimeters                                    | thgheight                                        |
 | `length`            | decimal | **Optional** | **N/A**      | millimeters                                    | thglength                                        |
 | `maxStackingWeight` | decimal | **Optional** | **N/A**      | Only "T-PAK"                                   | thgmaxstackingweight                             |
 | `minOrderQuantity`  | integer | **Optional** | **N/A**      | Only "F-PAK"                                   | thgminorderquantity                              |
-| `stocked`           | boolean | **Required** | **Required** | Also known as "Lagerført".                     | thgstocked                                       |
+| `stocked`           | boolean | **Required** | **Optional** | Also known as "Lagerført".                     | thgstocked                                       |
 | `type`              | string  | **Optional** | **N/A**      | Either "F-PAK", "D-PAK", "T-PAK", "PSE-PAK", "UDEF", or `null`. `null` is used for packages without a defined type (a.k.a. "UDEF").| Set by Middleware based on RS entity type. | |
 | `unit`              | string  | **Required** | **N/A**      | From reference data, eg. "STK"                 | thgpackageunit (rdunit)                          |
 | `volume`            | decimal | **Optional** | **N/A**      | Cubic meters (m3)                              | thgvolumecustom                                        |

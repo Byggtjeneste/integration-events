@@ -86,6 +86,8 @@ The data model depends on the event type, see below.
 | `type`                      | string              | **Required** | **N/A** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type. |
 | `uniqueSellingPoints`       | array of string     | **Optional** | **N/A** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
 | `videos`                    | array of objects    | **Optional** | **N/A** |                                                                | see `videos Type` |
+| `gwpData`                   | object              | **Optional** | **N/A** |                                                                | New attributes to be established in Riversand |
+
 
 
 ### Sub-types (Only relevant when `mainSupplier` is `true`)
@@ -130,6 +132,21 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 | `number`             | integer | **Optional** |                       | txnrfnumber               | 
 | `productGroupNumber` | string  | **Required** | NRF item group number | txnrfvaregruppenr         |
 | `supplierNumber`     | integer | **Optional** | NRF Supplier number   | txnrfsuppliernr           |
+
+
+##### gwData Type
+
+`object` with following properties:
+
+| Property       | Type    | Required     |	Description                     | Riversand Comment                                 |
+| -------------- | ------- | ------------ | ------------------------------- | ------------------------------------------------- |
+| `epdId`      | string  | **Optional** |    ID (registration number) of the EPD                             |                                     |
+| `A1`        | decimal  | **Optional** |                        |  |
+| `A2`        | decimal  | **Optional** |                        |  |
+| `A3`        | decimal  | **Optional** |                        |  |
+| `A1toA3`        | decimal  | **Optional** |                        |  |
+| `calculationFactor`        | decimal  | **Optional** |                        |  |
+
 
 
 
@@ -207,7 +224,14 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
                 "description":"A Youtube video",
                 "code": "youtubeId"
             },
-        ]
+        ],
+		"gwpData" : {
+			"epdId":"NEPD-001-NO",
+			"A1":0.0034,
+			"A2":1.02345,
+			"A3":0.0004,
+			"calculationFactor": 65.1234
+		}
     }
 }
 ```
@@ -299,7 +323,7 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `type`                      | string              | **Optional** | **N/A** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type.|
 | `uniqueSellingPoints`       | array of string     | **Optional** | **N/A** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
 | `videos`                    | array of objects    | **Optional** | **N/A** |                                                                | see `videos Type` |
-
+| `gwpData`                   | object              | **Optional** | **N/A** |                                                                | New attributes to be established in Riversand |
 
 ### Sub-types (Only relevant when `mainSupplier` is `true`)
 
@@ -340,6 +364,20 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 | `number`             | integer | **Optional** |                       | txnrfnumber               |
 | `productGroupNumber` | string  | **Required** |                       | txnrfvaregruppenr         |
 | `supplierNumber`     | integer | **Optional** | NRF Supplier number   | txnrfsuppliernr           |
+
+
+##### gwData Type
+
+`object` with following properties:
+
+| Property       | Type    | Required     |	Description                     | Riversand Comment                                 |
+| -------------- | ------- | ------------ | ------------------------------- | ------------------------------------------------- |
+| `epdId`      | string  | **Optional** |    ID (registration number) of the EPD                             |                                     |
+| `A1`        | decimal  | **Optional** |                        |  |
+| `A2`        | decimal  | **Optional** |                        |  |
+| `A3`        | decimal  | **Optional** |                        |  |
+| `A1toA3`        | decimal  | **Optional** |                        |  |
+| `calculationFactor`        | decimal  | **Optional** |                        |  |
 
 
 

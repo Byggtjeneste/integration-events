@@ -126,7 +126,7 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 | -------------------- | ------- | ------------ | --------------------- | ------------------------- |
 | `additionalText`     | string  | **Optional** |                       | txnrftilleggsopplysninger |
 | `dimension`          | string  | **Optional** |                       | txnrfdimension            |
-| `name`               | string  | **Required** |                       | txnrfname                 |
+| `name`               | string  | **Optional** |                       | txnrfname                 |
 | `number`             | integer | **Optional** |                       | txnrfnumber               | 
 | `productGroupNumber` | string  | **Required** | NRF item group number | txnrfvaregruppenr         |
 | `supplierNumber`     | integer | **Optional** | NRF Supplier number   | txnrfsuppliernr           |
@@ -336,7 +336,7 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 | -------------------- | ------- | ------------ | --------------------- | ------------------------- |
 | `additionalText`     | string  | **Optional** |                       | txnrftilleggsopplysninger |
 | `dimension`          | string  | **Optional** |                       | txnrfdimension            |
-| `name`               | string  | **Required** |                       | txnrfname                 |
+| `name`               | string  | **Optional** |                       | txnrfname                 |
 | `number`             | integer | **Optional** |                       | txnrfnumber               |
 | `productGroupNumber` | string  | **Required** |                       | txnrfvaregruppenr         |
 | `supplierNumber`     | integer | **Optional** | NRF Supplier number   | txnrfsuppliernr           |

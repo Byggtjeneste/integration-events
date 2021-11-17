@@ -141,12 +141,6 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 | Property       | Type    | Required     |	Description                     | Riversand Comment                                 |
 | -------------- | ------- | ------------ | ------------------------------- | ------------------------------------------------- |
 | `epdId`      | string  | **Optional** |    ID (registration number) of the EPD                             |                                     |
-| `A1`        | decimal  | **Optional** |                        |  |
-| `A2`        | decimal  | **Optional** |                        |  |
-| `A3`        | decimal  | **Optional** |                        |  |
-| `A1toA3`        | decimal  | **Optional** |                        |  |
-| `validFrom`        | string  | **Optional** |  In format `yyyy-MM-dd`                      |  |
-| `validTo`        | string  | **Optional** |   In format `yyyy-MM-dd`                         |  |
 | `calculationFactor`        | decimal  | **Optional** |                        |  |
 
 
@@ -229,11 +223,6 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
         ],
 		"gwpData" : {
 			"epdId":"NEPD-001-NO",
-			"A1":0.0034,
-			"A2":1.02345,
-			"A3":0.0004,
-            "validFrom":"2021-05-01",
-            "validTo":"2025-04-30",
 			"calculationFactor": 65.1234
 		}
     }
@@ -377,12 +366,6 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
 | Property       | Type    | Required     |	Description                     | Riversand Comment                                 |
 | -------------- | ------- | ------------ | ------------------------------- | ------------------------------------------------- |
 | `epdId`      | string  | **Optional** |    ID (registration number) of the EPD                             |                                     |
-| `A1`        | decimal  | **Optional** |                        |  |
-| `A2`        | decimal  | **Optional** |                        |  |
-| `A3`        | decimal  | **Optional** |                        |  |
-| `A1toA3`        | decimal  | **Optional** |                        |  |
-| `validFrom`        | string  | **Optional** |  In format `yyyy-MM-dd`                      |  |
-| `validTo`        | string  | **Optional** |   In format `yyyy-MM-dd`                         |  |
 | `calculationFactor`        | decimal  | **Optional** |                        |  |
 
 

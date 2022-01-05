@@ -1,6 +1,6 @@
 # Product Media events
 
-These events relates to product media (documentations and Images) that will be maintained in the MediaApi(handled from RS). 
+These events relates to product media (documentations and Images) that will be maintained in the MediaApi. 
 Events will be sent from MediaApi to an Azure Service Bus Topic '**productmedia**'.
 
 [ProductMedia Created](#ProductMedia-Created)
@@ -42,10 +42,11 @@ The data model depends on the event type, see below.
 
 | Property            | Type    | Required     | Description |
 | ------------------- | ------- | ------------ | ----------- |
-| `id`                | string  | **Required** | GUID base on assessmentId.
+| `id`                | string  | **Required** | Media GUID.
 | `type`              | string  | **Required** | Type of Image or Documentation, from reference data. E.g. "PB", "FDV".
 | `fileName`          | string  | **Required** | Media file name.
-| `referencedByItem`  | integer | **Required** | NOBB number of item that references this media.
+| `participantNumber` | integer | **Required** | Participant number of media owner.
+| `nobbNumber`        | integer | **Required** | NOBB number of item that references this media.
 | `url`               | string  | **Required** | Full URL to Media file.
 
 
@@ -62,7 +63,8 @@ The data model depends on the event type, see below.
         "id": "4f214662-ba42-491c-b230-37b1420a4db9",
         "fileName": "rormansjett.jpg",
         "type": "PB",
-        "referencedByItem": 49831963,
+        "participantNumber": 51128,
+        "nobbNumber": 49831963,
         "url": "https://cdn.byggtjeneste.no/nobb/9397f64b-98ae-48ac-a0d3-10701089fe53/Original"
     }
 }
@@ -78,10 +80,11 @@ The data model depends on the event type, see below.
 
 | Property            | Type    | Required     | Description |
 | ------------------- | ------- | ------------ | ----------- |
-| `id`                | string  | **Required** | GUID base on assessmentId.
-| `type`              | string  | **Optional** | Type of Image or Documentation, from reference data. E.g. "PB", "FDV".
+| `id`                | string  | **Required** | Media GUID.
+| `type`              | string  | **Required** | Type of Image or Documentation, from reference data. E.g. "PB", "FDV".
 | `fileName`          | string  | **Optional** | Media file name.
-| `referencedByItem`  | integer | **Required** | NOBB number of item that references this media.
+| `participantNumber` | integer | **Required** | Participant number of media owner.
+| `nobbNumber`        | integer | **Required** | NOBB number of item that references this media.
 | `url`               | string  | **Optional** | Full URL to media file.
 
 
@@ -98,15 +101,14 @@ Example of when the document has been referenced from one more modules:
     },	
     "data": {
         "id": "4f214662-ba42-491c-b230-37b1420a4db9",
-        "referencedByItem": 49831963
+        "type": "PB",
+        "participantNumber": 51128,
+        "nobbNumber": 49831963
     }
 }
 ```
 
 # ProductMedia Deleted 
-
-## Note
-The identifier must be part of the event data. 
 
 ## Properties
 
@@ -116,8 +118,11 @@ The identifier must be part of the event data.
 
 | Property            | Type    | Required     | Description |
 | ------------------- | ------- | ------------ | ----------- |
-| `id`                | string  | **Required** | GUID base on assessmentId.
-| `referencedByItem`  | integer | **Required** | NOBB number of item that references this media.
+| `id`                | string  | **Required** | Media GUID.
+| `type`              | string  | **Required** | Type of Image or Documentation, from reference data. E.g. "PB", "FDV".
+| `fileName`          | string  | **Optional** | Media file name.
+| `participantNumber` | integer | **Required** | Participant number of image owner.
+| `nobbNumber`        | integer | **Required** | NOBB number of item that references this media.
 
 
 ## Sample json
@@ -131,7 +136,9 @@ The identifier must be part of the event data.
     },
     "data": {
         "id": "4f214662-ba42-491c-b230-37b1420a4db9",
-        "referencedByItem": 49831963
+        "type": "PB",
+        "participantNumber": 51128,
+        "nobbNumber": 49831963
     }
 }
 ```

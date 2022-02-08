@@ -55,6 +55,7 @@ The data model depends on the event type, see below.
 | Property            | Type    | Required when `mainSupplier` is `true` | Required when `mainSupplier` is `false` | Description              | Riversand Comment |
 | ------------------- | ------- | ------------ | ------------ | ---------------------------------------------- | ------------------------------------------------ |
 | `id`                | string  | **Required** | **Required** | When 'mainSupplier' is 'false' this must be the GUID of main suppliers package. Oterwise a generated GUID that can't be changed  | This will be generated and stored in Middleware. |
+| `nobbId`            | string  | **Required** | **N/A**      | Package ID as shown in Riversand               | thgpackageid |
 | `nobbNumber`        | integer | **Required** | **Required** | Always main supplier's NOBB number.            | thgnobbno                                        |
 | `participantNumber` | integer | **Required** | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. | |
 | `mainSupplier`      | boolean | **true**     | **false**    | `true` when the participant number belongs to the main supplier, `false` otherwise. |             |
@@ -108,6 +109,7 @@ Note:
     
     "data": {
         "id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
+        "nobbId": "44445555F-PAK123456",
         "nobbNumber": 44445555,
         "participantNumber": 51128,
         "mainSupplier": true,
@@ -187,6 +189,7 @@ The identifier must be part of the event data. Otherwise, only changed fields ca
 | `id`                | string  | **Required** | **Required** | Always GUID of main suppliers package. | This will be generated and stored in Middleware. |
 | `participantNumber` | integer | **Required** | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
 | `mainSupplier`      | boolean | **true**     | **false**    | `true` when the participant number belongs to the main supplier, `false` otherwise. |            |
+| `nobbId`            | string  | **Optional** | **N/A**      | Package ID as shown in Riversand              | thgpackageid |
 | `availableFrom`     | string  | **Optional** | **N/A**      | yyyy-MM-dd                                    | thgpackageavailablefrom                          |
 | `availableTo`       | string  | **Optional** | **N/A**      | yyyy-MM-dd                                    | thgexpiredate                                    |
 | `calculatedCount`   | decimal | **Optional** | **N/A**      |                                               | thgcalculatedcount                               |

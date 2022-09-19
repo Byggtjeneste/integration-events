@@ -56,11 +56,13 @@ The data model depends on the event type, see below.
 | `participantNumber`         | integer             | **Required** | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
 | `mainSupplier`              | boolean             | **true**     | **false** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
 | `accessories`               | array of integers   | **Optional** | **N/A** | Array of NOBB numbers.                                         | __relationships__ [ serviceaccessories, standardaccessories ]  |
+| `bundleItems`               | array of objects    | **Optional** | **N/A** |                                                                | see `bundleItems Type` |
 | `customsEuCode`             | string              | **Optional** | **N/A** |                                                                | thgeucustomcode |
 | `customsNoCode`             | string              | **Optional** | **N/A** |                                                                | thgnocustomcode |
 | `dangerousGoods`            | object              | **Optional** | **N/A** |                                                                | see `dangerousGoods Type` |
 | `description`               | string              | **Optional** | **N/A** |                                                                | thgdescription |
 | `environmentLabels`         | array of string     | **Optional** | **N/A** |                                                                | thgenvironmentlabels |
+| `epdData`                   | object              | **Optional** | **N/A** |                                                                | New attributes to be established in Riversand |
 | `expiryDate`                | string              | **Optional** | **Optional** | In format `yyyy-MM-dd`. Different suppliers can have different expiry dates. | thgexpiredate |
 | `finfoNumber`               | string              | **Optional** | **N/A** |                                                                | thgfinfono |
 | `freightGroup`              | string              | **Optional** | **Optional** | Different suppliers can have different freight groups.         | thgfreightgroup |
@@ -86,11 +88,20 @@ The data model depends on the event type, see below.
 | `type`                      | string              | **Required** | **N/A** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type. |
 | `uniqueSellingPoints`       | array of string     | **Optional** | **N/A** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
 | `videos`                    | array of objects    | **Optional** | **N/A** |                                                                | see `videos Type` |
-| `epdData`                   | object              | **Optional** | **N/A** |                                                                | New attributes to be established in Riversand |
 
 
 
 ### Sub-types (Only relevant when `mainSupplier` is `true`)
+
+##### bundleItems Type
+
+`object` with following properties:
+
+| Property       | Type    | Required     |	Description                      |
+| -------------- | ------- | ------------ | -------------------------------- |
+| `nobbNumber`   | integer | **Required** | NOBB number of the bundled item. |
+| `quantity`     | integer | **Required** |                                  |
+
 
 ##### dangerousGoods Type
 
@@ -221,10 +232,16 @@ __Comment:__ All NRF attributes are taxonomy attributes from the NRF taxonomy.
                 "code": "youtubeId"
             },
         ],
-		"epdData" : {
-			"epdId":"NEPD-001-NO",
-			"calculationFactor": 65.1234
-		}
+        "epdData" : {
+            "epdId":"NEPD-001-NO",
+            "calculationFactor": 65.1234
+        },
+        "bundleItems": [
+            {
+                "nobbNumber": 55554444,
+                "quantity": 2
+            }
+        ]
     }
 }
 ```
@@ -286,11 +303,13 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `participantNumber`         | integer             | **Required** | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. |
 | `mainSupplier`              | boolean             | **true**     | **false** | `true` when the participant number belongs to the main supplier, `false` otherwise. |
 | `accessories`               | array of integers   | **Optional** | **N/A** | Array of NOBB numbers.                                         | __relationships__  [ serviceaccessories, standardaccessories ] |
+| `bundleItems`               | array of objects    | **Optional** | **N/A** |                                                                | see `bundleItems Type` |
 | `customsEuCode`             | string              | **Optional** | **N/A** |                                                                | thgeucustomcode      |
 | `customsNoCode`             | string              | **Optional** | **N/A** |                                                                | thgnocustomcode      |]
 | `dangerousGoods`            | object              | **Optional** | **N/A** |                                                                | see `dangerousGoods Type` |
 | `description`               | string              | **Optional** | **N/A** |                                                                | thgdescription |
 | `environmentLabels`         | array of string     | **Optional** | **N/A** |                                                                | thgenvironmentlabels |
+| `epdData`                   | object              | **Optional** | **N/A** |                                                                | New attributes to be established in Riversand |
 | `expiryDate`                | string              | **Optional** | **Optional** |                                                                | thgexpiredate |
 | `finfoNumber`               | string              | **Optional** | **N/A** |                                                                | thgfinfono |
 | `freightGroup`              | string              | **Optional** | **Optional** |                                                                | thgfreightgroup |
@@ -316,9 +335,18 @@ The identifiers must be part of the event data. Otherwise, only changed fields c
 | `type`                      | string              | **Optional** | **N/A** | Type of item. One of "Standard", "Display", "Composite", "Special", or "Service" | Set by Middleware based on RS entity type.|
 | `uniqueSellingPoints`       | array of string     | **Optional** | **N/A** |                                                                | [ thgusp1, thgusp2, thgusp3, thgusp4, thgusp5 ] |
 | `videos`                    | array of objects    | **Optional** | **N/A** |                                                                | see `videos Type` |
-| `epdData`                   | object              | **Optional** | **N/A** |                                                                | New attributes to be established in Riversand |
 
 ### Sub-types (Only relevant when `mainSupplier` is `true`)
+
+##### bundleItems Type
+
+`object` with following properties:
+
+| Property       | Type    | Required     |	Description                      |
+| -------------- | ------- | ------------ | -------------------------------- |
+| `nobbNumber`   | integer | **Required** | NOBB number of the bundled item. |
+| `quantity`     | integer | **Required** |                                  |
+
 
 ##### dangerousGoods Type
 

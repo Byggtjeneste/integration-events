@@ -157,25 +157,26 @@ The identifier must be part of the event data.
 
 `object` with following properties:
 
-| Property                    | Type    | Required     | Description |
-| --------------------------- | ------- | ------------ | -------     |
-| `id`                        | string  | **Required** |  
+| Property     | Type    | Required     | Description |
+| ------------ | ------- | ------------ | -------     |
+| `id`         | string  | **Required** | The identifier to the price that was deleted.
+| `nobbNumber` | integer | **Required** | 
 
 
 ## Sample json
 
 ```json
 {
-	"metadata": {
-		"eventType": "Delete", // string
-		"event": "Price", // string
-		"date": "2019-09-30T12:34:56",
-		"author": "Glava AS" // string
-	},
-	
-	"data": {
-		// the identifier to the price that was deleted
-		"id": "4f214662-ba42-491c-b230-37b1420a4db9"
-	}
+    "metadata": {
+        "eventType": "Delete",
+        "event": "Price",
+        "date": "2019-09-30T12:34:56",
+        "author": "Glava AS"
+    },
+    
+    "data": {
+        "id": "4f214662-ba42-491c-b230-37b1420a4db9",
+        "nobbNumber": 44445555
+    }
 }
 ```

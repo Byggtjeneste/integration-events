@@ -297,6 +297,7 @@ The identifier must be part of the event data.
 | `id`                | string  | **Required** |             | This will be generated and stored in Middleware. |
 | `participantNumber` | integer | **Required** | Participant number for the supplier. The supplier is either a main supplier or an alternative supplier. | |
 | `mainSupplier`      | boolean | **Required** | `true` when the participant number belongs to the main supplier, `false` otherwise. | |
+| `nobbNumber`        | integer | **Required** |
 
 
 
@@ -314,7 +315,8 @@ The identifier must be part of the event data.
     "data": {
         "id": "b7c6081c-7b8e-47fd-8294-b195fe05ae63",
         "participantNumber": 51128,
-        "mainSupplier": true
+        "mainSupplier": true,
+        "nobbNumber": 44445555
     }
 }
 ```
